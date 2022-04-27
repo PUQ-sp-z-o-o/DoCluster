@@ -12,9 +12,7 @@ def ApiStart(url, args, client_ip):
 
     if ClientApi.token_status == False:
         return ClientApi.answer()
-###
-##print(str(os.uname()))
-###
+
     if 'cluster' not in config.cluster_config:
         if len(url) >= 2 and url[0] == 'cluster' and url[1] in ['create', 'join']:
             config.logger.info(ClientApi.client_ip + ' (' + ClientApi.username + ') ' + 'create or join cluster')
@@ -52,7 +50,6 @@ def ApiStart(url, args, client_ip):
             config.logger.error(ClientApi.client_ip + ' (' + ClientApi.username + ') ' + 'wrong api path')
             return ClientApi.answer()
 
-
-    r=ClientApi.answer()
+    r = ClientApi.answer()
     del ClientApi
     return r

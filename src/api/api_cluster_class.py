@@ -40,11 +40,11 @@ class cluster:
                 'name': 'DoCluster',
                 'nodes': {
                         os.uname()[1]: {'machine': os.uname()[4],
-                                        'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(128)),
-                                        'enabled': 'true',
-                                        'mng_weight': 0
+                                        'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(30)),
+                                        'enabled': 'true'
                                         }
-                }
+                },
+                'management': [{'node': os.uname()[1], 'weight': 0}]
             }
             self.SaveConfiguration = True
             self.answer_status = 'success'

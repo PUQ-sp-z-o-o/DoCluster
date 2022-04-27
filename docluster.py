@@ -68,7 +68,7 @@ if __name__ == '__main__':
     config.logger.info('Start API service')
     api_t = threading.Thread(target=api_web, daemon=False)
     api_t.start()
-    time.sleep(2)
+    time.sleep(1)
     config.logger.info('Start MNG service')
     mng_t = threading.Thread(target=mng_web, daemon=False)
     mng_t.start()

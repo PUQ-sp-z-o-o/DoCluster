@@ -22,6 +22,13 @@ def ApiStart(url, args, client_ip):
             config.logger.debug(ClientApi.client_ip + ' (' + ClientApi.username + ') ' + 'cluster not created')
             return ClientApi.Answer()
 
+    if not ClientApi.ManagementNode():
+        ClientApi.answer_msg = {}
+        ClientApi.answer_status = 'error'
+        ClientApi.answer_error = 'not management node'
+        config.logger.error(ClientApi.client_ip + ' (' + ClientApi.username + ') ' + 'not management node')
+        return ClientApi.Answer()
+
     if len(url) >= 2:
         if os.access('src/api/api_' + url[0] + '_class.py', os.F_OK):
             api_module = importlib.import_module('src.api.api_' + url[0] + '_class')

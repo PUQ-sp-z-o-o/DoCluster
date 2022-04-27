@@ -17,5 +17,7 @@ cd /root/DoCluster/
 python3 -m venv .venv
 git pull
 pip3 install -r requirements.txt
+pip install -r requirements.txt
+
 
 exit

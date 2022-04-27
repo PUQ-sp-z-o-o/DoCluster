@@ -15,5 +15,5 @@ git clone https://github.com/PUQ-sp-z-o-o/DoCluster
 cd /root/DoCluster/
 git pull
 python3 -m venv .venv
-/root/Docluster/venv/bin/pip3 install -r requirements.txt
+/root/DoCluster/venv/bin/pip3 install -r requirements.txt
 exit

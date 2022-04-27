@@ -11,7 +11,7 @@ def ApiStart(url, args, client_ip):
     ClientApi = ClastercpApi(url, args, client_ip)
 
     if ClientApi.token_status == False:
-        return ClientApi.answer()
+        return ClientApi.Answer()
 
     if 'cluster' not in config.cluster_config:
         if len(url) >= 2 and url[0] == 'cluster' and url[1] in ['create', 'join']:
@@ -20,7 +20,7 @@ def ApiStart(url, args, client_ip):
             ClientApi.answer_status = 'error'
             ClientApi.answer_error = 'Cluster not created'
             config.logger.debug(ClientApi.client_ip + ' (' + ClientApi.username + ') ' + 'cluster not created')
-            return ClientApi.answer()
+            return ClientApi.Answer()
 
     if len(url) >= 2:
         if os.access('src/api/api_' + url[0] + '_class.py', os.F_OK):
@@ -41,15 +41,15 @@ def ApiStart(url, args, client_ip):
                 ClientApi.answer_status = 'error'
                 ClientApi.answer_error = 'Wrong API path'
                 config.logger.error(ClientApi.client_ip + ' (' + ClientApi.username + ') ' + 'wrong api path')
-                return ClientApi.answer()
+                return ClientApi.Answer()
             del api_class
         else:
             ClientApi.answer_msg = {}
             ClientApi.answer_status = 'error'
             ClientApi.answer_error = 'Wrong API path'
             config.logger.error(ClientApi.client_ip + ' (' + ClientApi.username + ') ' + 'wrong api path')
-            return ClientApi.answer()
+            return ClientApi.Answer()
 
-    r = ClientApi.answer()
+    r = ClientApi.Answer()
     del ClientApi
     return r

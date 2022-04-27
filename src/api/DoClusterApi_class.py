@@ -5,7 +5,7 @@ import calendar
 import hashlib
 import random
 import string
-
+import os
 
 class ClastercpApi:
 
@@ -43,7 +43,7 @@ class ClastercpApi:
 
         self.user_token_server = config.access_tokens.get(self.user_token, '')
 
-        if self.check_token():
+        if self.CheckToken():
             if len(self.url) == 1 and self.url[0] == 'logout':
                 self.__logout()
 
@@ -62,7 +62,7 @@ class ClastercpApi:
         config.logger.debug(
             self.client_ip + ' (' + self.username + ') ' + 'URL: ' + str(self.url) + ' POST: ' + str(self.args))
 
-    def check_token(self):
+    def CheckToken(self):
         date = datetime.datetime.utcnow()
         utc_time = calendar.timegm(date.utctimetuple())
         '''Delete invalid tokens'''
@@ -108,23 +108,22 @@ class ClastercpApi:
     def __login(self):
         self.answer_status = 'false'
 
-        if self.username in config.cluster_config['systems']['users']:
-            password = config.cluster_config['systems']['users'][self.username]['password']
-        else:
+        if self.username not in config.cluster_config['systems']['users']:
             config.logger.error(self.client_ip + ' (' + self.username + ') ' + 'wrong login or password')
             self.answer_msg = {}
             self.answer_error = 'Username not found, please log in.'
             return False
-        if password != hashlib.md5(self.password.encode("utf-8")).hexdigest():
+
+        if config.cluster_config['systems']['users'][self.username]['password'] != hashlib.md5(self.password.encode("utf-8")).hexdigest():
             config.logger.error(self.client_ip + ' (' + self.username + ') ' + 'wrong login or password')
             self.answer_msg = {}
             self.answer_error = 'Wrong password.'
             return False
-        else:
-            config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'login success')
-            self.answer_status = "success"
-            self.answer_error = ''
-            self.answer_msg = {"access_token": self.__WriteToken()}
+
+        config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'login success')
+        self.answer_status = "success"
+        self.answer_error = ''
+        self.answer_msg = {"access_token": self.__WriteToken()}
 
     def __logout(self):
         config.access_tokens[self.user_token]['expiration'] = 0
@@ -151,7 +150,13 @@ class ClastercpApi:
         }
         return self.user_token
 
-    def answer(self):
+    def ManagementNode(self):
+        for node in config.cluster_config['management']:
+            if node['node'] == os.uname()[1] and node['weight'] == 0:
+                return True
+        return False
+
+    def Answer(self):
         answer = {
             'msg': self.answer_msg,
             'status': self.answer_status,

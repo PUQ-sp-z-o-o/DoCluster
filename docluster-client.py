@@ -5,7 +5,7 @@ import os
 import json
 
 
-api_url = "http://192.168.129.82:3033/api/"
+api_url = "http://192.168.129.83:3033/api/"
 api_login = 'admin'
 api_apss = 'admin'
 access_token = ''
@@ -72,8 +72,8 @@ def cluster_join():
     path = 'cluster/join'
     data = {
         'cluster_username': 'admin',
-        'cluster_password': 'QWEqwe123',
-        'cluster_ip': '192.168.129.81',
+        'cluster_password': 'admin',
+        'cluster_ip': '192.168.129.82',
     }
     send(path, data)
 

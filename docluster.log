@@ -2967,3 +2967,13 @@
 2022-04-27 11:40:44,197 - API - DEBUG - 192.168.129.183 () URL: ['claster', 'status'] POST: {'access_token': ''}
 2022-04-27 11:40:49,260 - API - ERROR - 192.168.129.183 () wrong token
 2022-04-27 11:40:49,260 - API - DEBUG - 192.168.129.183 () URL: ['claster', 'status'] POST: {'access_token': ''}
+2022-04-27 15:49:33,617 - API - INFO - Start API service
+2022-04-27 15:49:34,619 - API - INFO - Start MNG service
+2022-04-27 15:50:24,066 - API - INFO - Start API service
+2022-04-27 15:50:25,067 - API - INFO - Start MNG service
+2022-04-27 15:52:54,580 - API - INFO - Start API service
+2022-04-27 15:52:55,582 - API - INFO - Start MNG service
+2022-04-27 16:00:52,764 - API - INFO - Start API service
+2022-04-27 16:00:53,766 - API - INFO - Start MNG service
+2022-04-27 16:00:59,420 - API - ERROR - 127.0.0.1 () wrong token
+2022-04-27 16:00:59,421 - API - DEBUG - 127.0.0.1 () URL: [] POST: {}

@@ -5,7 +5,7 @@ import os
 import json
 
 
-api_url = "http://192.168.129.83:3033/api/"
+api_url = "http://192.168.129.198:3033/api/"
 api_login = 'admin'
 api_apss = 'admin'
 access_token = ''
@@ -148,8 +148,15 @@ def tokens():
     send(path, data)
 
 
+def cluster_management_get():
+    path = 'cluster/management/get'
+    data = {}
+    send(path, data)
+
+
 login()
-cluster_status()
+cluster_management_get()
+#cluster_status()
 #tokens()
 #cluster_create()
 #cluster_join()

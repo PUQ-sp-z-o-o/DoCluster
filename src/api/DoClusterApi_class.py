@@ -151,6 +151,8 @@ class ClastercpApi:
         return self.user_token
 
     def ManagementNode(self):
+        if 'cluster' not in config.cluster_config:
+            return True
         for node in config.cluster_config['cluster']['management']:
             if node['node'] == os.uname()[1] and node['weight'] == 0:
                 return True

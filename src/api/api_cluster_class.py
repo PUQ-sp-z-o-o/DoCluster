@@ -15,8 +15,8 @@ class cluster:
     client_ip = ''
 
     answer_msg = {}
-    answer_error = ''
-    answer_status = ''
+    answer_error = 'wrong api path'
+    answer_status = 'error'
     username = ''
 
     def __init__(self, url, args, client_ip, username):
@@ -99,4 +99,16 @@ class cluster:
         self.answer_status = json.loads(send.text)['status']
         self.answer_msg = {}
 
+
+
+    def management(self):
+        if len(self.url) != 3:
+            return 0
+        if self.url[2] not in ['get', 'set', 'add', 'delete']:
+            return 0
+
+        if self.url[2] == 'get':
+            self.answer_msg = config.cluster_config['cluster']['management']
+            self.answer_status = 'success'
+            self.answer_error = ''
 

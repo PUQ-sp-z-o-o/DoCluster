@@ -22,7 +22,7 @@ def MngJoin(args, client_ip):
         return {'status': 'error', 'error': 'password is wrong'}
 
     if args['node'] in config.cluster_config['cluster']['nodes']:
-        return {'status': 'error', 'error': 'a node with the same hostname is already in the cluster.'}
+        return {'status': 'error', 'error': 'a node with the same hostname is already in the cluster'}
 
     config.cluster_config['cluster']['nodes'][args['node']] = {
         'machine': args['machine'],

@@ -7,7 +7,7 @@ if [ "x$(id -u)" != 'x0' ]; then
     echo 'Error: this script can only be executed by root'
     exit 1
 fi
-
+cd /root/
 apt-get install git -y
 apt-get install python3-pip -y
 apt-get install python3-venv -y

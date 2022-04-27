@@ -15,7 +15,7 @@ apt-get install python3-venv -y
 git clone https://github.com/PUQ-sp-z-o-o/DoCluster
 cd /root/DoCluster/
 python3 -m venv .venv
-source ./.venv/bin/activate
+source /root/DoCluster/.venv/bin/activate
 git pull
 pip3 install -r requirements.txt
 pip install -r requirements.txt

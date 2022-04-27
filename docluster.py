@@ -12,6 +12,10 @@ from src.mng.mng import *
 from src.functions import *
 
 #####
+try:
+    os.mkdir('config')
+except Exception as e:
+    print(e)
 if not os.access('config/docluster.conf', os.F_OK):
     f = open('config/docluster.conf', 'w+')
     json.dump(config.default_config, f, indent=1)

@@ -76,7 +76,7 @@ mng_t.start()
 
 
 #Cluster.NodeStatus()
-#threading.Thread(Cluster.quorum()).run()
+threading.Thread(Cluster.quorum()).run()
 
 if 'cluster' in config.cluster_config:
     threading.Thread(Cluster.NodsStatusCheck()).run()

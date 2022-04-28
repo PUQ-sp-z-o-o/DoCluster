@@ -40,7 +40,8 @@ def ReadConfiguration():
 
 
 def SaveConfiguration():
-    config.cluster_config['version'] = config.cluster_config['version'] + 1
+    if config.cluster_quorum['master'] == os.uname()[1]:
+        config.cluster_config['version'] = config.cluster_config['version'] + 1
     f = open('config/docluster.conf', 'w+')
     json.dump(config.cluster_config, f, indent=1)
     config.logger.info('SaveConfiguration version: ' + str(config.cluster_config['version']))

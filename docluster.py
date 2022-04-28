@@ -8,13 +8,13 @@ import os
 from flask import Flask, request
 
 from src.api.api import ApiStart
-from src.mng.mng import *
+from src.mng.mng import MngJoin
 from src.functions import *
 from src.mng.DoClusterMng import DoClusterMng
 
 ReadConfiguration()
 ReadClusterTasks()
-
+Cluster = DoClusterMng()
 
 
 api = Flask(__name__)
@@ -51,7 +51,7 @@ def mng_get_dir():
     if request.method == 'POST':
         args = request.form.to_dict()
     client_ip = request.remote_addr
-    return MngStart(args, client_ip)
+    return Cluster.MngStart(args, client_ip)
 
 
 @mng.route('/join/', methods=['POST', 'GET'])
@@ -73,9 +73,9 @@ mng_t.start()
 
 
 
-Cluster = DoClusterMng()
 
-threading.Thread(Cluster.quorum()).run()
-
+#Cluster.NodeStatus()
+#threading.Thread(Cluster.quorum()).run()
+threading.Thread(Cluster.NodsStatusCheck()).run()
 #while True:
 #

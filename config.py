@@ -11,6 +11,7 @@ cluster_quorum ={
     "error": '',
     'master': ''
 }
+cluster_nodes_status = {}
 
 # DEBUG,INFO,WARNING,ERROR,CRITICAL
 LogLevel = 'DEBUG'

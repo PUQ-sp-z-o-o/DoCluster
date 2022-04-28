@@ -4,9 +4,6 @@ import random
 import string
 from src.functions import *
 
-def MngStart(args, client_ip):
-    return client_ip
-
 def MngJoin(args, client_ip):
     if 'cluster' not in config.cluster_config:
         config.logger.error(client_ip + 'Join to cluster: cluster not created on connecting node')
@@ -35,5 +32,6 @@ def MngJoin(args, client_ip):
         'enabled': 'false'
     }
     SaveConfiguration()
+
     config.logger.info(client_ip + 'Join to cluster:' + args['node'])
     return {'status': 'success', 'error': '', 'msg': config.cluster_config}

@@ -7,6 +7,7 @@ import json
 import os
 from flask import Flask, request
 
+import config
 from src.api.api import ApiStart
 from src.mng.mng import MngJoin
 from src.functions import *
@@ -76,6 +77,9 @@ mng_t.start()
 
 #Cluster.NodeStatus()
 #threading.Thread(Cluster.quorum()).run()
-threading.Thread(Cluster.NodsStatusCheck()).run()
+
+if 'cluster' in config.cluster_config:
+    threading.Thread(Cluster.NodsStatusCheck()).run()
+
 #while True:
 #

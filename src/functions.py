@@ -3,12 +3,14 @@ import re
 import json
 import config
 
+
 def is_valid_ip(ip_address):
     try:
         ipaddress.ip_address(ip_address)
         return True
     except ValueError:
         return False
+
 
 def is_valid_hostname(hostname: object) -> object:
     if len(hostname) == 0:
@@ -20,13 +22,38 @@ def is_valid_hostname(hostname: object) -> object:
     allowed = re.compile("(?!-)[A-Z\d-]{1,63}(?<!-)$", re.IGNORECASE)
     return all(allowed.match(x) for x in hostname.split("."))
 
+
 def ReadConfiguration():
+    try:
+        os.mkdir('config')
+    except Exception as e:
+        print(e)
+    if not os.access('config/docluster.conf', os.F_OK):
+        f = open('config/docluster.conf', 'w+')
+        json.dump(config.default_config, f, indent=1)
+        f.close()
+
     with open('config/docluster.conf') as json_file:
         config.cluster_config = json.load(json_file)
         json_file.close()
+
 
 def SaveConfiguration():
     f = open('config/docluster.conf', 'w+')
     json.dump(config.cluster_config, f, indent=1)
     f.close()
 
+
+def ReadClusterTasks():
+    try:
+        os.mkdir('config')
+    except Exception as e:
+        print(e)
+    if not os.access('config/docluster.tasks', os.F_OK):
+        f = open('config/docluster.tasks', 'w+')
+        json.dump(config.cluster_tasks, f, indent=1)
+        f.close()
+
+    with open('config/docluster.tasks') as json_file:
+        config.cluster_config = json.load(json_file)
+        json_file.close()

@@ -7,7 +7,7 @@ import random
 import string
 import os
 
-class ClastercpApi:
+class ClustercpApi:
 
     config.logger.name = 'API'
     access_tokens = config.access_tokens

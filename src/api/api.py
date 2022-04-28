@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import os
-from src.api.DoClusterApi_class import ClastercpApi
+from src.api.DoClusterApi_class import ClustercpApi
 import config
 import importlib
 from src.functions import *
 
 
 def ApiStart(url, args, client_ip):
-    ClientApi = ClastercpApi(url, args, client_ip)
+    ClientApi = ClustercpApi(url, args, client_ip)
 
     if ClientApi.token_status == False:
         return ClientApi.Answer()

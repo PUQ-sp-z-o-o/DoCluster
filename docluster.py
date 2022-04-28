@@ -11,17 +11,10 @@ from src.api.api import ApiStart
 from src.mng.mng import *
 from src.functions import *
 
-#####
-try:
-    os.mkdir('config')
-except Exception as e:
-    print(e)
-if not os.access('config/docluster.conf', os.F_OK):
-    f = open('config/docluster.conf', 'w+')
-    json.dump(config.default_config, f, indent=1)
-    f.close()
-#####
+
 ReadConfiguration()
+ReadClusterTasks()
+
 
 
 api = Flask(__name__)
@@ -43,6 +36,11 @@ def api_web():
     api.run(host='0.0.0.0', port=3033, use_reloader=False)
 
 
+config.logger.info('Start API service')
+api_t = threading.Thread(target=api_web, daemon=False)
+api_t.start()
+
+
 mng = Flask(__name__)
 mng.debug = True
 
@@ -54,6 +52,7 @@ def mng_get_dir():
         args = request.form.to_dict()
     client_ip = request.remote_addr
     return MngStart(args, client_ip)
+
 
 @mng.route('/join/', methods=['POST', 'GET'])
 def join():
@@ -68,14 +67,9 @@ def mng_web():
     mng.run(host='0.0.0.0', port=3030, use_reloader=False)
 
 
-if __name__ == '__main__':
-    config.logger.info('Start API service')
-    api_t = threading.Thread(target=api_web, daemon=False)
-    api_t.start()
-    time.sleep(1)
-    config.logger.info('Start MNG service')
-    mng_t = threading.Thread(target=mng_web, daemon=False)
-    mng_t.start()
+config.logger.info('Start MNG service')
+mng_t = threading.Thread(target=mng_web, daemon=False)
+mng_t.start()
 
 
 

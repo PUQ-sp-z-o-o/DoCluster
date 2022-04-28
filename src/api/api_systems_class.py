@@ -110,7 +110,7 @@ class systems:
                     config.cluster_config['systems']['users'][self.args['username']]['password'] = hashlib.md5(pass_tmp.encode("utf-8")).hexdigest()
 
             if 'email' in self.args:
-                config.cluster_config['systems']['users'][self.args['username']]['email'] =  self.args['email']
+                config.cluster_config['systems']['users'][self.args['username']]['email'] = self.args['email']
 
             self.SaveConfiguration = True
             self.answer_msg[self.args['username']] = config.cluster_config['systems']['users'][self.args['username']]

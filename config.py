@@ -5,6 +5,7 @@ import hashlib
 token_timeout = 60
 access_tokens = {}
 cluster_config = {}
+cluster_tasks = {}
 # DEBUG,INFO,WARNING,ERROR,CRITICAL
 LogLevel = 'DEBUG'
 LogFile = 'docluster.log'

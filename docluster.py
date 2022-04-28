@@ -43,7 +43,7 @@ api_t.start()
 
 
 mng = Flask(__name__)
-mng.debug = True
+#mng.debug = True
 
 
 @mng.route('/mng/', methods=['POST', 'GET'])

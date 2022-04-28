@@ -25,9 +25,20 @@ class DoClusterMng:
                     config.cluster_nodes_status[key]['error'] = 'network problem: ConnectionError'
                     continue
 
-                answer = json.loads(send.text)
-                config.cluster_nodes_status[key]['status'] = 'online'
-                config.cluster_nodes_status[key]['config_version'] = answer['config_version']
+                try:
+                    answer = json.loads(send.text)
+                except ValueError as e:
+                    config.cluster_nodes_status[key]['status'] = 'offline'
+                    config.cluster_nodes_status[key]['error'] = str(e)
+                else:
+                    config.cluster_nodes_status[key]['status'] = 'online'
+                    config.cluster_nodes_status[key]['config_version'] = answer['config_version']
+
+
+
+
+
+
 
 
     def NodeStatus(self):

@@ -2,6 +2,7 @@ import ipaddress
 import re
 import json
 import config
+import os
 
 
 def is_valid_ip(ip_address):
@@ -39,8 +40,11 @@ def ReadConfiguration():
 
 
 def SaveConfiguration():
+    config.cluster_config['version'] = config.cluster_config['version'] + 1
     f = open('config/docluster.conf', 'w+')
     json.dump(config.cluster_config, f, indent=1)
+    config.logger.info('SaveConfiguration version: ' + str(config.cluster_config['version']))
+    config.logger.debug('SaveConfiguration: ' + str(config.cluster_config))
     f.close()
 
 
@@ -55,5 +59,5 @@ def ReadClusterTasks():
         f.close()
 
     with open('config/docluster.tasks') as json_file:
-        config.cluster_config = json.load(json_file)
+        config.cluster_tasks = json.load(json_file)
         json_file.close()

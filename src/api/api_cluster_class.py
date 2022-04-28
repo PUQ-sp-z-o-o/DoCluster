@@ -44,11 +44,12 @@ class cluster:
                                         'enabled': 'true'
                                         }
                 },
-                'management': [{'node': os.uname()[1], 'weight': 0}]
+                'quorum': [{'node': os.uname()[1], 'main': True}]
             }
             self.SaveConfiguration = True
             self.answer_status = 'success'
             self.answer_msg = {}
+            self.answer_error = ''
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'cluster created successfully')
 
     def join(self):

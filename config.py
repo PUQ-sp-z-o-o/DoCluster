@@ -6,6 +6,12 @@ token_timeout = 60
 access_tokens = {}
 cluster_config = {}
 cluster_tasks = {}
+cluster_quorum ={
+    "status": 'OK',
+    "error": '',
+    'master': ''
+}
+
 # DEBUG,INFO,WARNING,ERROR,CRITICAL
 LogLevel = 'DEBUG'
 LogFile = 'docluster.log'
@@ -13,6 +19,7 @@ LogFile = 'docluster.log'
 VERSION = '1.0'
 
 default_config = {
+    "version": 0,
     "systems": {
         "users": {"admin": {"password": hashlib.md5("admin".encode("utf-8")).hexdigest()}}
     }

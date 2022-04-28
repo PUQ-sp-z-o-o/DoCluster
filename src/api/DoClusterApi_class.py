@@ -7,7 +7,7 @@ import random
 import string
 import os
 
-class ClustercpApi:
+class DoClustercpApi:
 
     config.logger.name = 'API'
     access_tokens = config.access_tokens
@@ -153,8 +153,8 @@ class ClustercpApi:
     def ManagementNode(self):
         if 'cluster' not in config.cluster_config:
             return True
-        for node in config.cluster_config['cluster']['management']:
-            if node['node'] == os.uname()[1] and node['weight'] == 0:
+        for node in config.cluster_config['cluster']['quorum']:
+            if node['node'] == os.uname()[1]:
                 return True
         return False
 

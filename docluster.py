@@ -6,11 +6,11 @@ import threading
 import json
 import os
 from flask import Flask, request
-import config
+
 from src.api.api import ApiStart
 from src.mng.mng import *
 from src.functions import *
-
+from src.mng.DoClusterMng import DoClusterMng
 
 ReadConfiguration()
 ReadClusterTasks()
@@ -73,5 +73,9 @@ mng_t.start()
 
 
 
+Cluster = DoClusterMng()
 
+threading.Thread(Cluster.quorum()).run()
 
+#while True:
+#

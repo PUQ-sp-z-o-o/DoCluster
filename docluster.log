@@ -1,2 +1,1355 @@
 2022-04-28 18:55:58,423 - API - INFO - Start API service
 2022-04-28 18:55:58,427 - API - INFO - Start MNG service
+2022-04-28 19:03:55,179 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:04:31,000 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:04:32,977 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:04:35,250 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:04:37,908 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:04:38,981 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:04:40,006 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:05:25,899 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:05:26,790 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:05:27,561 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:05:28,250 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:09:42,353 - API - INFO - Start API service
+2022-04-28 19:09:42,356 - API - INFO - Start MNG service
+2022-04-28 19:09:43,966 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:09:54,898 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:09:55,810 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:09:56,578 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:09:57,331 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:09:58,085 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:09:58,775 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:09:59,426 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:10:00,256 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:10:01,008 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:10:01,714 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:11:07,155 - API - INFO - Start API service
+2022-04-28 19:11:07,158 - API - INFO - Start MNG service
+2022-04-28 19:11:08,638 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:11:09,702 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:11:10,603 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:11:11,990 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:11:12,855 - API - ERROR - 192.168.129.82Join to cluster: cluster not created on connecting node
+2022-04-28 19:11:49,711 - API - ERROR - 192.168.129.198 () wrong token
+2022-04-28 19:11:49,712 - API - DEBUG - 192.168.129.198 () URL: [] POST: {}
+2022-04-28 19:11:49,718 - API - ERROR - 192.168.129.198 () wrong token
+2022-04-28 19:11:49,718 - API - ERROR - 192.168.129.198 () wrong login or password
+2022-04-28 19:11:49,718 - API - DEBUG - 192.168.129.198 () URL: ['login'] POST: {'access_token': 'OKXRDTSUPIJVVMOCDTXRUTJHWYWMSIHNJULFFAYFLZPURPPJYYHWISWYRFIQ'}
+2022-04-28 19:11:49,724 - API - ERROR - 192.168.129.198 (admin) wrong token
+2022-04-28 19:11:49,725 - API - INFO - 192.168.129.198 (admin) login success
+2022-04-28 19:11:49,725 - API - DEBUG - 192.168.129.198 (admin) URL: ['login'] POST: {'username': 'admin', 'password': 'admin'}
+2022-04-28 19:11:51,904 - API - ERROR - 192.168.129.198 () wrong token
+2022-04-28 19:11:51,904 - API - DEBUG - 192.168.129.198 () URL: [] POST: {}
+2022-04-28 19:11:51,909 - API - DEBUG - 192.168.129.198 (admin) success token
+2022-04-28 19:11:51,910 - API - DEBUG - 192.168.129.198 (admin) URL: ['login'] POST: {'access_token': 'RMKGKEHPSVTFOSQOAIQPLDPDTDAFNXUREWNOMULUHABTTMCJNISNRIETUKAQ'}
+2022-04-28 19:11:51,910 - API - DEBUG - 192.168.129.198 (admin) cluster not created
+2022-04-28 19:11:52,937 - API - ERROR - 192.168.129.198 () wrong token
+2022-04-28 19:11:52,937 - API - DEBUG - 192.168.129.198 () URL: [] POST: {}
+2022-04-28 19:11:52,942 - API - DEBUG - 192.168.129.198 (admin) success token
+2022-04-28 19:11:52,942 - API - DEBUG - 192.168.129.198 (admin) URL: ['login'] POST: {'access_token': 'RMKGKEHPSVTFOSQOAIQPLDPDTDAFNXUREWNOMULUHABTTMCJNISNRIETUKAQ'}
+2022-04-28 19:11:52,942 - API - DEBUG - 192.168.129.198 (admin) cluster not created
+2022-04-28 19:11:56,304 - API - ERROR - 192.168.129.198 () wrong token
+2022-04-28 19:11:56,304 - API - DEBUG - 192.168.129.198 () URL: [] POST: {}
+2022-04-28 19:11:56,309 - API - DEBUG - 192.168.129.198 (admin) success token
+2022-04-28 19:11:56,309 - API - DEBUG - 192.168.129.198 (admin) URL: ['login'] POST: {'access_token': 'RMKGKEHPSVTFOSQOAIQPLDPDTDAFNXUREWNOMULUHABTTMCJNISNRIETUKAQ'}
+2022-04-28 19:11:56,309 - API - DEBUG - 192.168.129.198 (admin) cluster not created
+2022-04-28 19:12:01,792 - API - ERROR - 192.168.129.198 () wrong token
+2022-04-28 19:12:01,792 - API - DEBUG - 192.168.129.198 () URL: [] POST: {}
+2022-04-28 19:12:01,797 - API - DEBUG - 192.168.129.198 (admin) success token
+2022-04-28 19:12:01,797 - API - DEBUG - 192.168.129.198 (admin) URL: ['login'] POST: {'access_token': 'RMKGKEHPSVTFOSQOAIQPLDPDTDAFNXUREWNOMULUHABTTMCJNISNRIETUKAQ'}
+2022-04-28 19:12:01,798 - API - DEBUG - 192.168.129.198 (admin) cluster not created
+2022-04-28 19:12:07,082 - API - ERROR - 192.168.129.198 () wrong token
+2022-04-28 19:12:07,082 - API - DEBUG - 192.168.129.198 () URL: [] POST: {}
+2022-04-28 19:12:07,088 - API - DEBUG - 192.168.129.198 (admin) success token
+2022-04-28 19:12:07,088 - API - DEBUG - 192.168.129.198 (admin) URL: ['login'] POST: {'access_token': 'RMKGKEHPSVTFOSQOAIQPLDPDTDAFNXUREWNOMULUHABTTMCJNISNRIETUKAQ'}
+2022-04-28 19:12:07,088 - API - DEBUG - 192.168.129.198 (admin) cluster not created
+2022-04-28 19:12:07,094 - API - DEBUG - 192.168.129.198 (admin) success token
+2022-04-28 19:12:07,094 - API - DEBUG - 192.168.129.198 (admin) URL: ['cluster', 'create'] POST: {'access_token': 'RMKGKEHPSVTFOSQOAIQPLDPDTDAFNXUREWNOMULUHABTTMCJNISNRIETUKAQ'}
+2022-04-28 19:12:07,094 - API - INFO - 192.168.129.198 (admin) create or join cluster
+2022-04-28 19:12:07,098 - API - INFO - 192.168.129.198 (admin) cluster created successfully
+2022-04-28 19:12:07,099 - API - INFO - SaveConfiguration version: 0
+2022-04-28 19:12:07,099 - API - DEBUG - SaveConfiguration: {'version': 0, 'systems': {'users': {'admin': {'password': '21232f297a57a5a743894a0e4a801fc3'}}}, 'cluster': {'name': 'DoCluster', 'nodes': {'PC-ruslan': {'machine': 'x86_64', 'API_key': 'csdqmwwcnfvbrzeequqygiwkzoqjwk', 'enabled': 'true'}}, 'quorum': [{'node': 'PC-ruslan', 'main': True}]}}
+2022-04-28 19:12:08,385 - API - ERROR - 192.168.129.198 () wrong token
+2022-04-28 19:12:08,386 - API - DEBUG - 192.168.129.198 () URL: [] POST: {}
+2022-04-28 19:12:08,391 - API - DEBUG - 192.168.129.198 (admin) success token
+2022-04-28 19:12:08,391 - API - DEBUG - 192.168.129.198 (admin) URL: ['login'] POST: {'access_token': 'RMKGKEHPSVTFOSQOAIQPLDPDTDAFNXUREWNOMULUHABTTMCJNISNRIETUKAQ'}
+2022-04-28 19:12:08,396 - API - DEBUG - 192.168.129.198 (admin) success token
+2022-04-28 19:12:08,397 - API - DEBUG - 192.168.129.198 (admin) URL: ['cluster', 'create'] POST: {'access_token': 'RMKGKEHPSVTFOSQOAIQPLDPDTDAFNXUREWNOMULUHABTTMCJNISNRIETUKAQ'}
+2022-04-28 19:12:08,397 - API - ERROR - 192.168.129.198 (admin) cluster already created
+2022-04-28 19:12:27,457 - API - INFO - SaveConfiguration version: 0
+2022-04-28 19:12:27,457 - API - DEBUG - SaveConfiguration: {'version': 0, 'systems': {'users': {'admin': {'password': '21232f297a57a5a743894a0e4a801fc3'}}}, 'cluster': {'name': 'DoCluster', 'nodes': {'PC-ruslan': {'machine': 'x86_64', 'API_key': 'csdqmwwcnfvbrzeequqygiwkzoqjwk', 'enabled': 'true'}, 'node-1': {'machine': 'x86_64', 'API_key': 'gtpufqmdoqvaohscahzfnwxgxgvaml'}}, 'quorum': [{'node': 'PC-ruslan', 'main': True}]}}
+2022-04-28 19:12:27,457 - API - INFO - 192.168.129.81Join to cluster:node-1
+2022-04-28 19:14:37,502 - API - INFO - Start API service
+2022-04-28 19:14:37,505 - API - INFO - Start MNG service
+2022-04-28 19:14:38,507 - NodsStatusCheck - DEBUG - {}
+2022-04-28 19:14:38,517 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:16:18,364 - API - INFO - Start API service
+2022-04-28 19:16:18,367 - API - INFO - Start MNG service
+2022-04-28 19:16:19,369 - NodsStatusCheck - DEBUG - {}
+2022-04-28 19:16:19,379 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:17:39,548 - API - INFO - Start API service
+2022-04-28 19:17:39,554 - API - INFO - Start MNG service
+2022-04-28 19:17:40,556 - NodsStatusCheck - DEBUG - {}
+2022-04-28 19:17:40,566 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:08,900 - API - INFO - Start API service
+2022-04-28 19:23:08,903 - API - INFO - Start MNG service
+2022-04-28 19:23:09,904 - NodsStatusCheck - DEBUG - {}
+2022-04-28 19:23:09,914 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:10,928 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:10,934 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:11,947 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:11,953 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:12,964 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:12,970 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:13,981 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:13,984 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:14,994 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:14,999 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:16,012 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:16,018 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:17,030 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:17,036 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:18,048 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:18,053 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:19,066 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:19,072 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:20,084 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:20,088 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:21,101 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:21,107 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:22,120 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:22,125 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:23,138 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:23,144 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:24,155 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:24,161 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:25,174 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:25,179 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:26,191 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:26,197 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:27,209 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:27,215 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:28,228 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:28,234 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:29,247 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:29,253 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:30,265 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:30,271 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:31,284 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:31,290 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:32,303 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:32,309 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:33,322 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:33,328 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:34,340 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:34,346 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:35,359 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:35,365 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:36,376 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:36,382 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:37,396 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:37,402 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:38,415 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:38,421 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:39,435 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:39,441 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:40,454 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:40,459 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:41,471 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:41,477 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:42,490 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:42,496 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:43,508 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:43,514 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:44,526 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:44,532 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:45,544 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:45,550 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:46,560 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:46,566 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:47,578 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:47,584 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:48,595 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:48,601 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:49,613 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:49,618 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:50,630 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:50,636 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:51,646 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:51,652 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:52,666 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:52,672 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:53,685 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:53,691 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:54,703 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:54,709 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:55,722 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:55,728 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:56,740 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:56,746 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:57,758 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:57,764 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:58,775 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:58,781 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:23:59,793 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:23:59,799 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:00,811 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:00,817 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:01,829 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:01,835 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:02,848 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:02,854 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:03,865 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:03,871 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:04,883 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:04,889 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:05,900 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:05,906 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:06,919 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:06,924 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:07,936 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:07,942 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:08,953 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:08,959 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:09,971 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:09,977 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:10,989 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:10,995 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:12,007 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:12,013 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:13,024 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:13,030 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:14,042 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:14,048 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:15,060 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:15,066 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:16,078 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:16,084 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:17,097 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:17,103 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:18,114 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:18,120 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:19,132 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:19,138 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:20,150 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:20,156 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:21,168 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:21,174 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:22,186 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:22,192 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:23,204 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:23,210 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:24,222 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:24,228 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:25,239 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:25,246 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:26,258 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:26,264 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:27,275 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:27,281 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:28,292 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:28,298 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:29,312 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:29,317 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:30,330 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:30,336 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:31,349 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:31,355 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:32,369 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:32,375 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:33,387 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:33,391 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:34,400 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:34,406 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:35,419 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:35,425 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:36,438 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:36,444 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:37,455 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:37,461 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:38,472 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:38,479 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:39,490 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:39,496 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:40,508 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:40,514 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:41,526 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:41,531 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:42,543 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:42,549 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:43,559 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:43,565 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:44,576 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:44,582 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:45,594 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:45,600 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:46,612 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:46,618 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:47,628 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:47,633 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:48,644 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:48,650 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:49,663 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:49,669 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:50,682 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:50,687 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:51,700 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:51,706 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:52,719 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:52,725 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:53,738 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:53,744 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:54,757 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:54,762 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:55,776 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:55,782 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:56,792 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:56,798 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:57,810 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:57,816 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:58,828 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:58,833 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:24:59,846 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:24:59,852 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:00,863 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:00,869 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:01,881 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:01,887 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:02,899 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:02,905 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:03,917 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:03,924 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:04,935 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:04,941 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:05,955 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:05,961 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:06,974 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:06,980 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:07,991 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:07,997 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:09,010 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:09,016 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:10,028 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:10,034 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:11,047 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:11,053 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:12,066 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:12,072 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:13,083 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:13,088 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:14,100 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:14,105 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:15,116 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:15,122 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:16,134 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:16,140 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:17,152 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:17,158 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:18,168 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:18,174 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:19,184 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:19,190 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:20,203 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:20,208 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:21,220 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:21,226 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:22,239 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:22,245 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:23,258 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:23,264 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:24,275 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:24,281 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:25,293 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:25,299 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:26,310 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:26,317 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:27,328 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:27,334 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:28,346 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:28,352 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:29,363 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:29,369 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:30,381 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:30,388 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:31,399 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:31,405 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:32,418 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:32,423 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:33,434 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:33,440 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:34,451 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:34,456 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:35,468 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:35,474 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:36,486 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:36,492 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:37,504 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:37,510 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:38,522 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:38,527 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:39,539 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:39,545 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:40,558 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:40,564 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:41,576 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:41,583 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:42,595 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:42,601 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:43,614 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:43,620 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:44,633 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:44,639 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:45,650 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:45,655 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:46,665 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:46,671 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:47,682 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:47,688 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:48,699 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:48,706 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:49,717 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:49,723 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:50,734 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:50,740 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:51,751 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:51,756 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:52,770 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:52,776 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:53,787 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:53,791 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:54,802 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:54,808 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:55,821 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:55,827 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:56,839 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:56,845 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:57,855 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:57,861 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:58,872 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:58,878 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:25:59,889 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:25:59,896 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:00,908 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:00,913 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:01,927 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:01,933 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:02,945 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:02,951 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:03,964 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:03,970 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:04,984 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:04,990 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:06,003 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:06,009 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:07,022 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:07,028 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:08,040 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:08,046 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:09,057 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:09,063 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:10,076 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:10,081 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:11,093 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:11,098 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:12,111 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:12,117 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:13,128 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:13,134 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:14,146 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:14,153 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:15,165 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:15,171 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:16,183 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:16,189 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:17,200 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:17,206 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:18,217 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:18,222 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:19,233 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:19,239 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:20,252 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:20,258 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:21,270 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:21,276 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:22,288 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:22,294 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:23,307 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:23,313 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:24,325 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:24,331 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:25,342 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:25,348 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:26,359 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:26,364 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:27,377 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:27,383 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:28,395 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:28,401 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:29,413 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:29,419 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:30,430 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:30,435 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:31,447 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:31,453 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:32,466 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:32,472 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:33,485 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:33,492 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:34,505 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:34,511 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:35,524 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:35,530 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:36,542 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:36,548 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:37,560 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:37,566 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:38,577 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:38,583 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:39,595 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:39,601 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:40,611 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:40,617 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:41,629 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:41,635 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:42,646 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:42,653 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:43,664 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:43,669 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:44,680 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:44,685 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:45,695 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:45,701 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:46,713 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:46,719 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:47,730 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:47,736 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:48,748 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:48,754 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:49,767 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:49,773 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:50,787 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:50,793 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:51,804 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:51,809 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:52,821 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:52,826 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:53,839 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:53,845 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:54,856 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:54,862 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:55,874 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:55,881 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:56,893 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:56,899 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:57,911 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:57,917 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:58,929 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:58,935 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:26:59,945 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:26:59,951 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:00,963 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:00,969 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:01,981 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:01,988 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:03,000 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:03,006 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:04,018 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:04,024 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:05,035 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:05,041 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:06,052 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:06,058 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:07,068 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:07,074 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:08,085 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:08,091 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:09,101 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:09,106 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:10,116 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:10,122 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:11,132 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:11,138 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:12,150 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:12,156 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:13,169 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:13,175 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:14,188 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:14,194 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:15,207 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:15,212 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:16,224 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:16,230 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:17,243 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:17,249 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:18,261 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:18,267 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:19,279 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:19,284 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:20,297 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:20,303 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:21,315 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:21,320 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:22,333 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:22,339 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:23,352 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:23,357 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:24,370 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:24,376 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:25,388 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:25,394 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:26,407 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:26,412 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:27,426 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:27,432 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:28,443 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:28,449 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:29,461 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:29,467 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:30,480 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:30,486 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:31,500 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:31,506 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:32,518 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:32,524 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:33,538 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:33,543 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:34,555 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:34,561 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:35,574 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:35,579 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:36,592 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:36,597 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:37,610 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:37,615 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:38,627 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:38,633 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:39,645 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:39,651 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:40,663 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:40,669 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:41,680 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:41,686 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:42,696 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:42,701 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:43,713 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:43,719 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:44,731 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:44,737 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:45,749 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:45,755 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:46,766 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:46,772 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:47,784 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:47,790 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:48,803 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:48,807 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:49,818 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:49,824 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:50,836 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:50,842 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:51,854 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:51,860 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:52,872 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:52,878 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:53,889 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:53,895 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:54,907 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:54,913 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:55,926 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:55,931 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:56,944 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:56,950 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:57,963 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:57,969 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:58,981 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:27:58,987 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:27:59,999 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:00,005 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:01,015 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:01,021 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:02,032 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:02,038 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:03,050 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:03,055 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:04,067 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:04,073 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:05,083 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:05,089 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:06,100 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:06,106 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:07,118 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:07,124 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:08,135 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:08,141 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:09,153 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:09,159 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:10,171 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:10,177 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:11,190 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:11,196 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:12,208 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:12,214 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:13,227 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:13,233 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:14,244 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:14,250 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:15,261 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:15,267 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:16,279 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:16,285 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:17,298 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:17,303 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:18,315 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:18,321 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:19,333 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:19,339 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:20,350 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:20,354 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:21,365 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:21,371 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:22,383 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:22,389 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:23,402 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'offline', 'error': 'problem answer'}, 'node-1': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:28:23,408 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:25,118 - API - INFO - Start API service
+2022-04-28 19:28:25,125 - API - INFO - Start MNG service
+2022-04-28 19:28:26,127 - NodsStatusCheck - DEBUG - {}
+2022-04-28 19:28:26,137 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:39,097 - API - INFO - Start API service
+2022-04-28 19:28:39,100 - API - INFO - Start MNG service
+2022-04-28 19:28:40,101 - NodsStatusCheck - DEBUG - {}
+2022-04-28 19:28:40,112 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:28:49,579 - API - INFO - Start API service
+2022-04-28 19:28:49,582 - API - INFO - Start MNG service
+2022-04-28 19:28:50,584 - NodsStatusCheck - DEBUG - {}
+2022-04-28 19:28:50,593 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:34,606 - API - INFO - Start API service
+2022-04-28 19:29:34,609 - API - INFO - Start MNG service
+2022-04-28 19:29:35,613 - NodsStatusCheck - DEBUG - {}
+2022-04-28 19:29:35,623 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:36,635 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:36,641 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:37,654 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:37,660 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:38,674 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:38,680 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:39,690 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:39,696 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:40,709 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:40,715 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:41,727 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:41,733 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:42,744 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:42,750 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:43,763 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:43,769 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:44,780 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:44,786 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:45,797 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:45,803 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:46,814 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:46,820 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:47,831 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:47,837 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:48,849 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:48,855 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:49,867 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:49,873 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:50,884 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:50,890 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:51,901 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:51,907 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:52,919 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:52,925 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:53,938 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:53,944 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:54,957 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:54,963 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:55,975 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:55,981 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:56,993 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:56,999 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:58,010 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:58,016 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:29:59,030 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:29:59,036 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:00,048 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:00,054 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:01,067 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:01,073 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:02,085 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:02,091 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:03,104 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:03,110 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:04,123 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:04,129 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:05,142 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:05,148 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:06,160 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:06,166 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:07,177 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:07,183 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:08,195 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:08,201 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:09,212 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:09,219 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:10,230 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:10,236 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:11,248 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:11,254 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:12,267 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:12,273 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:13,287 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:13,292 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:14,304 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:14,310 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:15,321 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:15,327 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:16,339 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:16,345 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:17,357 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:17,363 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:18,373 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:18,380 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:19,390 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:19,396 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:20,407 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:20,413 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:21,424 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:21,431 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:22,441 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:22,447 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:30:23,458 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}}
+2022-04-28 19:30:23,464 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:31:14,769 - NodeStatus - INFO - SaveConfiguration version: 0
+2022-04-28 19:31:14,769 - NodeStatus - DEBUG - SaveConfiguration: {'version': 0, 'systems': {'users': {'admin': {'password': '21232f297a57a5a743894a0e4a801fc3'}}}, 'cluster': {'name': 'DoCluster', 'nodes': {'PC-ruslan': {'machine': 'x86_64', 'API_key': 'csdqmwwcnfvbrzeequqygiwkzoqjwk', 'enabled': 'true'}, 'node-1': {'machine': 'x86_64', 'API_key': 'gtpufqmdoqvaohscahzfnwxgxgvaml'}, 'node-2': {'machine': 'x86_64', 'API_key': 'unrxjwyofesdxuyfqagkyhvtkjbzpm'}}, 'quorum': [{'node': 'PC-ruslan', 'main': True}]}}
+2022-04-28 19:31:14,769 - NodeStatus - INFO - 192.168.129.82Join to cluster:node-2
+2022-04-28 19:31:52,785 - API - INFO - Start API service
+2022-04-28 19:31:52,788 - API - INFO - Start MNG service
+2022-04-28 19:31:53,790 - NodsStatusCheck - DEBUG - {}
+2022-04-28 19:31:53,800 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:31:54,822 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:31:54,828 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:31:55,849 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:31:55,855 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:31:56,875 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:31:56,881 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:31:57,900 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:31:57,906 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:31:58,928 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:31:58,934 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:31:59,957 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:31:59,960 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:00,976 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:00,982 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:02,003 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:02,008 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:03,030 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:03,036 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:04,057 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:04,064 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:05,087 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:05,093 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:06,116 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:06,121 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:07,140 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:07,146 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:08,164 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:08,170 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:09,191 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:09,197 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:10,219 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:10,225 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:11,246 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:11,252 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:12,275 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:12,280 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:13,302 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:13,307 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:14,328 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:14,334 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:15,355 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:15,361 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:16,381 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:16,387 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:17,408 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:17,414 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:18,436 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:18,442 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:19,463 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:19,469 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:20,490 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:20,496 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:21,513 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:21,519 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:22,540 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:22,546 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:23,568 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:23,573 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:24,593 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:24,598 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:25,618 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:25,624 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:26,644 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:26,650 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:27,671 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:27,677 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:28,700 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:28,706 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:29,727 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:29,733 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:30,754 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:30,760 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:31,779 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:31,785 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:32,806 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:32,812 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:33,834 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:33,840 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:34,862 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:34,867 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:35,890 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:35,896 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:36,915 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:36,921 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:37,942 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:37,948 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:38,968 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:38,974 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:39,995 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:40,001 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:41,022 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:41,028 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:42,050 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:42,056 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:43,077 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:43,083 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:44,104 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:44,110 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:45,130 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:45,135 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:46,156 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:46,162 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:47,183 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:47,189 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:48,210 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:48,217 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:49,240 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:49,246 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:50,264 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:50,270 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:51,291 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:51,297 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:52,320 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:52,326 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:53,347 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:53,353 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:54,373 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:54,379 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:55,401 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:55,408 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:56,430 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:56,436 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:57,456 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:57,462 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:58,484 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:58,490 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:32:59,509 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:32:59,515 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:00,534 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:00,540 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:01,560 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:01,566 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:02,586 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:02,592 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:03,613 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:03,618 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:04,639 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:04,645 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:05,665 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:05,671 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:06,692 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:06,698 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:07,718 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:07,724 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:08,746 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:08,752 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:09,773 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:09,779 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:10,801 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:10,807 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:11,828 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:11,834 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:12,854 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:12,861 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:13,882 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:13,888 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:14,908 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:14,914 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:15,936 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:15,942 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:16,964 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:16,970 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:17,990 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:17,996 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:19,017 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:19,023 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:20,043 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:20,049 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:21,070 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:21,076 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:22,097 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:22,103 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:23,124 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:23,130 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:24,151 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:24,157 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:25,175 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:25,181 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:26,220 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:26,226 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:27,247 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:27,253 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:28,276 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:28,282 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:29,304 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:29,309 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:30,331 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:30,336 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:31,358 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:31,364 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:32,385 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:32,391 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:33,412 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:33,418 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:34,439 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:34,445 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:35,465 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:35,471 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:36,494 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:36,500 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:37,523 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:37,529 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:38,550 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:38,556 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:39,577 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:39,583 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:40,603 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:40,609 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:41,630 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:41,636 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:42,657 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:42,662 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:43,683 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:43,689 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:44,710 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:44,716 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:45,737 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:45,742 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:46,764 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:46,770 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:47,792 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:47,798 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:48,818 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:48,825 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:49,845 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:49,851 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:50,871 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:50,877 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:51,897 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:51,903 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:52,927 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:52,932 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:53,954 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:53,959 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:54,981 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:54,987 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:56,008 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:56,014 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:57,036 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:57,042 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:58,063 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:58,070 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:33:59,095 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:33:59,102 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:00,122 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:00,128 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:01,149 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:01,155 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:02,174 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:02,179 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:03,203 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:03,209 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:04,233 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:04,239 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:05,259 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:05,265 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:06,284 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:06,290 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:07,312 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:07,318 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:08,337 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:08,343 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:09,366 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:09,372 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:10,392 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:10,398 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:11,419 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:11,425 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:12,447 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:12,453 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:13,474 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:13,479 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:14,499 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:14,504 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:15,524 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:15,530 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:16,552 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:16,558 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:17,578 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:17,584 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:18,605 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:18,611 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:19,632 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:19,637 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:20,655 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:20,658 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:21,676 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:21,679 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:22,696 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:22,702 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:23,722 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:23,727 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:24,748 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:24,754 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:25,775 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:25,781 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:26,802 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:26,807 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:27,828 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:27,831 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:28,850 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:28,856 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:29,876 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:29,882 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:30,903 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:30,908 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:31,928 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:31,934 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:32,956 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:32,962 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:33,983 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:33,990 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:35,011 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:35,017 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:36,038 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:36,044 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:37,064 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:37,068 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:38,090 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:38,094 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:39,114 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:39,120 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:40,140 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:40,144 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:41,162 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:41,167 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:42,188 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:42,194 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:43,216 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:43,221 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:44,243 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:44,249 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:45,270 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:45,276 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:46,296 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:46,302 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:47,323 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:47,329 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:48,349 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:48,355 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:49,374 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:49,380 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:50,400 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:50,405 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:51,424 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:51,430 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:52,451 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:52,457 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:53,478 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:53,483 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:54,506 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:54,513 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:55,534 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:55,540 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:56,560 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:56,566 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:57,588 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:57,594 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:58,617 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:58,620 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:34:59,639 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:34:59,645 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:00,664 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:00,667 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:01,685 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:01,691 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:02,711 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:02,717 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:03,738 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:03,744 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:04,764 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:04,770 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:05,791 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:05,796 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:06,817 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:06,823 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:07,842 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:07,847 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:08,868 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:08,874 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:09,895 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:09,899 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:10,917 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:10,923 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:11,945 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:11,950 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:12,968 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:12,974 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:13,995 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:14,001 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:15,024 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:15,030 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:16,053 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:16,058 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:17,080 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:17,085 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:18,106 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:18,112 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:19,133 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:19,139 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:20,162 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:20,168 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:21,188 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:21,194 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:22,215 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:22,220 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:23,242 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:23,248 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:24,270 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:24,276 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:25,296 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:25,303 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:26,324 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:26,330 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:27,349 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:27,355 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:28,375 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:28,380 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:29,400 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:29,405 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:30,427 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:30,432 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:31,449 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:31,454 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:32,475 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:32,482 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:33,504 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:33,510 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:34,531 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:34,536 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:35,557 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:35,562 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:36,583 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:36,588 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:37,608 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:37,614 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:38,634 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:38,640 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:39,662 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:39,667 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:40,688 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'online', 'config_version': 0}}
+2022-04-28 19:35:40,694 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:41,710 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:41,716 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:42,731 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:42,737 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:43,752 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:43,758 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:44,774 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:44,780 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:45,795 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:45,801 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:46,816 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:46,822 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:47,836 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:47,843 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:48,857 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:48,863 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:49,878 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:49,884 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:50,899 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:50,905 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:51,921 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:51,927 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:52,941 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:52,947 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:53,960 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:53,965 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:54,980 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:54,986 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:55,999 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:56,005 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:57,018 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:57,024 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:58,039 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:58,046 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:35:59,063 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:35:59,068 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:00,084 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:00,089 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:01,103 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:01,122 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:02,136 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:02,139 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:03,149 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:03,156 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:04,170 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:04,175 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:05,188 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:05,194 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:06,211 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:06,217 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:07,230 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:07,235 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:08,250 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:08,253 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:09,265 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:09,271 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:10,285 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:10,291 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:11,306 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:11,311 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:12,326 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:12,332 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:13,346 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:13,352 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:14,366 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:14,372 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:15,387 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:15,393 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:16,408 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:16,414 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:17,429 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:17,435 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:18,450 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:18,457 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:19,470 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:19,476 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:20,490 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:20,495 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:21,507 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:21,513 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}
+2022-04-28 19:36:22,527 - NodsStatusCheck - DEBUG - {'PC-ruslan': {'status': 'online', 'config_version': 0}, 'node-1': {'status': 'offline', 'error': 'Extra data: line 1 column 8 (char 7)'}, 'node-2': {'status': 'offline', 'error': 'network problem: ConnectionError'}}
+2022-04-28 19:36:22,532 - MNG - DEBUG - 127.0.0.1 answer: {'command': 'node_status'}

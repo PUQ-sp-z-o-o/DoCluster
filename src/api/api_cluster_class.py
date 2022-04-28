@@ -92,7 +92,7 @@ class cluster:
             self.answer_msg = {}
             self.answer_status = 'error'
             self.answer_error = json.loads(send.text)['error']
-
+            return 0
         config.access_tokens = {}
         config.cluster_config = json.loads(send.text)['msg']
         SaveConfiguration()

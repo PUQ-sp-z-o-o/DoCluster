@@ -29,7 +29,6 @@ def MngJoin(args, client_ip):
     config.cluster_config['cluster']['nodes'][args['node']] = {
         'machine': args['machine'],
         'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(30)),
-        'enabled': 'false'
     }
     SaveConfiguration()
 

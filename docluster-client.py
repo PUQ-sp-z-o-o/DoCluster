@@ -72,7 +72,7 @@ def cluster_join():
     path = 'cluster/join'
     data = {
         'cluster_username': 'admin',
-        'cluster_password': 'adminq',
+        'cluster_password': 'admin',
         'cluster_ip': '192.168.129.198',
     }
     send(path, data)

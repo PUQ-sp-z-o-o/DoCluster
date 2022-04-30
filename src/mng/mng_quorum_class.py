@@ -53,19 +53,33 @@ class quorum:
                         config.quorum_status['nodes'][i]['error'] = ''
                     i = i + 1
 
+                i = 0
+                while i < len(config.quorum_status['nodes']):
+                    config.quorum_status['status'] = 'OK'
+                    if config.quorum_status['nodes'][i]['status'] != 'online':
+                        config.quorum_status['status'] = 'WARNING'
+                        config.quorum_status['error'] = 'Some MNG nodes are not active'
+                    i = i + 1
+
+                i = 0
+                while i < len(config.quorum_status['nodes']):
+                    if config.quorum_status['nodes'][i]['main'] == True and config.quorum_status['nodes'][i]['status'] == 'online':
+                        config.quorum_status['master'] = config.quorum_status['nodes'][i]['node']
+                    else:
+                        if config.quorum_status['nodes'][i]['status'] == 'online':
+                            config.quorum_status['master'] = config.quorum_status['nodes'][i]['node']
+                    i = i + 1
+
+
+
+
+
+
                 config.logger.name = 'QUORUM'
                 config.logger.debug(str(config.quorum_status))
                 time.sleep(5)
-
-                #config.logger.name = 'SYSTEM'
-                #config.logger.info('Not start schedulers: cluster not created')
-                #config.logger.name = 'QUORUM'
-                #config.logger.debug('Scheduler_QuorumStatus in')
 
     def status(self):
         self.answer_status = 'OK'
         self.answer_msg = {'config_version': config.cluster_config['version']}
         self.answer_error = ''
-        #config.logger.name = 'SYSTEM'
-        #config.logger.d(self.client_ip  + 'WWWWWWWWWWWWWWWWWWWWWWWWWWWW')
-

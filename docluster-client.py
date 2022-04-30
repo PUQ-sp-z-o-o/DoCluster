@@ -5,7 +5,7 @@ import os
 import json
 
 
-api_url = "http://192.168.129.82:3033/api/"
+api_url = "http://192.168.129.198:3033/api/"
 api_login = 'admin'
 api_apss = 'admin'
 access_token = ''
@@ -83,6 +83,11 @@ def cluster_status():
     data = {}
     send(path, data)
 
+def quorum_status():
+    path = 'quorum/status'
+    data = {}
+    send(path, data)
+
 '''Argument is a username, if argument not set return all users'''
 def systems_users_get(username=None):
     path = 'systems/users/get'
@@ -155,11 +160,12 @@ def cluster_management_get():
 
 
 login()
+quorum_status()
 #cluster_management_get()
-#cluster_status()
+cluster_status()
 #tokens()
 #cluster_create()
-cluster_join()
+#cluster_join()
 #systems_hosts_set('5.2.3.2', 'dupa-1')
 #systems_hosts_get()
 #systems_hosts_delete('1.2.3.1', 'dupa-1')
@@ -167,4 +173,4 @@ cluster_join()
 #systems_users_add('dimon', 'QWEqwe123')
 #systems_users_delete('admin')
 #systems_users_set('admin', 'QWEqwe123', 'admin@clastercp.com')
-logout()
+#logout()

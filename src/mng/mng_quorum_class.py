@@ -2,6 +2,7 @@ import time
 import config
 import requests
 import json
+import copy
 class quorum:
     SaveConfiguration = False
     url = []
@@ -23,35 +24,35 @@ class quorum:
     def Scheduler_QuorumStatus(self):
         while True:
             if 'quorum' in config.cluster_config:
-                nodes = config.cluster_config['quorum']
 
+                config.quorum_status['nodes'] = copy.deepcopy(config.cluster_config['quorum'])
                 i = 0
                 while i < len(config.cluster_config['quorum']):
                     try:
                         send = requests.post(url='http://' + config.cluster_config['quorum'][i]['node'] + ':' + str(self.mng_port) + '/mng/quorum/status', data={},
                                              timeout=2)
                     except requests.Timeout:
-                        nodes[i]['status'] = 'offline'
-                        nodes[i]['error'] = 'network problem: Timeout'
+                        config.quorum_status['nodes'][i]['status'] = 'offline'
+                        config.quorum_status['nodes'][i]['error'] = 'network problem: Timeout'
                         i = i + 1
                         continue
                     except requests.ConnectionError:
-                        nodes[i]['status'] = 'offline'
-                        nodes[i]['error'] = 'network problem: ConnectionError'
+                        config.quorum_status['nodes'][i]['status'] = 'offline'
+                        config.quorum_status['nodes'][i]['error'] = 'network problem: ConnectionError'
                         i = i + 1
                         continue
 
                     try:
                         answer = json.loads(send.text)
                     except ValueError as e:
-                        nodes[i]['status'] = 'offline'
-                        nodes[i]['error'] = str(e)
+                        config.quorum_status['nodes'][i]['status'] = 'offline'
+                        config.quorum_status['nodes'][i]['error'] = str(e)
                     else:
-                        nodes[i]['status'] = 'online'
-                        nodes[i]['config_version'] = answer['msg']['config_version']
-                        nodes[i]['error'] = ''
+                        config.quorum_status['nodes'][i]['status'] = 'online'
+                        config.quorum_status['nodes'][i]['config_version'] = answer['msg']['config_version']
+                        config.quorum_status['nodes'][i]['error'] = ''
                     i = i + 1
-                config.quorum_status['nodes'] = nodes
+
                 config.logger.name = 'QUORUM'
                 config.logger.debug(str(config.quorum_status))
                 time.sleep(5)

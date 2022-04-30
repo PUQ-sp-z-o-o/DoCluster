@@ -3,14 +3,17 @@ import hashlib
 
 
 token_timeout = 60
-access_tokens = {}
 cluster_config = {}
+
 cluster_tasks = {}
-cluster_quorum ={
-    "status": 'OK',
+
+quorum_status = {
+    "status": '',
     "error": '',
-    'master': ''
+    'master': '',
+    'nodes': []
 }
+
 cluster_nodes_status = {}
 
 # DEBUG,INFO,WARNING,ERROR,CRITICAL

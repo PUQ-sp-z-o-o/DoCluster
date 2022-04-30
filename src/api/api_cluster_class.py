@@ -13,11 +13,11 @@ class cluster:
     url = []
     args = {}
     client_ip = ''
+    username = ''
 
     answer_msg = {}
     answer_error = 'wrong api path'
     answer_status = 'error'
-    username = ''
 
     def __init__(self, url, args, client_ip, username):
         self.url = url
@@ -34,22 +34,24 @@ class cluster:
         if 'cluster' in config.cluster_config:
             self.answer_status = 'error'
             self.answer_error = 'cluster already created'
+            config.logger.name = 'SYSTEM'
             config.logger.error(self.client_ip + ' (' + self.username + ') ' + 'cluster already created')
         else:
             config.cluster_config['cluster'] = {
                 'name': 'DoCluster',
                 'nodes': {
-                        os.uname()[1]: {'machine': os.uname()[4],
-                                        'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(30)),
-                                        'enabled': 'true'
-                                        }
-                },
-                'quorum': [{'node': os.uname()[1], 'main': True}]
+                    os.uname()[1]: {'machine': os.uname()[4],
+                                    'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(30)),
+                                    'enabled': 'true'
+                                    }
+                }
             }
+            config.cluster_config['quorum'] = [{'node': os.uname()[1], 'main': True}]
             self.SaveConfiguration = True
             self.answer_status = 'success'
             self.answer_msg = {}
             self.answer_error = ''
+            config.logger.name = 'SYSTEM'
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'cluster created successfully')
 
     def join(self):

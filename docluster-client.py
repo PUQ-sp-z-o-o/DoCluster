@@ -5,7 +5,7 @@ import os
 import json
 
 
-api_url = "http://192.168.129.82:3033/api/"
+api_url = "http://192.168.129.198:3033/api/"
 api_login = 'admin'
 api_apss = 'admin'
 access_token = ''
@@ -31,7 +31,7 @@ def login():
     answer_token = json.loads(send_token.text)
     if answer_token['status'] == 'success':
         print("Authorized on " + api_url)
-    if answer_token['status'] == 'false':
+    if answer_token['status'] == 'error':
         print("Not authorized")
         print("Login request to " + api_url)
         send_login = requests.post(url=api_url+'login/', data={"username": api_login, "password": api_apss})
@@ -158,8 +158,8 @@ login()
 #cluster_management_get()
 #cluster_status()
 #tokens()
-#cluster_create()
-cluster_join()
+cluster_create()
+#cluster_join()
 #systems_hosts_set('5.2.3.2', 'dupa-1')
 #systems_hosts_get()
 #systems_hosts_delete('1.2.3.1', 'dupa-1')
@@ -167,4 +167,4 @@ cluster_join()
 #systems_users_add('dimon', 'QWEqwe123')
 #systems_users_delete('admin')
 #systems_users_set('admin', 'QWEqwe123', 'admin@clastercp.com')
-#logout()
+logout()

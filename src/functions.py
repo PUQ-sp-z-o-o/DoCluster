@@ -24,41 +24,4 @@ def is_valid_hostname(hostname: object) -> object:
     return all(allowed.match(x) for x in hostname.split("."))
 
 
-def ReadConfiguration():
-    try:
-        os.mkdir('config')
-    except Exception as e:
-        print(e)
-    if not os.access('config/docluster.conf', os.F_OK):
-        f = open('config/docluster.conf', 'w+')
-        json.dump(config.default_config, f, indent=1)
-        f.close()
 
-    with open('config/docluster.conf') as json_file:
-        config.cluster_config = json.load(json_file)
-        json_file.close()
-
-
-def SaveConfiguration():
-    if config.cluster_quorum['master'] == os.uname()[1]:
-        config.cluster_config['version'] = config.cluster_config['version'] + 1
-    f = open('config/docluster.conf', 'w+')
-    json.dump(config.cluster_config, f, indent=1)
-    config.logger.info('SaveConfiguration version: ' + str(config.cluster_config['version']))
-    config.logger.debug('SaveConfiguration: ' + str(config.cluster_config))
-    f.close()
-
-
-def ReadClusterTasks():
-    try:
-        os.mkdir('config')
-    except Exception as e:
-        print(e)
-    if not os.access('config/docluster.tasks', os.F_OK):
-        f = open('config/docluster.tasks', 'w+')
-        json.dump(config.cluster_tasks, f, indent=1)
-        f.close()
-
-    with open('config/docluster.tasks') as json_file:
-        config.cluster_tasks = json.load(json_file)
-        json_file.close()

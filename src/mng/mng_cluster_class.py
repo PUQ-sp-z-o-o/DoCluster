@@ -64,7 +64,7 @@ class cluster:
             'machine': self.args['machine'],
             'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(30)),
         }
-        config.cluster_config['cluster']['quorum'].append({'node': self.args['node'], 'main': False})
+        config.cluster_config['quorum'].append({'node': self.args['node'], 'main': False})
 
         self.SaveConfiguration = True
 

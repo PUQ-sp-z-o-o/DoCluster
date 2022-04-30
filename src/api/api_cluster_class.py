@@ -41,8 +41,7 @@ class cluster:
                 'name': 'DoCluster',
                 'nodes': {
                     os.uname()[1]: {'machine': os.uname()[4],
-                                    'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(30)),
-                                    'enabled': 'true'
+                                    'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(30))
                                     }
                 }
             }
@@ -98,9 +97,10 @@ class cluster:
         config.access_tokens = {}
         config.cluster_config = json.loads(send.text)['msg']
         self.SaveConfiguration = True
-        self.answer_status = json.loads(send.text)['error']
-        self.answer_status = json.loads(send.text)['status']
         self.answer_msg = {}
+        self.answer_status = json.loads(send.text)['status']
+        self.answer_error = json.loads(send.text)['error']
+
 
 
 

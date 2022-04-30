@@ -78,7 +78,7 @@ class cluster:
         }
 
         try:
-            send = requests.post(url='http://' + self.args['cluster_ip'] + ':3030/join/', data=node, timeout=2)
+            send = requests.post(url='http://' + self.args['cluster_ip'] + ':3030/mng/cluster/join/', data=node, timeout=2)
         except requests.Timeout:
             self.answer_msg = {}
             self.answer_status = 'error'
@@ -97,7 +97,7 @@ class cluster:
             return 0
         config.access_tokens = {}
         config.cluster_config = json.loads(send.text)['msg']
-        SaveConfiguration()
+        self.SaveConfiguration = True
         self.answer_status = json.loads(send.text)['error']
         self.answer_status = json.loads(send.text)['status']
         self.answer_msg = {}

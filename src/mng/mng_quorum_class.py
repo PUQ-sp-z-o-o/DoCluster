@@ -70,6 +70,7 @@ class quorum:
                     else:
                         if config.quorum_status['nodes'][i]['status'] == 'online':
                             config.quorum_status['master'] = config.quorum_status['nodes'][i]['node']
+                            break
                     i = i + 1
 
 
@@ -79,7 +80,7 @@ class quorum:
 
                 config.logger.name = 'QUORUM'
                 config.logger.debug(str(config.quorum_status))
-                time.sleep(5)
+                time.sleep(1)
 
     def status(self):
         self.answer_status = 'OK'

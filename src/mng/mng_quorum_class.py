@@ -24,6 +24,7 @@ class quorum:
         while True:
             if 'quorum' in config.cluster_config:
                 nodes = config.cluster_config['quorum']
+
                 i = 0
                 while i < len(config.cluster_config['quorum']):
                     try:
@@ -32,10 +33,12 @@ class quorum:
                     except requests.Timeout:
                         nodes[i]['status'] = 'offline'
                         nodes[i]['error'] = 'network problem: Timeout'
+                        i = i + 1
                         continue
                     except requests.ConnectionError:
                         nodes[i]['status'] = 'offline'
                         nodes[i]['error'] = 'network problem: ConnectionError'
+                        i = i + 1
                         continue
 
                     try:
@@ -47,8 +50,7 @@ class quorum:
                         nodes[i]['status'] = 'online'
                         nodes[i]['config_version'] = answer['msg']['config_version']
                         nodes[i]['error'] = ''
-                    i=+1
-
+                    i = i + 1
                 config.quorum_status['nodes'] = nodes
                 config.logger.name = 'QUORUM'
                 config.logger.debug(str(config.quorum_status))

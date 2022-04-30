@@ -79,8 +79,9 @@ class DoClusterMng:
             api.run(host='0.0.0.0', port=self.api_port, use_reloader=False)
 
         config.logger.info('Start API service. Port: ' + str(self.api_port))
-        api_t = threading.Thread(target=api_web, daemon=False)
-        api_t.start()
+        threading.Thread(target=api_web, daemon=False).start()
+        #api_t = threading.Thread(target=api_web, daemon=False)
+        #api_t.start()
 
     '''API interface for cluster'''
     def MngStartWeb(self):
@@ -102,8 +103,9 @@ class DoClusterMng:
             mng.run(host='0.0.0.0', port=self.mng_port, use_reloader=False)
 
         config.logger.info('Start MNG service. Port: ' + str(self.mng_port))
-        mng_t = threading.Thread(target=mng_web, daemon=False)
-        mng_t.start()
+        threading.Thread(target=mng_web, daemon=False).start()
+        #mng_t = threading.Thread(target=mng_web, daemon=False)
+        #mng_t.start()
 
     ''' The function is responsible for processing requests from the nodes MNG and returns a response. '''
     def MngRequestProcessor(self, url, args, client_ip):

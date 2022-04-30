@@ -56,6 +56,7 @@ class quorum:
                 i = 0
                 while i < len(config.quorum_status['nodes']):
                     config.quorum_status['status'] = 'OK'
+                    config.quorum_status['error'] = ''
                     if config.quorum_status['nodes'][i]['status'] != 'online':
                         config.quorum_status['status'] = 'WARNING'
                         config.quorum_status['error'] = 'Some MNG nodes are not active'
@@ -63,8 +64,9 @@ class quorum:
 
                 i = 0
                 while i < len(config.quorum_status['nodes']):
-                    if config.quorum_status['nodes'][i]['main'] == True and config.quorum_status['nodes'][i]['status'] == 'online':
+                    if config.quorum_status['nodes'][i]['main'] and config.quorum_status['nodes'][i]['status'] == 'online':
                         config.quorum_status['master'] = config.quorum_status['nodes'][i]['node']
+                        break
                     else:
                         if config.quorum_status['nodes'][i]['status'] == 'online':
                             config.quorum_status['master'] = config.quorum_status['nodes'][i]['node']

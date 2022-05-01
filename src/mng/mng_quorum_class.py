@@ -37,7 +37,7 @@ class quorum(mng):
                 time.sleep(1)
 
     def status(self):
-        self.answer_status = 'OK'
+        self.answer_status = 'online'
         self.answer_msg = {'config_version': config.cluster_config['version']}
         self.answer_error = ''
 

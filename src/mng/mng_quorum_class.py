@@ -40,7 +40,7 @@ class quorum(mng):
                 node_config_v_tmp = ''
                 while i < len(config.quorum_status['nodes']):
                     if config.quorum_status['nodes'][i]['status'] == 'online':
-                        if config_v_tmp > config.quorum_status['nodes'][i]['config_version']:
+                        if config_v_tmp < config.quorum_status['nodes'][i]['config_version']:
                             config_v_tmp = config.quorum_status['nodes'][i]['config_version']
                             node_config_v_tmp = config.quorum_status['nodes'][i]['node']
                     i = i + 1
@@ -48,6 +48,8 @@ class quorum(mng):
                     url = 'cluster/config/get'
                     data = {}
                     answer = self.SendToNodes(node_config_v_tmp, url, data)
+                    print(str(config_v_tmp))
+                    print(str(node_config_v_tmp))
                     if answer['error'] == '':
                         config.cluster_config = answer['msg']['config']
                         config.quorum_status['master'] = ''

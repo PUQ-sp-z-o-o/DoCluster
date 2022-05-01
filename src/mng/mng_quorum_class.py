@@ -37,7 +37,7 @@ class quorum(mng):
                     i = i + 1
 
                 self.QuorumSyncConfig()
-
+                time.sleep(1)
                 self.QuorumMaster()
 
                 config.logger.name = 'QUORUM'
@@ -100,10 +100,15 @@ class quorum(mng):
 
             if answer['status'] == 'success':
                 config.cluster_config = copy.deepcopy(answer['msg']['config'])
-                config.quorum_status['master'] = ''
+                #config.quorum_status['master'] = '1'
                 config.logger.name = 'QUORUM'
                 config.logger.info('Get new config from: ' + node_config_v_tmp + ' version: ' + str(config_v_tmp))
-                SaveConfiguration()
+                #SaveConfiguration()
+                f = open('config/docluster.conf', 'w+')
+                json.dump(config.cluster_config, f, indent=1)
+                config.logger.info('Save configuration version: ' + str(config.cluster_config['version']))
+                config.logger.debug('Save configuration: ' + str(config.cluster_config))
+                f.close()
 
 
 

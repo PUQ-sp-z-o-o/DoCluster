@@ -44,13 +44,16 @@ class quorum(mng):
                             config_v_tmp = config.quorum_status['nodes'][i]['config_version']
                             node_config_v_tmp = config.quorum_status['nodes'][i]['node']
                     i = i + 1
+
+                print(str(config_v_tmp))
+                print(str(node_config_v_tmp))
                 if config_v_tmp > config.cluster_config['version']:
                     url = 'cluster/config/get'
                     data = {}
                     answer = self.SendToNodes(node_config_v_tmp, url, data)
                     print(str(config_v_tmp))
                     print(str(node_config_v_tmp))
-                    if answer['error'] == '':
+                    if answer['status'] == 'success':
                         config.cluster_config = answer['msg']['config']
                         config.quorum_status['master'] = ''
                         SaveConfiguration()

@@ -14,7 +14,13 @@ quorum_status = {
     'nodes': []
 }
 
-cluster_nodes_status = {}
+cluster_status = {
+    "status": '',
+    "error": '',
+    'nodes': {}
+}
+
+
 
 # DEBUG,INFO,WARNING,ERROR,CRITICAL
 LogLevel = 'DEBUG'

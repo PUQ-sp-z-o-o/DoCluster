@@ -1,7 +1,8 @@
 from src.mng.mng_class import mng
 from src.functions import *
-
+import psutil
 import time
+import subprocess
 import config
 import hashlib
 import random
@@ -60,9 +61,48 @@ class cluster(mng):
         self.answer_error = ''
         return True
 
-    def status(self):
+    def Scheduler_NodesStatus(self):
+        while True:
+            time.sleep(1)
+            if 'cluster' not in config.cluster_config:
+                time.sleep(60)
+                continue
+
+            if 'quorum' in config.cluster_config:
+                if os.uname()[1] != config.quorum_status['master']:
+                    time.sleep(60)
+                    continue
+
+            node_online = 0
+            node_offline = 0
+            for node in config.cluster_config['cluster']['nodes']:
+                config.cluster_status['nodes'][node] = {}
+                url = 'cluster/nodestatus'
+                data = {}
+                answer = self.SendToNode(node, url, data)
+                config.cluster_status['nodes'][node] = answer['msg']
+                config.cluster_status['nodes'][node]['status'] = answer['status']
+                config.cluster_status['nodes'][node]['error'] = answer['error']
+
+                if answer['status'] == 'online':
+                    node_online = node_online + 1
+                if answer['status'] == 'offline':
+                    node_offline = node_offline + 1
+                    config.cluster_status['status'] = 'WARNING'
+
+                config.cluster_status['error'] = str(node_offline) + ' nodes are not online'
+
+
+    def nodestatus(self):
         self.answer_status = 'online'
-        self.answer_msg = {'config_version': config.cluster_config['version']}
+        self.answer_error = ''
+        self.answer_msg['config_version'] = config.cluster_config['version']
+        self.answer_msg['cpu_percent'] = psutil.cpu_percent()
+        self.answer_msg['memory_percent'] = psutil.virtual_memory().percent
+        self.answer_msg['memory_available'] = psutil.virtual_memory().available
+        self.answer_msg['memory_used'] = psutil.virtual_memory().used
+        self.answer_msg['memory_total'] = psutil.virtual_memory().total
+        #self.answer_msg['disks'] = psutil.disk_partitions()
         self.answer_error = ''
 
     def config(self):

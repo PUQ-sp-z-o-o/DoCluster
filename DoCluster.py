@@ -10,7 +10,8 @@ time.sleep(1)
 Cluster.MngStartWeb()
 time.sleep(1)
 Cluster.ApiStartWeb()
-
+time.sleep(1)
+Cluster.MngSchedulersStart()
 #Cluster.MngSchedulersStart()
 
 

@@ -29,7 +29,7 @@ class quorum(mng):
                 data = {}
                 i = 0
                 while i < len(config.quorum_status['nodes']):
-                    answer = self.SendToNodes(config.quorum_status['nodes'][i]['node'], url, data)
+                    answer = self.SendToNode(config.quorum_status['nodes'][i]['node'], url, data)
                     config.quorum_status['nodes'][i]['status'] = answer['status']
                     config.quorum_status['nodes'][i]['error'] = answer['error']
                     if answer['error'] == '':
@@ -43,8 +43,6 @@ class quorum(mng):
                 config.logger.name = 'QUORUM'
                 config.logger.debug(str(config.quorum_status))
                 time.sleep(1)
-
-
 
     def status(self):
         self.answer_status = 'online'
@@ -98,7 +96,7 @@ class quorum(mng):
         if config_v_tmp > config.cluster_config['version']:
             url = 'cluster/config/get'
             data = {}
-            answer = self.SendToNodes(node_config_v_tmp, url, data)
+            answer = self.SendToNode(node_config_v_tmp, url, data)
 
             if answer['status'] == 'success':
                 config.cluster_config = copy.deepcopy(answer['msg']['config'])

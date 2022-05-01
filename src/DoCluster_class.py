@@ -33,7 +33,7 @@ class DoClusterMng:
 
         ReadConfiguration()
         #self.SaveConfiguration()
-        self.MngSchedulersStart()
+        #self.MngSchedulersStart()
 
     '''API interface for clients'''
     def ApiStartWeb(self):

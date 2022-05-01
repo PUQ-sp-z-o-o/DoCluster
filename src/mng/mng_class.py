@@ -27,7 +27,7 @@ class mng:
         self.answer_error = ''
         self.answer_status = ''
 
-    def SendToNodes(self, node, url, data):
+    def SendToNode(self, node, url, data):
         answer = {'status': '', 'error': '', 'msg':  {}}
         try:
             send = requests.post(url='http://' + node + ':' + str(self.mng_port) + '/mng/' + url, data=data, timeout=5)

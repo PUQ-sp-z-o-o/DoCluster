@@ -15,8 +15,9 @@ class cluster(api):
 
     def status(self):
         self.answer_status = 'success'
-        self.answer_msg['status'] = 'OK'
-        self.answer_msg['config'] = config.cluster_config
+        self.answer_msg = config.cluster_status
+        self.answer_error = ''
+
 
     def create(self):
         if 'cluster' in config.cluster_config:

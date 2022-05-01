@@ -13,12 +13,12 @@ class quorum(mng):
 
     def Scheduler_QuorumStatus(self):
         while True:
-            if os.uname()[1] not in self.QuorumNodes():
+            if os.uname()[1] not in config.cluster_config['quorum']['nodes']:
                 time.sleep(10)
                 continue
             '''The process polls the quorum nodes.'''
             if 'quorum' in config.cluster_config:
-                config.quorum_status['nodes'] = copy.deepcopy(config.cluster_config['quorum'])
+                config.quorum_status['nodes'] = copy.deepcopy(config.cluster_config['quorum']['nodes'])
 
                 url = 'quorum/status'
                 data = {}
@@ -41,14 +41,6 @@ class quorum(mng):
         self.answer_msg = {'config_version': config.cluster_config['version']}
         self.answer_error = ''
 
-    def QuorumNodes(self):
-        i = 0
-        nodes = []
-        while i < len(config.cluster_config['quorum']):
-            nodes.append(config.cluster_config['quorum'][i]['node'])
-            i = i + 1
-        return nodes
-
     ''' The process that selects the master. '''
     def QuorumMaster(self):
         i = 0
@@ -70,17 +62,11 @@ class quorum(mng):
 
         i = 0
         while i < len(config.quorum_status['nodes']):
-            if config.cluster_config['quorum'][i]['main'] and config.quorum_status['nodes'][i]['status'] in ['OK',
-                                                                                                             'online']:
+            if config.quorum_status['nodes'][i]['status'] in ['OK','online']:
                 config.quorum_status['master'] = config.cluster_config['quorum'][i]['node']
                 break
             else:
                 if config.quorum_status['nodes'][i]['status'] == 'online':
                     config.quorum_status['master'] = config.quorum_status['nodes'][i]['node']
-
-                    for node in config.cluster_config['quorum']:
-                        node['main'] = False
-                    config.cluster_config['quorum'][i]['main'] = True
-                    SaveConfiguration()
                     break
             i = i + 1

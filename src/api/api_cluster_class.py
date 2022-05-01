@@ -33,8 +33,8 @@ class cluster(api):
                                     }
                 }
             }
-            config.cluster_config['quorum'] = [{'node': os.uname()[1], 'main': True}]
-            self.SaveConfiguration = True
+            config.cluster_config['quorum'] = {'nodes': [os.uname()[1]]}
+            SaveConfiguration()
             self.answer_status = 'success'
             self.answer_msg = {}
             self.answer_error = ''
@@ -84,7 +84,7 @@ class cluster(api):
             return 0
         config.access_tokens = {}
         config.cluster_config = json.loads(send.text)['msg']
-        self.SaveConfiguration = True
+        SaveConfiguration()
         self.answer_msg = {}
         self.answer_status = json.loads(send.text)['status']
         self.answer_error = json.loads(send.text)['error']

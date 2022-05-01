@@ -9,7 +9,6 @@ from src.functions import *
 
 class api:
 
-    SaveConfiguration = False
     url = []
     args = {}
     client_ip = ''

@@ -51,7 +51,7 @@ class cluster(mng):
             'machine': self.args['machine'],
             'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(30)),
         }
-        config.cluster_config['quorum'].append({'node': self.args['node'], 'main': False})
+        config.cluster_config['quorum']['nodes'].append(self.args['node'])
 
         self.SaveConfiguration = True
         config.logger.info(self.client_ip + 'Join to cluster:' + self.args['node'])

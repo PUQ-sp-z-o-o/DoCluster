@@ -54,7 +54,7 @@ class quorum(mng):
                     print(str(config_v_tmp))
                     print(str(node_config_v_tmp))
                     if answer['status'] == 'success':
-                        config.cluster_config = answer['msg']['config']
+                        config.cluster_config = copy.deepcopy(answer['msg']['config'])
                         config.quorum_status['master'] = ''
                         SaveConfiguration()
 

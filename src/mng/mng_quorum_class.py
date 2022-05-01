@@ -36,28 +36,10 @@ class quorum(mng):
                         config.quorum_status['nodes'][i]['config_version'] = answer['msg']['config_version']
                     i = i + 1
 
-                i = 0
-                config_v_tmp = 0
-                node_config_v_tmp = ''
-                while i < len(config.quorum_status['nodes']):
-                    if config.quorum_status['nodes'][i]['status'] == 'online':
-                        if config_v_tmp < config.quorum_status['nodes'][i]['config_version']:
-                            config_v_tmp = config.quorum_status['nodes'][i]['config_version']
-                            node_config_v_tmp = config.quorum_status['nodes'][i]['node']
-                    i = i + 1
-
-                if config_v_tmp > config.cluster_config['version']:
-                    url = 'cluster/config/get'
-                    data = {}
-                    answer = self.SendToNodes(node_config_v_tmp, url, data)
-                    print(str(config_v_tmp))
-                    print(str(node_config_v_tmp))
-                    if answer['status'] == 'success':
-                        config.cluster_config = copy.deepcopy(answer['msg']['config'])
-                        config.quorum_status['master'] = ''
-                        SaveConfiguration()
+                self.QuorumSyncConfig()
 
                 self.QuorumMaster()
+
                 config.logger.name = 'QUORUM'
                 config.logger.debug(str(config.quorum_status))
                 time.sleep(1)
@@ -98,6 +80,28 @@ class quorum(mng):
             if config.quorum_status['master'] in config.cluster_config['quorum']['nodes']:
                 config.cluster_config['quorum']['nodes'].remove(config.quorum_status['master'])
                 config.cluster_config['quorum']['nodes'].insert(0, config.quorum_status['master'])
+                SaveConfiguration()
+
+    def QuorumSyncConfig(self):
+        i = 0
+        config_v_tmp = 0
+        node_config_v_tmp = ''
+        while i < len(config.quorum_status['nodes']):
+            if config.quorum_status['nodes'][i]['status'] == 'online':
+                if config_v_tmp < config.quorum_status['nodes'][i]['config_version']:
+                    config_v_tmp = config.quorum_status['nodes'][i]['config_version']
+                    node_config_v_tmp = config.quorum_status['nodes'][i]['node']
+            i = i + 1
+
+        if config_v_tmp > config.cluster_config['version']:
+            url = 'cluster/config/get'
+            data = {}
+            answer = self.SendToNodes(node_config_v_tmp, url, data)
+            print(str(config_v_tmp))
+            print(str(node_config_v_tmp))
+            if answer['status'] == 'success':
+                config.cluster_config = copy.deepcopy(answer['msg']['config'])
+                config.quorum_status['master'] = ''
                 SaveConfiguration()
 
 

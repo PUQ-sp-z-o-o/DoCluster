@@ -13,12 +13,17 @@ class quorum(mng):
 
     def Scheduler_QuorumStatus(self):
         while True:
-            if os.uname()[1] not in config.cluster_config['quorum']['nodes']:
-                time.sleep(10)
-                continue
+            if 'quorum' in config.cluster_config:
+                if os.uname()[1] not in config.cluster_config['quorum']['nodes']:
+                    time.sleep(10)
+                    continue
             '''The process polls the quorum nodes.'''
             if 'quorum' in config.cluster_config:
-                config.quorum_status['nodes'] = copy.deepcopy(config.cluster_config['quorum']['nodes'])
+
+                quorum_nodes = []
+                for node in config.cluster_config['quorum']['nodes']:
+                    quorum_nodes.append({'node': node})
+                config.quorum_status['nodes'] = copy.deepcopy(quorum_nodes)
 
                 url = 'quorum/status'
                 data = {}
@@ -63,7 +68,7 @@ class quorum(mng):
         i = 0
         while i < len(config.quorum_status['nodes']):
             if config.quorum_status['nodes'][i]['status'] in ['OK','online']:
-                config.quorum_status['master'] = config.cluster_config['quorum'][i]['node']
+                config.quorum_status['master'] = config.quorum_status['nodes'][i]['node']
                 break
             else:
                 if config.quorum_status['nodes'][i]['status'] == 'online':

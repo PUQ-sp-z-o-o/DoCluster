@@ -59,3 +59,15 @@ class cluster(mng):
         self.answer_msg = config.cluster_config
         self.answer_error = ''
         return True
+
+    def status(self):
+        self.answer_status = 'online'
+        self.answer_msg = {'config_version': config.cluster_config['version']}
+        self.answer_error = ''
+
+    def config(self):
+        if len(self.url) >= 3:
+            if self.url[2] == 'get':
+                self.answer_status = 'success'
+                self.answer_msg = {'config': config.cluster_config}
+                self.answer_error = ''

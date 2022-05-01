@@ -15,8 +15,8 @@ class mng:
     client_ip = ''
     mng_port = 3030
     answer_msg = {}
-    answer_error = 'wrong api path'
-    answer_status = 'error'
+    answer_error = ''
+    answer_status = ''
 
     def __init__(self, mng_port, url, args, client_ip):
         self.url = url
@@ -24,6 +24,8 @@ class mng:
         self.client_ip = client_ip
         self.mng_port = mng_port
         self.answer_msg = {}
+        self.answer_error = ''
+        self.answer_status = ''
 
     def SendToNodes(self, node, url, data):
         answer = {'status': '', 'error': '', 'msg':  {}}

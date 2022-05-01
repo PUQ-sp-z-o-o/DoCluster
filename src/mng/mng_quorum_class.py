@@ -36,10 +36,28 @@ class quorum(mng):
                         config.quorum_status['nodes'][i]['config_version'] = answer['msg']['config_version']
                     i = i + 1
 
+                config_v_tmp = 0
+                node_config_v_tmp = ''
+                while i < len(config.quorum_status['nodes']):
+                    if config.quorum_status['nodes'][i]['status'] == 'online':
+                        if config_v_tmp > config.quorum_status['nodes'][i]['config_version']:
+                            config_v_tmp = config.quorum_status['nodes'][i]['config_version']
+                            node_config_v_tmp = config.quorum_status['nodes'][i]['node']
+                    i = i + 1
+                if config_v_tmp > config.cluster_config['version']:
+                    url = 'cluster/config/get'
+                    data = {}
+                    answer = self.SendToNodes(node_config_v_tmp, url, data)
+                    if answer['error'] == '':
+                        config.cluster_config = answer['msg']['config']
+                        SaveConfiguration()
+
                 self.QuorumMaster()
                 config.logger.name = 'QUORUM'
                 config.logger.debug(str(config.quorum_status))
                 time.sleep(1)
+
+
 
     def status(self):
         self.answer_status = 'online'

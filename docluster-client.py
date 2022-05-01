@@ -5,7 +5,7 @@ import os
 import json
 
 
-api_url = "http://192.168.129.82:3033/api/"
+api_url = "http://192.168.129.83:3033/api/"
 api_login = 'admin'
 api_apss = 'admin'
 access_token = ''

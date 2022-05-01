@@ -74,13 +74,13 @@ class quorum(mng):
                 config.quorum_status['master'] = config.quorum_status['nodes'][i]['node']
                 break
             i = i + 1
-        if config.quorum_status['master'] != config.cluster_config['quorum']['nodes'][0]:
-            if config.quorum_status['master'] in config.cluster_config['quorum']['nodes']:
-                config.cluster_config['quorum']['nodes'].remove(config.quorum_status['master'])
-                config.cluster_config['quorum']['nodes'].insert(0, config.quorum_status['master'])
-                config.logger.name = 'QUORUM'
-                config.logger.info('Set new Master ' + config.quorum_status['master'])
-                SaveConfiguration()
+        #if config.quorum_status['master'] != config.cluster_config['quorum']['nodes'][0]:
+        #    if config.quorum_status['master'] in config.cluster_config['quorum']['nodes']:
+        #        config.cluster_config['quorum']['nodes'].remove(config.quorum_status['master'])
+        #        config.cluster_config['quorum']['nodes'].insert(0, config.quorum_status['master'])
+        #        config.logger.name = 'QUORUM'
+        #        config.logger.info('Set new Master ' + config.quorum_status['master'])
+        #        SaveConfiguration()
 
     def QuorumSyncConfig(self):
         i = 0

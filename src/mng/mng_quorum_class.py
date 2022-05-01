@@ -80,6 +80,8 @@ class quorum(mng):
             if config.quorum_status['master'] in config.cluster_config['quorum']['nodes']:
                 config.cluster_config['quorum']['nodes'].remove(config.quorum_status['master'])
                 config.cluster_config['quorum']['nodes'].insert(0, config.quorum_status['master'])
+                config.logger.name = 'QUORUM'
+                config.logger.info('Set new Master ' + config.quorum_status['master'])
                 SaveConfiguration()
 
     def QuorumSyncConfig(self):
@@ -97,11 +99,12 @@ class quorum(mng):
             url = 'cluster/config/get'
             data = {}
             answer = self.SendToNodes(node_config_v_tmp, url, data)
-            print(str(config_v_tmp))
-            print(str(node_config_v_tmp))
+
             if answer['status'] == 'success':
                 config.cluster_config = copy.deepcopy(answer['msg']['config'])
                 config.quorum_status['master'] = ''
+                config.logger.name = 'QUORUM'
+                config.logger.info('Get new config from: ' + node_config_v_tmp + ' version: ' + str(config_v_tmp))
                 SaveConfiguration()
 
 

@@ -53,7 +53,7 @@ class cluster(mng):
         }
         config.cluster_config['quorum']['nodes'].append(self.args['node'])
 
-        self.SaveConfiguration = True
+        SaveConfiguration()
         config.logger.info(self.client_ip + 'Join to cluster:' + self.args['node'])
         self.answer_status = 'success'
         self.answer_msg = config.cluster_config

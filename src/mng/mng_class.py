@@ -10,7 +10,6 @@ import string
 
 
 class mng:
-    SaveConfiguration = False
     url = []
     args = {}
     client_ip = ''

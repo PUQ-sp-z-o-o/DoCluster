@@ -1,4 +1,6 @@
+from src.api.api_class import api
 import config
+
 import os
 import json
 import random
@@ -7,24 +9,7 @@ import hashlib
 from src.functions import *
 
 
-class systems:
-
-    SaveConfiguration = False
-    url = []
-    args = {}
-    client_ip = ''
-
-    answer_msg = {}
-    answer_error = 'wrong api path'
-    answer_status = 'error'
-    username = ''
-
-    def __init__(self, url, args, client_ip, username):
-        self.url = url
-        self.args = args
-        self.client_ip = client_ip
-        self.username = username
-        self.answer_msg = {}
+class systems(api):
 
     '''
     System User Manager. Create, edit, delete, display

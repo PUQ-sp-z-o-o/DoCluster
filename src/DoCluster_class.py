@@ -83,50 +83,6 @@ class DoClusterMng:
         #api_t = threading.Thread(target=api_web, daemon=False)
         #api_t.start()
 
-    '''API interface for cluster'''
-    def MngStartWeb(self):
-        config.logger.name = 'SYSTEM'
-        mng = Flask(__name__)
-        mng.debug = True
-
-        @mng.route('/mng/', defaults={'path': ''}, methods=['GET', 'POST'])
-        @mng.route('/mng/<path:path>', methods=['GET', 'POST'])
-        def mng_get_dir(path):
-            args = {}
-            if request.method == 'POST':
-                args = request.form.to_dict()
-            client_ip = request.remote_addr
-            url = list(filter(None, path.split('/')))
-            return self.MngRequestProcessor(url, args, client_ip)
-
-        def mng_web():
-            mng.run(host='0.0.0.0', port=self.mng_port, use_reloader=False)
-
-        config.logger.info('Start MNG service. Port: ' + str(self.mng_port))
-        threading.Thread(target=mng_web, daemon=False).start()
-        #mng_t = threading.Thread(target=mng_web, daemon=False)
-        #mng_t.start()
-
-    ''' The function is responsible for processing requests from the nodes MNG and returns a response. '''
-    def MngRequestProcessor(self, url, args, client_ip):
-
-        if len(url) >= 2:
-            if os.access('src/mng/mng_' + url[0] + '_class.py', os.F_OK):
-                mng_module = importlib.import_module('src.mng.mng_' + url[0] + '_class')
-                mng_class = getattr(mng_module, url[0])
-                mng_instance = mng_class(self.mng_port, url, args, client_ip)
-
-                if url[1] in dir(mng_instance):
-                    getattr(mng_instance, url[1])()
-                    if mng_instance.SaveConfiguration:
-                        self.SaveConfiguration()
-                    return self.MngAnswer(mng_instance.answer_msg, mng_instance.answer_status, mng_instance.answer_error)
-
-        '''If nothing matches, we return an error that the path is not correct.'''
-        return self.ApiAnswer('', 'error', 'wrong api path')
-
-
-
     ''' The function is responsible for processing requests from the client API and returns a response. '''
     def ApiRequestProcessor(self, url, args, client_ip):
         config.logger.name = 'API'
@@ -182,6 +138,48 @@ class DoClusterMng:
                     if api_instance.SaveConfiguration:
                         self.SaveConfiguration()
                     return self.ApiAnswer(api_instance.answer_msg, api_instance.answer_status, api_instance.answer_error)
+
+        '''If nothing matches, we return an error that the path is not correct.'''
+        return self.ApiAnswer('', 'error', 'wrong api path')
+
+    '''API interface for cluster'''
+    def MngStartWeb(self):
+        config.logger.name = 'SYSTEM'
+        mng = Flask(__name__)
+        mng.debug = True
+
+        @mng.route('/mng/', defaults={'path': ''}, methods=['GET', 'POST'])
+        @mng.route('/mng/<path:path>', methods=['GET', 'POST'])
+        def mng_get_dir(path):
+            args = {}
+            if request.method == 'POST':
+                args = request.form.to_dict()
+            client_ip = request.remote_addr
+            url = list(filter(None, path.split('/')))
+            return self.MngRequestProcessor(url, args, client_ip)
+
+        def mng_web():
+            mng.run(host='0.0.0.0', port=self.mng_port, use_reloader=False)
+
+        config.logger.info('Start MNG service. Port: ' + str(self.mng_port))
+        threading.Thread(target=mng_web, daemon=False).start()
+        #mng_t = threading.Thread(target=mng_web, daemon=False)
+        #mng_t.start()
+
+    ''' The function is responsible for processing requests from the nodes MNG and returns a response. '''
+    def MngRequestProcessor(self, url, args, client_ip):
+
+        if len(url) >= 2:
+            if os.access('src/mng/mng_' + url[0] + '_class.py', os.F_OK):
+                mng_module = importlib.import_module('src.mng.mng_' + url[0] + '_class')
+                mng_class = getattr(mng_module, url[0])
+                mng_instance = mng_class(self.mng_port, url, args, client_ip)
+
+                if url[1] in dir(mng_instance):
+                    getattr(mng_instance, url[1])()
+                    if mng_instance.SaveConfiguration:
+                        self.SaveConfiguration()
+                    return self.MngAnswer(mng_instance.answer_msg, mng_instance.answer_status, mng_instance.answer_error)
 
         '''If nothing matches, we return an error that the path is not correct.'''
         return self.ApiAnswer('', 'error', 'wrong api path')
@@ -263,8 +261,9 @@ class DoClusterMng:
         files = os.listdir('src/mng')
         for file in files:
             result = re.split(r'_', file)
-            if result[0] == 'mng' and result[2] == 'class.py':
-                self.MngSchedulerStart(result[1])
+            if len(result) == 3:
+                if result[0] == 'mng' and result[2] == 'class.py':
+                    self.MngSchedulerStart(result[1])
 
     '''Start Scheduler all per class'''
     def MngSchedulerStart(self, scheduler):

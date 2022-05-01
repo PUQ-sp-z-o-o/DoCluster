@@ -1,4 +1,6 @@
 from src.mng.mng_class import mng
+from src.functions import *
+
 import time
 import config
 import hashlib
@@ -52,7 +54,6 @@ class cluster(mng):
         config.cluster_config['quorum'].append({'node': self.args['node'], 'main': False})
 
         self.SaveConfiguration = True
-
         config.logger.info(self.client_ip + 'Join to cluster:' + self.args['node'])
         self.answer_status = 'success'
         self.answer_msg = config.cluster_config

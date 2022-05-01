@@ -1,4 +1,5 @@
 import config
+from src.functions import *
 import os
 import json
 import threading
@@ -9,6 +10,7 @@ import random
 import string
 import importlib
 import re
+
 from flask import Flask, request
 
 
@@ -29,35 +31,9 @@ class DoClusterMng:
         config.logger.info('*                               *')
         config.logger.info('*********************************')
 
-        self.ReadConfiguration()
+        ReadConfiguration()
         #self.SaveConfiguration()
         self.MngSchedulersStart()
-
-    '''Read cluster configuration from file in format JSON'''
-    def ReadConfiguration(self):
-        config.logger.name = 'SYSTEM'
-        if not os.path.isdir('config'):
-            os.mkdir('config')
-
-        if not os.access('config/docluster.conf', os.F_OK):
-            f = open('config/docluster.conf', 'w+')
-            json.dump(config.default_config, f, indent=1)
-            f.close()
-
-        with open('config/docluster.conf') as json_file:
-            config.cluster_config = json.load(json_file)
-            json_file.close()
-        config.logger.info('Read configuration version: ' + str(config.cluster_config['version']))
-        config.logger.debug('Read configuration: ' + str(config.cluster_config))
-
-    '''Save cluster configuration to file in format JSON'''
-    def SaveConfiguration(self):
-        config.logger.name = 'SYSTEM'
-        f = open('config/docluster.conf', 'w+')
-        json.dump(config.cluster_config, f, indent=1)
-        config.logger.info('Save configuration version: ' + str(config.cluster_config['version']))
-        config.logger.debug('Save configuration: ' + str(config.cluster_config))
-        f.close()
 
     '''API interface for clients'''
     def ApiStartWeb(self):
@@ -135,8 +111,9 @@ class DoClusterMng:
 
                 if url[1] in dir(api_instance):
                     getattr(api_instance, url[1])()
-                    if api_instance.SaveConfiguration:
-                        self.SaveConfiguration()
+
+                    #if api_instance.SaveConfiguration:
+                    #    self.SaveConfiguration()
                     return self.ApiAnswer(api_instance.answer_msg, api_instance.answer_status, api_instance.answer_error)
 
         '''If nothing matches, we return an error that the path is not correct.'''
@@ -177,8 +154,8 @@ class DoClusterMng:
 
                 if url[1] in dir(mng_instance):
                     getattr(mng_instance, url[1])()
-                    if mng_instance.SaveConfiguration:
-                        self.SaveConfiguration()
+                    #if mng_instance.SaveConfiguration:
+                    #    self.SaveConfiguration()
                     return self.MngAnswer(mng_instance.answer_msg, mng_instance.answer_status, mng_instance.answer_error)
 
         '''If nothing matches, we return an error that the path is not correct.'''

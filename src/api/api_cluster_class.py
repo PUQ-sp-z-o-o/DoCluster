@@ -1,4 +1,6 @@
 from src.api.api_class import api
+from src.functions import *
+
 import config
 
 import os

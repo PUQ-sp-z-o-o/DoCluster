@@ -1,4 +1,6 @@
 from src.api.api_class import api
+from src.functions import *
+
 import config
 
 import os
@@ -13,6 +15,5 @@ class quorum(api):
 
     def status(self):
         self.answer_status = 'success'
-        self.answer_msg['status'] = 'OK'
         self.answer_msg['quorum_status'] = config.quorum_status
         self.answer_error = ''

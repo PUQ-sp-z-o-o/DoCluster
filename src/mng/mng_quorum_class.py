@@ -36,12 +36,10 @@ class quorum(mng):
                         config.quorum_status['nodes'][i]['config_version'] = answer['msg']['config_version']
                     i = i + 1
 
-
-                i =0
+                i = 0
                 config_v_tmp = 0
                 node_config_v_tmp = ''
                 while i < len(config.quorum_status['nodes']):
-                    print(str(config.quorum_status['nodes'][i]['status']))
                     if config.quorum_status['nodes'][i]['status'] == 'online':
                         if config_v_tmp < config.quorum_status['nodes'][i]['config_version']:
                             config_v_tmp = config.quorum_status['nodes'][i]['config_version']

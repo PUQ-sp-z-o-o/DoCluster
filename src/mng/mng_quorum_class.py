@@ -72,9 +72,10 @@ class quorum(mng):
                 break
             i = i + 1
         if config.quorum_status['master'] != config.cluster_config['quorum']['nodes'][0]:
-            config.cluster_config['quorum']['nodes'].remove(config.quorum_status['master'])
-            config.cluster_config['quorum']['nodes'].insert(0, config.quorum_status['master'])
-            SaveConfiguration()
+            if config.quorum_status['master'] in config.cluster_config['quorum']['nodes']:
+                config.cluster_config['quorum']['nodes'].remove(config.quorum_status['master'])
+                config.cluster_config['quorum']['nodes'].insert(0, config.quorum_status['master'])
+                SaveConfiguration()
 
 
 

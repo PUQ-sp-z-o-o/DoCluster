@@ -37,18 +37,17 @@ class quorum(mng):
                     i = i + 1
 
 
-
+                i =0
                 config_v_tmp = 0
-                node_config_v_tmp = 'Dupa'
+                node_config_v_tmp = ''
                 while i < len(config.quorum_status['nodes']):
+                    print(str(config.quorum_status['nodes'][i]['status']))
                     if config.quorum_status['nodes'][i]['status'] == 'online':
                         if config_v_tmp < config.quorum_status['nodes'][i]['config_version']:
                             config_v_tmp = config.quorum_status['nodes'][i]['config_version']
                             node_config_v_tmp = config.quorum_status['nodes'][i]['node']
                     i = i + 1
-                print(str(config.quorum_status))
-                print(str(config_v_tmp))
-                print(str(node_config_v_tmp))
+
                 if config_v_tmp > config.cluster_config['version']:
                     url = 'cluster/config/get'
                     data = {}

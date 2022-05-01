@@ -50,6 +50,7 @@ class quorum(mng):
                     answer = self.SendToNodes(node_config_v_tmp, url, data)
                     if answer['error'] == '':
                         config.cluster_config = answer['msg']['config']
+                        config.quorum_status['master'] = ''
                         SaveConfiguration()
 
                 self.QuorumMaster()

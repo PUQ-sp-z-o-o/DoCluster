@@ -13,6 +13,7 @@ class quorum(mng):
 
     def Scheduler_QuorumStatus(self):
         while True:
+            time.sleep(config.mng_nodes_timeout)
             if 'quorum' in config.cluster_config:
                 if os.uname()[1] not in config.cluster_config['quorum']['nodes']:
                     time.sleep(10)
@@ -42,7 +43,6 @@ class quorum(mng):
 
                 config.logger.name = 'QUORUM'
                 config.logger.debug(str(config.quorum_status))
-                time.sleep(1)
 
     def status(self):
         self.answer_status = 'online'
@@ -74,6 +74,7 @@ class quorum(mng):
                 config.quorum_status['master'] = config.quorum_status['nodes'][i]['node']
                 break
             i = i + 1
+        #Для того чтоб изменить порядок мастеров ПЕРЕДЕЛАТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!
         #if config.quorum_status['master'] != config.cluster_config['quorum']['nodes'][0]:
         #    if config.quorum_status['master'] in config.cluster_config['quorum']['nodes']:
         #        config.cluster_config['quorum']['nodes'].remove(config.quorum_status['master'])
@@ -100,10 +101,9 @@ class quorum(mng):
 
             if answer['status'] == 'success':
                 config.cluster_config = copy.deepcopy(answer['msg']['config'])
-                #config.quorum_status['master'] = '1'
                 config.logger.name = 'QUORUM'
                 config.logger.info('Get new config from: ' + node_config_v_tmp + ' version: ' + str(config_v_tmp))
-                #SaveConfiguration()
+                #Для того чтоб не изменял мастер версию ПЕРЕДЕЛАТЬ!!!!!!!!!!!!!!!#SaveConfiguration()
                 f = open('config/docluster.conf', 'w+')
                 json.dump(config.cluster_config, f, indent=1)
                 config.logger.info('Save configuration version: ' + str(config.cluster_config['version']))

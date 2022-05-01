@@ -1,8 +1,14 @@
 import logging
 import hashlib
 
-
+# таймаут токина позьзователя АПИ
 token_timeout = 60
+# таймаут опроса Менеджментовых нодов
+mng_nodes_timeout = 5
+# таймаут опроса нодов на статистику
+nodes_timeout = 10
+
+
 cluster_config = {}
 
 cluster_tasks = {}

@@ -63,7 +63,7 @@ class cluster(mng):
 
     def Scheduler_NodesStatus(self):
         while True:
-            time.sleep(1)
+            time.sleep(config.nodes_timeout)
             if 'cluster' not in config.cluster_config:
                 time.sleep(60)
                 continue

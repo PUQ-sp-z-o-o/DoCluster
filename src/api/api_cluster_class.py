@@ -63,32 +63,17 @@ class cluster(api):
             'machine': os.uname()[4]
         }
 
-        try:
-            send = requests.post(url='http://' + self.args['cluster_ip'] + ':3030/mng/cluster/join/', data=node, timeout=2)
-        except requests.Timeout:
-            self.answer_msg = {}
-            self.answer_status = 'error'
-            self.answer_error = 'network problem: Timeout'
-            return 0
-        except requests.ConnectionError:
-            self.answer_msg = {}
-            self.answer_status = 'error'
-            self.answer_error = 'network problem: ConnectionError'
-            return 0
+        answer = self.SendToNode(self.args['cluster_ip'], 'cluster/join/', node)
 
-        if json.loads(send.text)['status'] != "success":
-            self.answer_msg = {}
-            self.answer_status = 'error'
-            self.answer_error = json.loads(send.text)['error']
-            return 0
-        config.access_tokens = {}
-        config.cluster_config = json.loads(send.text)['msg']
-        SaveConfiguration()
-        self.answer_msg = {}
-        self.answer_status = json.loads(send.text)['status']
-        self.answer_error = json.loads(send.text)['error']
+        self.answer_msg = answer['msg']
+        self.answer_status = answer['status']
+        self.answer_error = answer['error']
 
 
+        if answer['status'] == 'success':
+            config.cluster_config = self.answer_msg
+            SaveConfiguration()
+            config.access_tokens = {}
 
 
     def management(self):

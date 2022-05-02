@@ -13,7 +13,6 @@ class quorum(mng):
 
     def Scheduler_QuorumStatus(self):
         while True:
-            time.sleep(config.mng_nodes_timeout)
             if 'quorum' in config.cluster_config:
                 if os.uname()[1] not in config.cluster_config['quorum']['nodes']:
                     time.sleep(10)
@@ -40,9 +39,9 @@ class quorum(mng):
                 self.QuorumSyncConfig()
                 time.sleep(1)
                 self.QuorumMaster()
-
                 config.logger.name = 'QUORUM'
                 config.logger.debug(str(config.quorum_status))
+            time.sleep(config.mng_nodes_timeout)
 
     def status(self):
         self.answer_status = 'online'

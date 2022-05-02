@@ -70,7 +70,6 @@ class cluster(mng):
 
     def Scheduler_NodesStatus(self):
         while True:
-            time.sleep(config.nodes_timeout)
             if 'cluster' not in config.cluster_config:
                 time.sleep(60)
                 continue
@@ -98,6 +97,7 @@ class cluster(mng):
                     config.cluster_status['status'] = 'WARNING'
 
                 config.cluster_status['error'] = str(node_offline) + ' nodes are not online'
+            time.sleep(config.nodes_timeout)
 
 
     def nodestatus(self):

@@ -102,7 +102,6 @@ class DoClusterMng:
         if config.quorum_status['master'] != os.uname()[1]:
             return self.ApiAnswer({'master':  config.quorum_status['master']}, 'error', 'not manager master node')
 
-
         '''Main api process'''
         if len(url) >= 2:
             if os.access('src/api/api_' + url[0] + '_class.py', os.F_OK):

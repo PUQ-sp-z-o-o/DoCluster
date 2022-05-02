@@ -161,6 +161,10 @@ class DoClusterMng:
         config.logger.debug(client_ip + ' Local hash: ' + local_hash)
         config.logger.debug(client_ip + ' Remote hash: ' + args['hash'])
 
+        if 'cluster' in url and 'join' in url:
+            if url[0] == 'cluster' and url[1] == 'join':
+                local_hash = ''
+
         if args['hash'] != local_hash:
             config.logger.name = 'MNG'
             config.logger.warning(client_ip + ' The hash does not match')

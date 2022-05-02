@@ -144,6 +144,26 @@ class DoClusterMng:
 
     ''' The function is responsible for processing requests from the nodes MNG and returns a response. '''
     def MngRequestProcessor(self, url, args, client_ip):
+        config.logger.name = 'MNG'
+        config.logger.debug(client_ip + ' URL: ' + str(url) + ' POST: ' + str(args))
+        if 'hash' not in args:
+            config.logger.name = 'MNG'
+            config.logger.warning(client_ip + ' no hash value')
+            return self.ApiAnswer('', 'error', 'no hash value')
+
+        local_hash = client_ip + \
+                            config.cluster_config['cluster']['nodes'][os.uname()[1]]['MNG_IP'] + \
+                            config.cluster_config['cluster']['nodes'][os.uname()[1]]['API_key']
+        local_hash = hashlib.md5(local_hash.encode("utf-8")).hexdigest()
+
+        config.logger.name = 'MNG'
+        config.logger.debug(client_ip + ' Local hash: ' + local_hash)
+        config.logger.debug(client_ip + ' Remote hash: ' + args['hash'])
+
+        if args['hash'] != local_hash:
+            config.logger.name = 'MNG'
+            config.logger.warning(client_ip + ' The hash does not match')
+            return self.ApiAnswer('', 'error', 'the hash does not match')
 
         if len(url) >= 2:
             if os.access('src/mng/mng_' + url[0] + '_class.py', os.F_OK):

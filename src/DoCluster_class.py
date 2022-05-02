@@ -78,7 +78,7 @@ class DoClusterMng:
             return self.ApiAnswer('', 'error', 'wrong token')
         if 'access_token' in args:
             if not self.ApiCheckToken(args['access_token'], client_ip):
-                config.logger.error('client_ip + ' wrong token')
+                config.logger.error(client_ip + ' wrong token')
                 return self.ApiAnswer('', 'error', 'wrong token')
 
         '''Logout'''

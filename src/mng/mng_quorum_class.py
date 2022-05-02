@@ -80,6 +80,7 @@ class quorum(mng):
                 print(str(config.cluster_config['quorum']['nodes']))
                 config.cluster_config['quorum']['nodes'].remove(config.quorum_status['master'])
                 config.cluster_config['quorum']['nodes'].insert(0, config.quorum_status['master'])
+                print(str(config.cluster_config['quorum']['nodes']))
                 config.logger.name = 'QUORUM'
                 config.logger.info('Set new Master ' + config.quorum_status['master'])
                 #SaveConfiguration()

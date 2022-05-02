@@ -1,6 +1,8 @@
 from src.mng.mng_class import mng
 from src.functions import *
 import psutil
+from psutil._common import bytes2human
+
 import time
 import subprocess
 import config
@@ -93,14 +95,15 @@ class cluster(mng):
                     node_online = node_online + 1
                 if answer['status'] == 'offline':
                     node_offline = node_offline + 1
-                    config.cluster_status['status'] = 'WARNING'
+
 
 
             '''Обрабатываем ошибки нодов и заганяем их в список'''
             config.cluster_status['errors'].clear()
+            config.cluster_status['status'] = 'OK'
             if node_offline > 0:
+                config.cluster_status['status'] = 'WARNING'
                 config.cluster_status['errors'].append(str(node_offline) + ' nodes are not online')
-
             time.sleep(config.nodes_timeout)
 
 
@@ -108,9 +111,9 @@ class cluster(mng):
         self.answer_msg['config_version'] = config.cluster_config['version']
         self.answer_msg['cpu_percent'] = psutil.cpu_percent()
         self.answer_msg['memory_percent'] = psutil.virtual_memory().percent
-        self.answer_msg['memory_available'] = psutil.virtual_memory().available
-        self.answer_msg['memory_used'] = psutil.virtual_memory().used
-        self.answer_msg['memory_total'] = psutil.virtual_memory().total
+        self.answer_msg['memory_available'] = bytes2human(psutil.virtual_memory().available)
+        self.answer_msg['memory_used'] = bytes2human(psutil.virtual_memory().used)
+        self.answer_msg['memory_total'] = bytes2human(psutil.virtual_memory().total)
         self.answer_msg['errors'] = []
         self.answer_status = 'success'
         self.answer_error = ''

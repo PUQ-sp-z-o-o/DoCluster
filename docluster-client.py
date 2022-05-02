@@ -3,6 +3,7 @@
 import requests
 import os
 import json
+from prettytable import PrettyTable
 
 
 
@@ -43,16 +44,18 @@ def login():
         print("Login request to " + api_url)
         send_login = requests.post(url=api_url+'login/', data={"username": api_login, "password": api_pss})
         answer_login = json.loads(send_login.text)
-        print(send_login.text)
+        #print(send_login.text)
         if answer_login['status'] == 'success':
             access_token = answer_login['msg']['access_token']
             f = open('access_token.tmp', 'w+')
             f.write(access_token)
             f.close()
             print("Authorization was successful to " + api_url)
+            return True
         else:
             print("Failed login to " + api_url)
             print("Error: " + answer_login['error'])
+            return False
 
 
 def logout():
@@ -60,14 +63,16 @@ def logout():
     answer_logout = json.loads(send_logout.text)
     if answer_logout['status'] == 'success':
         print("Logout " + api_url)
+        return True
     else:
         print("Error: " + answer_logout['error'])
+        return False
 
 
 def send(path, data):
     data['access_token'] = access_token
     send = requests.post(url=api_url + path, data=data)
-    print(send.text)
+    return json.loads(send.text)
 ############################################################3
 
 def cluster_create():
@@ -88,12 +93,12 @@ def cluster_join():
 def cluster_status():
     path = 'cluster/status'
     data = {}
-    send(path, data)
+    return send(path, data)
 
 def quorum_status():
     path = 'quorum/status'
     data = {}
-    send(path, data)
+    return send(path, data)
 
 '''Argument is a username, if argument not set return all users'''
 def systems_users_get(username=None):
@@ -166,8 +171,8 @@ def cluster_management_get():
     send(path, data)
 
 
-login()
-quorum_status()
+#login()
+#quorum_status()
 #cluster_management_get()
 #cluster_status()
 #tokens()
@@ -181,3 +186,124 @@ quorum_status()
 #systems_users_delete('admin')
 #systems_users_set('admin', 'QWEqwe123', 'admin@clastercp.com')
 #logout()
+
+import cmd2
+from cmd2 import (Bg, Fg, style,)
+import argparse
+
+import cmd2
+from cmd2 import (
+    CommandSet,
+    with_argparser,
+    with_category,
+    with_default_category,
+)
+
+
+
+class BasicApp(cmd2.Cmd):
+
+    def __init__(self):
+
+        super().__init__(
+            persistent_history_file='cmd2_history.dat',
+        )
+        self.intro = style('Welcome to DoCluster !', fg=Fg.RED, bg=Bg.WHITE, bold=True) + ' 😀'
+
+        self.prompt = 'DoCluster> '
+        self.do_login('_')
+
+
+    def do_login(self, _):
+        if login():
+            self.prompt = style(api_login, fg=Fg.BLUE, bold=True) + style('@', fg=Fg.RED, bold=True) + style('DoCluster # ', fg=Fg.GREEN, bold=True)
+
+    def do_logout(self, _):
+        if logout():
+            self.prompt = 'DoCluster> '
+
+
+    '''     Quorum      '''
+    load_parser = cmd2.Cmd2ArgumentParser()
+    load_parser.add_argument('quorum', choices=['status', 'add', 'delete'])
+    @with_argparser(load_parser)
+    def do_quorum(self, ns: argparse.Namespace):
+        if ns.quorum == 'status':
+            answer = quorum_status()
+            if answer['status'] != 'success':
+                print('Answer status: ' + answer['status'])
+                print('Answer error: ' + answer['error'])
+            else:
+                table = PrettyTable()
+                table.title = 'DoCluster Quorum'
+                table.header = False
+                table.add_row(['Quorum status', answer['msg']['quorum_status']['status']])
+                table.add_row(['Master nod', answer['msg']['quorum_status']['master']])
+                table.add_row(['Quorum errors', str(answer['msg']['quorum_status']['errors'])])
+                print(table)
+
+                table = PrettyTable()
+                table.field_names = ['Node hostname', 'status', 'Config version', 'Errors']
+                for key in answer['msg']['quorum_status']['nodes']:
+                    if key['status'] == 'offline':
+                        table.add_row([key['node'],key['status'], '---', str(key['error'])])
+                    else:
+                        table.add_row([key['node'], key['status'], key['config_version'], str(key['error'])])
+                print(table)
+
+
+    '''         Cluster     '''
+    load_parser = cmd2.Cmd2ArgumentParser()
+    load_parser.add_argument('cluster', choices=['status', 'create', 'join'])
+    @with_argparser(load_parser)
+    def do_cluster(self, ns: argparse.Namespace):
+        if ns.cluster == 'status':
+            answer = cluster_status()
+            if answer['status'] != 'success':
+                print('Answer status: ' + answer['status'])
+                print('Answer error: ' + answer['error'])
+            else:
+                table = PrettyTable()
+                table.title = 'DoCluster Cluster'
+                table.header = False
+                table.add_row(['Cluster status', answer['msg']['status']])
+                table.add_row(['Cluster errors', str(answer['msg']['errors'])])
+                print(table)
+
+                table = PrettyTable()
+                table.field_names = ['Node hostname', 'status', 'CPU', 'RAM', 'RAM total', 'Config version', 'Errors']
+                for key in answer['msg']['nodes']:
+                    if answer['msg']['nodes'][key]['status'] == 'offline':
+                        table.add_row([
+                            key,
+                            answer['msg']['nodes'][key]['status'],
+                            '---',
+                            '---',
+                            '---',
+                            '---',
+                            '---',
+                        ])
+                    else:
+                        table.add_row([
+                            key,
+                            answer['msg']['nodes'][key]['status'],
+                            str(answer['msg']['nodes'][key]['cpu_percent']),
+                            str(answer['msg']['nodes'][key]['memory_percent']),
+                            str(answer['msg']['nodes'][key]['memory_total']),
+                            str(answer['msg']['nodes'][key]['config_version']),
+                            str(answer['msg']['nodes'][key]['errors'])
+                        ])
+                print(table)
+
+
+
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    app = BasicApp()
+    app.cmdloop()

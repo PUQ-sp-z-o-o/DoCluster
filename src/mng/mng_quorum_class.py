@@ -58,10 +58,10 @@ class quorum(mng):
         online = 0
         offline = 0
         while i < len(config.quorum_status['nodes']):
-            if config.quorum_status['nodes'][i]['status'] == 'online':
-                online = online + 1
-            else:
+            if config.quorum_status['nodes'][i]['status'] == 'offline':
                 offline = offline + 1
+            else:
+                online = online + 1
             i = i + 1
 
         # Обработка ошибок кворума и запихнуть в список
@@ -74,7 +74,7 @@ class quorum(mng):
 
         i = 0
         while i < len(config.quorum_status['nodes']):
-            if config.quorum_status['nodes'][i]['status'] in ['OK', 'online']:
+            if config.quorum_status['nodes'][i]['status'] in 'success':
                 config.quorum_status['master'] = config.quorum_status['nodes'][i]['node']
                 # Для того чтоб изменить порядок мастеров
                 if i != 0 and config.quorum_status['master'] == os.uname()[1]:

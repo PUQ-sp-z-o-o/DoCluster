@@ -25,7 +25,7 @@ quorum_status = {
 
 cluster_status = {
     "status": '',
-    "error": '',
+    "errors": [],
     'nodes': {}
 }
 

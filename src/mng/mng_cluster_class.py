@@ -88,28 +88,31 @@ class cluster(mng):
                 answer = self.SendToNode(node, url, data)
                 config.cluster_status['nodes'][node] = answer['msg']
                 config.cluster_status['nodes'][node]['status'] = answer['status']
-                config.cluster_status['nodes'][node]['error'] = answer['error']
 
-                if answer['status'] == 'online':
+                if answer['status'] == 'success':
                     node_online = node_online + 1
                 if answer['status'] == 'offline':
                     node_offline = node_offline + 1
                     config.cluster_status['status'] = 'WARNING'
 
-                config.cluster_status['error'] = str(node_offline) + ' nodes are not online'
+
+            '''Обрабатываем ошибки нодов и заганяем их в список'''
+            config.cluster_status['errors'].clear()
+            if node_offline > 0:
+                config.cluster_status['errors'].append(str(node_offline) + ' nodes are not online')
+
             time.sleep(config.nodes_timeout)
 
 
     def nodestatus(self):
-        self.answer_status = 'online'
-        self.answer_error = ''
         self.answer_msg['config_version'] = config.cluster_config['version']
         self.answer_msg['cpu_percent'] = psutil.cpu_percent()
         self.answer_msg['memory_percent'] = psutil.virtual_memory().percent
         self.answer_msg['memory_available'] = psutil.virtual_memory().available
         self.answer_msg['memory_used'] = psutil.virtual_memory().used
         self.answer_msg['memory_total'] = psutil.virtual_memory().total
-        #self.answer_msg['disks'] = psutil.disk_partitions()
+        self.answer_msg['errors'] = []
+        self.answer_status = 'success'
         self.answer_error = ''
 
     def config(self):

@@ -32,8 +32,10 @@ class quorum(mng):
                     answer = self.SendToNode(config.quorum_status['nodes'][i]['node'], url, data)
                     config.quorum_status['nodes'][i]['status'] = answer['status']
                     config.quorum_status['nodes'][i]['error'] = answer['error']
+
                     if answer['error'] == '':
                         config.quorum_status['nodes'][i]['config_version'] = answer['msg']['config_version']
+                        config.quorum_status['nodes'][i]['errors'] = answer['msg']['errors']
                     i = i + 1
 
                 self.QuorumSyncConfig()
@@ -44,9 +46,11 @@ class quorum(mng):
             time.sleep(config.mng_nodes_timeout)
 
     def status(self):
-        self.answer_status = 'online'
-        self.answer_msg = {'config_version': config.cluster_config['version']}
+        self.answer_msg['config_version'] = config.cluster_config['version']
+        self.answer_msg['errors'] = []
+        self.answer_status = 'success'
         self.answer_error = ''
+
 
     ''' The process that selects the master. '''
     def QuorumMaster(self):
@@ -60,12 +64,13 @@ class quorum(mng):
                 offline = offline + 1
             i = i + 1
 
+        # Обработка ошибок кворума и запихнуть в список
+        config.quorum_status['errors'].clear()
         if offline == 0:
             config.quorum_status['status'] = 'OK'
-            config.quorum_status['error'] = ''
         else:
             config.quorum_status['status'] = 'WARNING'
-            config.quorum_status['error'] = str(offline) + ' MNG nodes are not online'
+            config.quorum_status['errors'].append(str(offline) + ' MNG nodes are not online')
 
         i = 0
         while i < len(config.quorum_status['nodes']):

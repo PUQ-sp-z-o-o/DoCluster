@@ -18,8 +18,8 @@ cluster_tasks = {}
 
 quorum_status = {
     "status": '',
-    "error": '',
-    'masters': '',
+    "errors": '',
+    'master': '',
     'nodes': []
 }
 

@@ -63,12 +63,11 @@ class cluster(api):
             'machine': os.uname()[4]
         }
 
-        answer = self.SendToNode(self.args['cluster_ip'], 'cluster/join/', node)
+        answer = self.SendToNode(self.args['cluster_ip'], 'cluster/join', node)
 
         self.answer_msg = answer['msg']
         self.answer_status = answer['status']
         self.answer_error = answer['error']
-
 
         if answer['status'] == 'success':
             config.cluster_config = self.answer_msg

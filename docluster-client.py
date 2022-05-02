@@ -5,10 +5,14 @@ import os
 import json
 
 
-api_url = "http://192.168.129.83:3033/api/"
+
+api_url = "http://192.168.129.198:3033/api/"
+#api_url = "http://127.0.0.1:3033/api/"
 api_login = 'admin'
-api_apss = 'admin'
+api_pss = 'admin'
 access_token = ''
+
+
 try:
     response = requests.get(api_url)
     print(f'Server available {api_url}')
@@ -34,7 +38,7 @@ def login():
     if answer_token['status'] == 'error':
         print("Not authorized")
         print("Login request to " + api_url)
-        send_login = requests.post(url=api_url+'login/', data={"username": api_login, "password": api_apss})
+        send_login = requests.post(url=api_url+'login/', data={"username": api_login, "password": api_pss})
         answer_login = json.loads(send_login.text)
         print(send_login.text)
         if answer_login['status'] == 'success':
@@ -160,11 +164,11 @@ def cluster_management_get():
 
 
 login()
-quorum_status()
+#quorum_status()
 #cluster_management_get()
 #cluster_status()
 #tokens()
-#cluster_create()
+cluster_create()
 #cluster_join()
 #systems_hosts_set('5.2.3.23', 'dupa-3')
 #systems_hosts_get()

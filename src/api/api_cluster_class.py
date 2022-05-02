@@ -1,8 +1,6 @@
 from src.api.api_class import api
 from src.functions import *
-
 import config
-
 import os
 import requests
 import json
@@ -18,7 +16,6 @@ class cluster(api):
         self.answer_msg = config.cluster_status
         self.answer_error = ''
 
-
     def create(self):
         if 'cluster' in config.cluster_config:
             self.answer_status = 'error'
@@ -30,7 +27,8 @@ class cluster(api):
                 'name': 'DoCluster',
                 'nodes': {
                     os.uname()[1]: {'machine': os.uname()[4],
-                                    'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(30))
+                                    'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(30)),
+                                    'MNG_IP': self.server_ip
                                     }
                 }
             }
@@ -62,7 +60,9 @@ class cluster(api):
             'cluster_password': self.args['cluster_password'],
             'cluster_ip': self.args['cluster_ip'],
             'node': os.uname()[1],
-            'machine': os.uname()[4]
+            'machine': os.uname()[4],
+            'MNG_IP': self.client_ip
+
         }
 
         try:

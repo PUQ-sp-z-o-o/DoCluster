@@ -48,19 +48,18 @@ class DoClusterMng:
             if request.method == 'POST':
                 args = request.form.to_dict()
             client_ip = request.remote_addr
+            server_ip = request.host.split(':')[0]
             url = list(filter(None, path.split('/')))
-            return self.ApiRequestProcessor(url, args, client_ip)
+            return self.ApiRequestProcessor(url, args, client_ip, server_ip)
 
         def api_web():
             api.run(host='0.0.0.0', port=self.api_port, use_reloader=False)
 
         config.logger.info('Start API service. Port: ' + str(self.api_port))
         threading.Thread(target=api_web, daemon=False).start()
-        #api_t = threading.Thread(target=api_web, daemon=False)
-        #api_t.start()
 
     ''' The function is responsible for processing requests from the client API and returns a response. '''
-    def ApiRequestProcessor(self, url, args, client_ip):
+    def ApiRequestProcessor(self, url, args, client_ip, server_ip):
         config.logger.name = 'API'
         config.logger.debug('IP: ' + client_ip + ' URL: ' + str(url) + ' POST: ' + str(args))
 
@@ -107,7 +106,7 @@ class DoClusterMng:
             if os.access('src/api/api_' + url[0] + '_class.py', os.F_OK):
                 api_module = importlib.import_module('src.api.api_' + url[0] + '_class')
                 api_class = getattr(api_module, url[0])
-                api_instance = api_class(url, args, client_ip, self.ApiGetUser(args['access_token']))
+                api_instance = api_class(url, args, client_ip, self.ApiGetUser(args['access_token']), server_ip)
 
                 if url[1] in dir(api_instance):
                     getattr(api_instance, url[1])()
@@ -154,8 +153,6 @@ class DoClusterMng:
 
                 if url[1] in dir(mng_instance):
                     getattr(mng_instance, url[1])()
-                    #if mng_instance.SaveConfiguration:
-                    #    self.SaveConfiguration()
                     return self.MngAnswer(mng_instance.answer_msg, mng_instance.answer_status, mng_instance.answer_error)
 
         '''If nothing matches, we return an error that the path is not correct.'''

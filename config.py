@@ -7,7 +7,10 @@ token_timeout = 60
 mng_nodes_timeout = 5
 # таймаут опроса нодов на статистику
 nodes_timeout = 10
-
+# Порт подключения для клинта АПИ
+api_port = '3033'
+# Порт подключени для узлов МНГ
+mng_port = '3030'
 
 cluster_config = {}
 

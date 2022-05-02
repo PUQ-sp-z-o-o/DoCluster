@@ -13,7 +13,7 @@ api_port = '3033'
 mng_port = '3030'
 
 cluster_config = {}
-
+api_access_tokens = {}
 cluster_tasks = {}
 
 quorum_status = {

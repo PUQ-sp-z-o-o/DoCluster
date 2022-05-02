@@ -73,7 +73,7 @@ class cluster(api):
         if answer['status'] == 'success':
             config.cluster_config = self.answer_msg
             SaveConfiguration()
-            config.access_tokens = {}
+            config.api_access_tokens.clear()
 
 
     def management(self):

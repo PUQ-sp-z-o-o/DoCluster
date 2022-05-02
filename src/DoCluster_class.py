@@ -16,9 +16,6 @@ from flask import Flask, request
 
 class DoClusterMng:
 
-    api_port = 3033
-    api_access_tokens = {}
-
     mng_port = 3030
 
     def __init__(self):
@@ -53,9 +50,9 @@ class DoClusterMng:
             return self.ApiRequestProcessor(url, args, client_ip, server_ip)
 
         def api_web():
-            api.run(host='0.0.0.0', port=self.api_port, use_reloader=False)
+            api.run(host='0.0.0.0', port=config.api_port, use_reloader=False)
 
-        config.logger.info('Start API service. Port: ' + str(self.api_port))
+        config.logger.info('Start API service. Port: ' + str(config.api_port))
         threading.Thread(target=api_web, daemon=False).start()
 
     ''' The function is responsible for processing requests from the client API and returns a response. '''
@@ -192,14 +189,14 @@ class DoClusterMng:
         return True
 
     def ApiLogout(self, access_token):
-        self.api_access_tokens[access_token]['expiration'] = 0
-        return self.api_access_tokens[access_token]['username']
+        config.api_access_tokens[access_token]['expiration'] = 0
+        return config.api_access_tokens[access_token]['username']
 
     def ApiWriteToken(self, username, client_ip):
         date = datetime.datetime.utcnow()
         utc_time = calendar.timegm(date.utctimetuple())
         user_token = ''.join(random.choice(string.ascii_uppercase) for i in range(60))
-        self.api_access_tokens[user_token] = {
+        config.api_access_tokens[user_token] = {
             "username": username,
             "ip": client_ip,
             "expiration": utc_time + config.token_timeout
@@ -207,25 +204,25 @@ class DoClusterMng:
         return user_token
 
     def ApiGetUser(self, access_token):
-        return self.api_access_tokens[access_token]['username']
+        return config.api_access_tokens[access_token]['username']
 
     def ApiCheckToken(self, access_token, client_ip):
         date = datetime.datetime.utcnow()
         utc_time = calendar.timegm(date.utctimetuple())
         '''Delete invalid tokens'''
-        if len(self.api_access_tokens) > 0:
-            for key in list(self.api_access_tokens):
-                if self.api_access_tokens[key]['expiration'] < utc_time:
-                    del self.api_access_tokens[key]
+        if len(config.api_access_tokens) > 0:
+            for key in list(config.api_access_tokens):
+                if config.api_access_tokens[key]['expiration'] < utc_time:
+                    del config.api_access_tokens[key]
 
-        if len(self.api_access_tokens) == 0:
+        if len(config.api_access_tokens) == 0:
             return False
 
-        if access_token in self.api_access_tokens:
-            if self.api_access_tokens[access_token]['ip'] != client_ip:
+        if access_token in config.api_access_tokens:
+            if config.api_access_tokens[access_token]['ip'] != client_ip:
                 return False
             else:
-                self.api_access_tokens[access_token]['expiration'] = utc_time + config.token_timeout
+                config.api_access_tokens[access_token]['expiration'] = utc_time + config.token_timeout
                 return True
         return False
 

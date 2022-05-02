@@ -73,7 +73,7 @@ class quorum(mng):
             if config.quorum_status['nodes'][i]['status'] in ['OK', 'online']:
                 config.quorum_status['master'] = config.quorum_status['nodes'][i]['node']
                 # Для того чтоб изменить порядок мастеров ПЕРЕДЕЛАТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!
-                if  config.quorum_status['master'] == os.uname()[1]:
+                if i != 0 :
                     print(str(config.cluster_config['quorum']['nodes']))
                     config.cluster_config['quorum']['nodes'].remove(config.quorum_status['master'])
                     config.cluster_config['quorum']['nodes'].insert(0, config.quorum_status['master'])

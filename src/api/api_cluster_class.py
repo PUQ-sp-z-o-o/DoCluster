@@ -56,6 +56,7 @@ class cluster(api):
                 self.answer_error = 'data not submitted'
                 return 0
         node = {
+            'hash': '',
             'cluster_username': self.args['cluster_username'],
             'cluster_password': self.args['cluster_password'],
             'cluster_ip': self.args['cluster_ip'],

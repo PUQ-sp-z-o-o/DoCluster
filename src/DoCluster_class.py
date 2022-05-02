@@ -146,6 +146,7 @@ class DoClusterMng:
     def MngRequestProcessor(self, url, args, client_ip):
         config.logger.name = 'MNG'
         config.logger.debug(client_ip + ' URL: ' + str(url) + ' POST: ' + str(args))
+
         if 'hash' not in args:
             config.logger.name = 'MNG'
             config.logger.warning(client_ip + ' no hash value')

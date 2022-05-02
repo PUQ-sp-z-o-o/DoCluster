@@ -58,19 +58,19 @@ class DoClusterMng:
     ''' The function is responsible for processing requests from the client API and returns a response. '''
     def ApiRequestProcessor(self, url, args, client_ip, server_ip):
         config.logger.name = 'API'
-        config.logger.debug('IP: ' + client_ip + ' URL: ' + str(url) + ' POST: ' + str(args))
+        config.logger.debug(client_ip + ' URL: ' + str(url) + ' POST: ' + str(args))
 
         '''Loging and create valid access token'''
         if len(url) == 1:
             if url[0] == 'login':
                 if 'username' in args and 'password' in args:
                     if self.ApiLogin(args['username'], args['password']):
-                        config.logger.info('IP: ' + client_ip + ' username: ' + args['username'] + ' login success')
+                        config.logger.info(client_ip + ' username: ' + args['username'] + ' login success')
                         return self.ApiAnswer({'access_token': self.ApiWriteToken(args['username'], client_ip)},
                                               'success',
                                               '')
                     else:
-                        config.logger.error('IP: ' + client_ip + ' username: ' + args['username'] + ' access denied')
+                        config.logger.error(client_ip + ' username: ' + args['username'] + ' access denied')
                         return self.ApiAnswer('', 'error', 'access denied')
 
         '''Check Token'''
@@ -78,14 +78,14 @@ class DoClusterMng:
             return self.ApiAnswer('', 'error', 'wrong token')
         if 'access_token' in args:
             if not self.ApiCheckToken(args['access_token'], client_ip):
-                config.logger.error('IP: ' + client_ip + ' wrong token')
+                config.logger.error('client_ip + ' wrong token')
                 return self.ApiAnswer('', 'error', 'wrong token')
 
         '''Logout'''
         if len(url) == 1:
             if url[0] == 'logout':
                 username = self.ApiLogout(args['access_token'])
-                config.logger.info('IP: ' + client_ip + ' username: ' + username + ' logout success')
+                config.logger.info(client_ip + ' username: ' + username + ' logout success')
                 return self.ApiAnswer('', 'success', '')
 
         '''If cluster not created'''
@@ -98,6 +98,11 @@ class DoClusterMng:
                     'IP: ' + client_ip + ' (' + self.ApiGetUser(args['access_token']) + ')' + 'cluster not created')
                 return self.ApiAnswer('', 'error', 'cluster not created')
 
+        '''If not manager master node'''
+        if config.quorum_status['master'] != os.uname()[1]:
+            return self.ApiAnswer({'master':  config.quorum_status['master']}, 'error', 'not manager master node')
+
+
         '''Main api process'''
         if len(url) >= 2:
             if os.access('src/api/api_' + url[0] + '_class.py', os.F_OK):
@@ -107,9 +112,6 @@ class DoClusterMng:
 
                 if url[1] in dir(api_instance):
                     getattr(api_instance, url[1])()
-
-                    #if api_instance.SaveConfiguration:
-                    #    self.SaveConfiguration()
                     return self.ApiAnswer(api_instance.answer_msg, api_instance.answer_status, api_instance.answer_error)
 
         '''If nothing matches, we return an error that the path is not correct.'''

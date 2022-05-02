@@ -165,12 +165,12 @@ def cluster_management_get():
 
 
 login()
-#quorum_status()
+quorum_status()
 #cluster_management_get()
 #cluster_status()
 #tokens()
 #cluster_create()
-cluster_join()
+#cluster_join()
 #systems_hosts_set('5.2.3.23', 'dupa-3')
 #systems_hosts_get()
 #systems_hosts_delete('1.2.3.1', 'dupa-1')

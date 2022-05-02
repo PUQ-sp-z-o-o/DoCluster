@@ -83,7 +83,7 @@ class quorum(mng):
                 print(str(config.cluster_config['quorum']['nodes']))
                 config.logger.name = 'QUORUM'
                 config.logger.info('Set new Master ' + config.quorum_status['master'])
-                #SaveConfiguration()
+                SaveConfiguration()
 
     def QuorumSyncConfig(self):
         i = 0

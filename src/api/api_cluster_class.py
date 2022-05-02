@@ -60,9 +60,7 @@ class cluster(api):
             'cluster_password': self.args['cluster_password'],
             'cluster_ip': self.args['cluster_ip'],
             'node': os.uname()[1],
-            'machine': os.uname()[4],
-            'MNG_IP': self.client_ip
-
+            'machine': os.uname()[4]
         }
 
         try:

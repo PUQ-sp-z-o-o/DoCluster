@@ -51,6 +51,7 @@ class cluster(mng):
         config.cluster_config['cluster']['nodes'][self.args['node']] = {
             'machine': self.args['machine'],
             'API_key': ''.join(random.choice(string.ascii_lowercase) for i in range(30)),
+            'MNG_IP': self.client_ip
         }
         config.cluster_config['quorum']['nodes'].append(self.args['node'])
 

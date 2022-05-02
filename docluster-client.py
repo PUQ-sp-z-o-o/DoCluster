@@ -7,7 +7,8 @@ import json
 
 
 api_url = "http://192.168.129.198:3033/api/"
-#api_url = "http://127.0.0.1:3033/api/"
+
+api_url = "http://192.168.129.82:3033/api/"
 api_login = 'admin'
 api_pss = 'admin'
 access_token = ''
@@ -168,8 +169,8 @@ login()
 #cluster_management_get()
 #cluster_status()
 #tokens()
-cluster_create()
-#cluster_join()
+#cluster_create()
+cluster_join()
 #systems_hosts_set('5.2.3.23', 'dupa-3')
 #systems_hosts_get()
 #systems_hosts_delete('1.2.3.1', 'dupa-1')

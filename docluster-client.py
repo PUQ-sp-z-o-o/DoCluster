@@ -15,7 +15,7 @@ from cmd2 import (
 
 api_url = "http://192.168.129.198:3033/api/"
 api_username = 'admin'
-api_password = 'admin'
+api_password = 'QWEqwe123'
 access_token = ''
 
 
@@ -450,6 +450,7 @@ class DoClusterCLI(cmd2.Cmd):
     def cluster_join(self, ns: argparse.Namespace):
         if ns.hostname is None or ns.u is None or ns.p is None:
             self.do_help('cluster join')
+            return 0
         answer = cluster_join(ns.hostname, ns.u, ns.p)
         if answer['status'] == 'success':
             print('Join to cluster successfully')

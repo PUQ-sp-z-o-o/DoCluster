@@ -92,7 +92,7 @@ class quorum(mng):
         config_v_tmp = 0
         node_config_v_tmp = ''
         while i < len(config.quorum_status['nodes']):
-            if config.quorum_status['nodes'][i]['status'] == 'online':
+            if config.quorum_status['nodes'][i]['status'] == 'success':
                 if config_v_tmp < config.quorum_status['nodes'][i]['config_version']:
                     config_v_tmp = config.quorum_status['nodes'][i]['config_version']
                     node_config_v_tmp = config.quorum_status['nodes'][i]['node']

@@ -91,6 +91,13 @@ class systems(api):
                 self.answer_status = 'error'
                 self.answer_error = 'user does not exist'
                 return 0
+
+            if 'email' in self.args:
+                if not is_valid_email(self.args['email']):
+                    self.answer_status = 'error'
+                    self.answer_error = 'wrong email format'
+                    return 0
+
             if 'password' in self.args:
                 if self.args['password'] != '':
                     pass_tmp = self.args['password']
@@ -111,7 +118,7 @@ class systems(api):
     '''
     def hosts(self):
         '''Ddd'''
-        if self.url[2] == 'set':
+        if self.url[2] == 'add':
             if 'ip' not in self.args or 'hostname' not in self.args:
                 self.answer_msg = {}
                 self.answer_status = 'error'
@@ -144,9 +151,53 @@ class systems(api):
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'Added in hosts: ' + self.args['ip'] + ':' + self.args['hostname'])
         '''Get'''
         if self.url[2] == 'get':
-            self.answer_msg = config.cluster_config['systems']['hosts']
-            self.answer_status = 'success'
-            self.answer_error = ''
+
+            if 'ip' in self.args:
+                if not is_valid_ip(self.args['ip']):
+                    self.answer_msg = {}
+                    self.answer_status = 'error'
+                    self.answer_error = 'wrong IP or hostname format'
+                    return 0
+
+            if 'hostname' in self.args:
+                if not is_valid_hostname(self.args['hostname']):
+                    self.answer_msg = {}
+                    self.answer_status = 'error'
+                    self.answer_error = 'wrong IP or hostname format'
+                    return 0
+
+            if 'ip' not in self.args and 'hostname' not in self.args:
+                self.answer_msg = config.cluster_config['systems']['hosts']
+                self.answer_status = 'success'
+                self.answer_error = ''
+                return 0
+
+            if 'ip' in self.args and 'hostname' not in self.args:
+                if self.args['ip'] not in config.cluster_config['systems']['hosts']:
+                    self.answer_msg = {}
+                    self.answer_status = 'error'
+                    self.answer_error = 'IP or hostname not found'
+                    return 0
+                self.answer_msg[self.args['ip']] = config.cluster_config['systems']['hosts'][self.args['ip']]
+                self.answer_status = 'success'
+                self.answer_error = ''
+                return 0
+
+            if 'ip' not in self.args and 'hostname' in self.args:
+                for ip in config.cluster_config['systems']['hosts']:
+                    for hostname in config.cluster_config['systems']['hosts'][ip]:
+                        if hostname == self.args['hostname']:
+                            self.answer_msg[ip] = [hostname]
+                if len(self.answer_msg) == 0:
+                    self.answer_msg = {}
+                    self.answer_status = 'error'
+                    self.answer_error = 'IP or hostname not found'
+                    return 0
+                self.answer_status = 'success'
+                self.answer_error = ''
+                return 0
+
+
         '''Delete'''
         if self.url[2] == 'delete':
             if 'ip' not in self.args or 'hostname' not in self.args:

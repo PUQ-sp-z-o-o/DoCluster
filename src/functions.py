@@ -13,6 +13,10 @@ def is_valid_ip(ip_address):
         return False
 
 
+def is_valid_email(email):
+    return re.search(r'[\w.-]+@[\w.-]+.\w+', email)
+
+
 def is_valid_hostname(hostname: object) -> object:
     if len(hostname) == 0:
         return False

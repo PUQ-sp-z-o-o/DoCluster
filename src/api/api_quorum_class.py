@@ -15,5 +15,5 @@ class quorum(api):
 
     def status(self):
         self.answer_status = 'success'
-        self.answer_msg['quorum_status'] = config.quorum_status
+        self.answer_msg = config.quorum_status
         self.answer_error = ''

@@ -119,6 +119,12 @@ class systems(api):
     def hosts(self):
         '''Ddd'''
         if self.url[2] == 'add':
+            if 'hosts' not in config.cluster_config['systems']:
+                config.cluster_config['systems']['hosts'] = {}
+
+            if self.args['ip'] not in config.cluster_config['systems']['hosts']:
+                config.cluster_config['systems']['hosts'][self.args['ip']] = []
+
             if 'ip' not in self.args or 'hostname' not in self.args:
                 self.answer_msg = {}
                 self.answer_status = 'error'
@@ -131,26 +137,25 @@ class systems(api):
                 self.answer_error = 'wrong IP or hostname format'
                 return 0
 
-            if 'hosts' not in config.cluster_config['systems']:
-                config.cluster_config['systems']['hosts'] = {}
-
-            if self.args['ip'] not in config.cluster_config['systems']['hosts']:
-                config.cluster_config['systems']['hosts'][self.args['ip']] = []
-
             if self.args['hostname'] in config.cluster_config['systems']['hosts'][self.args['ip']]:
                 self.answer_msg = {}
                 self.answer_status = 'error'
                 self.answer_error = 'hostname already added'
                 return 0
 
-            SaveConfiguration()
             config.cluster_config['systems']['hosts'][self.args['ip']].append(self.args['hostname'])
             self.answer_msg[self.args['ip']] = config.cluster_config['systems']['hosts'][self.args['ip']]
+            SaveConfiguration()
             self.answer_status = 'success'
             self.answer_error = ''
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'Added in hosts: ' + self.args['ip'] + ':' + self.args['hostname'])
         '''Get'''
         if self.url[2] == 'get':
+            if 'hosts' not in config.cluster_config['systems']:
+                self.answer_msg = {}
+                self.answer_status = 'error'
+                self.answer_error = 'there is nothing to output'
+                return 0
 
             if 'ip' in self.args:
                 if not is_valid_ip(self.args['ip']):
@@ -224,12 +229,34 @@ class systems(api):
                 self.answer_error = 'hostname not definite in hosts'
                 return 0
 
-            SaveConfiguration()
             config.cluster_config['systems']['hosts'][self.args['ip']].remove(self.args['hostname'])
-
             if len(config.cluster_config['systems']['hosts'][self.args['ip']]) == 0:
                 del(config.cluster_config['systems']['hosts'][self.args['ip']])
+            SaveConfiguration()
             self.answer_msg = {}
             self.answer_status = 'success'
             self.answer_error = ''
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'Delete in hosts: ' + self.args['ip'] + ':' + self.args['hostname'])
+
+    '''
+    GET SAVE and READ cluster configuration
+    '''
+    def config(self):
+
+        if self.url[2] == 'get':
+            self.answer_status = 'success'
+            self.answer_msg = config.cluster_config
+            self.answer_error = ''
+
+        if self.url[2] == 'save':
+            SaveConfiguration()
+            self.answer_status = 'success'
+            self.answer_msg = config.cluster_config
+            self.answer_error = ''
+
+        if self.url[2] == 'read':
+            ReadConfiguration()
+            self.answer_status = 'success'
+            self.answer_msg = config.cluster_config
+            self.answer_error = ''
+

@@ -195,6 +195,20 @@ def cluster_management_get():
     data = {}
     send(path, data)
 
+def system_config_get():
+    path = 'systems/config/get'
+    data = {}
+    return send(path, data)
+
+def system_config_save():
+    path = 'systems/config/save'
+    data = {}
+    return send(path, data)
+
+def system_config_read():
+    path = 'systems/config/read'
+    data = {}
+    return send(path, data)
 
 #tokens()
 #cluster_management_get()
@@ -302,7 +316,7 @@ class DoClusterCLI(cmd2.Cmd):
     parser_system_users_delete.add_argument('-y', action='store_true', help='Deletion confirmation')
 
     def system_users_delete(self, ns: argparse.Namespace):
-        if ns.u != None and ns.y:
+        if ns.u is not None and ns.y:
             answer = systems_users_delete(ns.u)
             if answer['status'] == 'success':
                 print('User removed successfully')
@@ -370,6 +384,46 @@ class DoClusterCLI(cmd2.Cmd):
         self.do_help('system hosts delete')
     parser_system_hosts_delete.set_defaults(func=system_hosts_delete)
 
+    ### config
+    parser_system_config = system_subparsers.add_parser('config', help='Manual cluster configuration management')
+    system_config_subparsers = parser_system_config.add_subparsers(title='config', help='help for 3rd layer of commands')
+
+    def system_config(self, args):
+        self.do_help('system config')
+
+    parser_system_config.set_defaults(func=system_config)
+
+    '''config get'''
+    parser_system_config_get = system_config_subparsers.add_parser('get', help='List configuration file')
+
+    def system_config_get(self, ns: argparse.Namespace):
+        answer = system_config_get()
+        if answer['status'] == 'success':
+            print(json.dumps(answer['msg'], indent=1))
+
+    parser_system_config_get.set_defaults(func=system_config_get)
+
+    '''config save'''
+    parser_system_config_save = system_config_subparsers.add_parser('save', help='Save configuration')
+
+    def system_config_save(self, ns: argparse.Namespace):
+        answer = system_config_save()
+        if answer['status'] == 'success':
+            print('Config save successfully')
+            print('Config version: ' + str(answer['msg']['version']))
+
+    parser_system_config_save.set_defaults(func=system_config_save)
+
+    '''config read'''
+    parser_system_config_read = system_config_subparsers.add_parser('read', help='Read configuration')
+
+    def system_config_read(self, ns: argparse.Namespace):
+        answer = system_config_read()
+        if answer['status'] == 'success':
+            print('Config read successfully')
+            print('Config version: ' + str(answer['msg']['version']))
+
+    parser_system_config_read.set_defaults(func=system_config_read)
 
     '''system'''
     @cmd2.with_argparser(system_parser)
@@ -380,9 +434,6 @@ class DoClusterCLI(cmd2.Cmd):
         else:
             self.do_help('system')
     ####################################################################################################################
-
-
-
 
     ##########               CLUSTER                  ##################################################################
     cluster_parser = cmd2.Cmd2ArgumentParser()

@@ -75,7 +75,6 @@ class cluster(api):
             SaveConfiguration()
             config.api_access_tokens.clear()
 
-
     def management(self):
         if len(self.url) != 3:
             return 0

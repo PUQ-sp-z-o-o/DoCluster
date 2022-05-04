@@ -13,12 +13,19 @@ import string
 class cluster(mng):
 
     def join(self):
+
         if 'cluster' not in config.cluster_config:
             config.logger.name = 'MNG'
             config.logger.error(self.client_ip + 'Join to cluster: cluster not created on connecting node')
             self.answer_status = 'error'
             self.answer_msg = {}
             self.answer_error = 'cluster not created on connecting node'
+            return False
+
+        if config.quorum_status['master'] != os.uname()[1]:
+            self.answer_status = 'error'
+            self.answer_msg = {}
+            self.answer_error = 'not manager master node'
             return False
 
         if 'cluster_username' not in self.args and 'cluster_password' not in self.args and 'node' not in self.args:

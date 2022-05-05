@@ -14,10 +14,10 @@ from cmd2 import (
 )
 
 api_url = "http://192.168.129.198:3033/api/"
-#api_url = "http://192.168.129.83:3033/api/"
 #api_url = "http://192.168.129.82:3033/api/"
+#api_url = "http://192.168.129.83:3033/api/"
 api_username = 'admin'
-api_password = 'QWEqwe123'
+api_password = 'admin'
 access_token = ''
 
 
@@ -211,6 +211,34 @@ def system_config_read():
     path = 'systems/config/read'
     data = {}
     return send(path, data)
+
+def system_loops_get():
+    path = 'systems/loops/get'
+    data = {}
+    return send(path, data)
+
+def system_loops_stop(name):
+    path = 'systems/loops/stop'
+    data = {
+        'name': name
+    }
+    return send(path, data)
+
+def system_loops_start(name):
+    path = 'systems/loops/start'
+    data = {
+        'name': name
+    }
+    return send(path, data)
+
+def system_loops_reload(name):
+    path = 'systems/loops/reload'
+    data = {
+        'name': name
+    }
+    return send(path, data)
+
+
 
 #tokens()
 #cluster_management_get()
@@ -426,6 +454,75 @@ class DoClusterCLI(cmd2.Cmd):
             print('Config version: ' + str(answer['msg']['version']))
 
     parser_system_config_read.set_defaults(func=system_config_read)
+
+    ### Loops
+    parser_system_loops = system_subparsers.add_parser('loops', help='Loops management')
+    system_config_subparsers = parser_system_loops.add_subparsers(title='loops', help='help for 3rd layer of commands')
+
+    def system_loops(self, args):
+        self.do_help('system loops')
+
+    parser_system_loops.set_defaults(func=system_loops)
+
+    '''loops get'''
+    parser_system_loops_get = system_config_subparsers.add_parser('get', help='List loops')
+
+    def system_loops_get(self, ns: argparse.Namespace):
+        answer = system_loops_get()
+        if answer['status'] == 'success':
+            #print(json.dumps(answer['msg'], indent=1))
+            table = PrettyTable()
+            table.field_names = ['Name', 'Status', 'id', 'native_id', 'Timeout', 'Counter']
+
+            for loop in answer['msg']:
+                id = '---'
+                native_id = '---'
+                timeout = '---'
+                if 'ident' in answer['msg'][loop]:
+                    id = answer['msg'][loop]['ident']
+                    native_id = answer['msg'][loop]['native_id']
+                    timeout = str(answer['msg'][loop]['timeout'])
+                    counter = str(answer['msg'][loop]['counter'])
+                table.add_row([loop, answer['msg'][loop]['isAlive'], id,  native_id, timeout, counter])
+            print(table)
+
+    parser_system_loops_get.set_defaults(func=system_loops_get)
+
+    #'''loop reload'''
+    #parser_system_loops_reload = system_config_subparsers.add_parser('reload', help='Reload loop')
+
+    #def system_loops_reload(self, ns: argparse.Namespace):
+    #    answer = system_config_save()
+        #if answer['status'] == 'success':
+        #    print('Config save successfully')
+        #    print('Config version: ' + str(answer['msg']['version']))
+
+    #parser_system_loops_reload.set_defaults(func=system_loops_reload)
+
+    #'''loop stop'''
+    #parser_system_loops_stop = system_config_subparsers.add_parser('stop', help='Stop loop')
+    #parser_system_loops_stop.add_argument('-n', type=str, help='Name')
+    #def system_loops_stop(self, ns: argparse.Namespace):
+    #    if ns.n is None:
+    #        self.do_help('system loops stop')
+    #        return 0
+
+    #    answer = system_loops_stop(ns.n)
+    #    if answer['status'] == 'success':
+    #        print('Loop: ' + ns.n + ' stopped successfully')
+
+    #parser_system_loops_stop.set_defaults(func=system_loops_stop)
+
+    #'''loop start'''
+    #parser_system_loops_start = system_config_subparsers.add_parser('start', help='Start loop')
+
+    #def system_loops_start(self, ns: argparse.Namespace):
+    #    answer = system_config_save()
+    #    #if answer['status'] == 'success':
+    #    #    print('Config save successfully')
+    #    #    print('Config version: ' + str(answer['msg']['version']))
+
+    #parser_system_loops_start.set_defaults(func=system_loops_start)
 
     '''system'''
     @cmd2.with_argparser(system_parser)

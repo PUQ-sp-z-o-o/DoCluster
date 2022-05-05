@@ -12,6 +12,8 @@ import string
 
 class cluster(mng):
 
+    Timeout_Loop_NodesStatus = 10
+
     def join(self):
 
         if 'cluster' not in config.cluster_config:
@@ -77,42 +79,37 @@ class cluster(mng):
         self.answer_error = ''
         return True
 
-    def Scheduler_NodesStatus(self):
-        while True:
-            if 'cluster' not in config.cluster_config:
+    def Loop_NodesStatus(self):
+        if 'cluster' not in config.cluster_config:
+            time.sleep(10)
+            return 0
+
+        if 'quorum' in config.cluster_config:
+            if os.uname()[1] != config.quorum_status['master']:
                 time.sleep(60)
-                continue
+                return 0
 
-            if 'quorum' in config.cluster_config:
-                if os.uname()[1] != config.quorum_status['master']:
-                    time.sleep(60)
-                    continue
+        node_online = 0
+        node_offline = 0
+        for node in config.cluster_config['cluster']['nodes']:
+            config.cluster_status['nodes'][node] = {}
+            url = 'cluster/nodestatus'
+            data = {}
+            answer = self.SendToNode(node, url, data)
+            config.cluster_status['nodes'][node] = answer['msg']
+            config.cluster_status['nodes'][node]['status'] = answer['status']
 
-            node_online = 0
-            node_offline = 0
-            for node in config.cluster_config['cluster']['nodes']:
-                config.cluster_status['nodes'][node] = {}
-                url = 'cluster/nodestatus'
-                data = {}
-                answer = self.SendToNode(node, url, data)
-                config.cluster_status['nodes'][node] = answer['msg']
-                config.cluster_status['nodes'][node]['status'] = answer['status']
+            if answer['status'] == 'success':
+                node_online = node_online + 1
+            if answer['status'] == 'offline':
+                node_offline = node_offline + 1
 
-                if answer['status'] == 'success':
-                    node_online = node_online + 1
-                if answer['status'] == 'offline':
-                    node_offline = node_offline + 1
-
-
-
-            '''Обрабатываем ошибки нодов и заганяем их в список'''
-            config.cluster_status['errors'].clear()
-            config.cluster_status['status'] = 'OK'
-            if node_offline > 0:
-                config.cluster_status['status'] = 'WARNING'
-                config.cluster_status['errors'].append(str(node_offline) + ' nodes are not online')
-            time.sleep(config.nodes_timeout)
-
+        '''Обрабатываем ошибки нодов и заганяем их в список'''
+        config.cluster_status['errors'].clear()
+        config.cluster_status['status'] = 'OK'
+        if node_offline > 0:
+            config.cluster_status['status'] = 'WARNING'
+            config.cluster_status['errors'].append(str(node_offline) + ' nodes are not online')
 
     def nodestatus(self):
         self.answer_msg['config_version'] = config.cluster_config['version']

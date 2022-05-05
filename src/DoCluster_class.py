@@ -1,3 +1,5 @@
+import time
+
 import config
 from src.functions import *
 import os
@@ -10,7 +12,8 @@ import random
 import string
 import importlib
 import re
-
+import inspect
+import time
 from flask import Flask, request
 
 
@@ -53,7 +56,7 @@ class DoClusterMng:
             api.run(host='0.0.0.0', port=config.api_port, use_reloader=False)
 
         config.logger.info('Start API service. Port: ' + str(config.api_port))
-        threading.Thread(target=api_web, daemon=False).start()
+        threading.Thread(name='API service', target=api_web, daemon=False).start()
 
     ''' The function is responsible for processing requests from the client API and returns a response. '''
     def ApiRequestProcessor(self, url, args, client_ip, server_ip):
@@ -136,9 +139,7 @@ class DoClusterMng:
             mng.run(host='0.0.0.0', port=self.mng_port, use_reloader=False)
 
         config.logger.info('Start MNG service. Port: ' + str(self.mng_port))
-        threading.Thread(target=mng_web, daemon=False).start()
-        #mng_t = threading.Thread(target=mng_web, daemon=False)
-        #mng_t.start()
+        threading.Thread(name='MNG service', target=mng_web, daemon=False).start()
 
     ''' The function is responsible for processing requests from the nodes MNG and returns a response. '''
     def MngRequestProcessor(self, url, args, client_ip):
@@ -253,25 +254,36 @@ class DoClusterMng:
         config.logger.debug('MngAnswer:' + str(answer))
         return json.dumps(answer, indent=1)
 
-    '''Start Scheduler for all nodes'''
-    def MngSchedulersStart(self):
+    '''Start Loops for all nodes'''
+    def MngLoopsStart(self):
         files = os.listdir('src/mng')
         for file in files:
             result = re.split(r'_', file)
             if len(result) == 3:
                 if result[0] == 'mng' and result[2] == 'class.py':
-                    self.MngSchedulerStart(result[1])
+                    mng_module = importlib.import_module('src.mng.mng_' + result[1] + '_class')
+                    mng_class = getattr(mng_module, result[1])
+                    for metchod in dir(mng_class):
+                        if re.split(r'_', metchod)[0] == 'Loop':
+                            config.schedulers[result[1] + '-' + metchod] = {}
+                            config.schedulers[result[1] + '-' + metchod]['counter'] = 0
+                            config.schedulers[result[1] + '-' + metchod]['timeout'] = ''
+                            config.schedulers[result[1] + '-' + metchod]['loop'] = threading.Thread(name=result[1] + '-' + metchod, target=self.MngLoopStart, args=(mng_class, result[1], metchod))
 
-    '''Start Scheduler all per class'''
-    def MngSchedulerStart(self, scheduler):
-        mng_module = importlib.import_module('src.mng.mng_' + scheduler + '_class')
-        mng_class = getattr(mng_module, scheduler)
-        mng_instance = mng_class(self.mng_port, [], {}, '')
+        threads = [t for t in config.schedulers.values()]
+        for t in threads:
+            t['loop'].start()
+            config.logger.name = 'SYSTEM'
+            config.logger.info('Start loop: ' + t['loop'].name)
 
-        for metchod in dir(mng_instance):
-            temp = re.split(r'_', metchod)
-            if temp[0] == 'Scheduler':
-                config.logger.name = 'SYSTEM'
-                config.logger.info('Start Scheduler: ' + scheduler + '/' + metchod)
-                threading.Thread(target=getattr(mng_instance, metchod), args=()).start()
 
+    '''Start Loop '''
+    def MngLoopStart(self, mng_class, class_name, metchod):
+        mng_instance = mng_class(config.mng_port, [], {}, '')
+        timeout = getattr(mng_instance, 'Timeout_' + metchod)
+        config.schedulers[class_name + '-' + metchod]['timeout'] = str(timeout)
+
+        while True:
+            getattr(mng_instance, metchod)()
+            config.schedulers[class_name + '-' + metchod]['counter'] = config.schedulers[class_name + '-' + metchod]['counter'] + 1
+            time.sleep(timeout)

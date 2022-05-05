@@ -29,6 +29,7 @@ cluster_status = {
     'nodes': {}
 }
 
+schedulers = {}
 
 
 # DEBUG,INFO,WARNING,ERROR,CRITICAL

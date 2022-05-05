@@ -6,7 +6,9 @@ import json
 import random
 import string
 import hashlib
+import threading
 from src.functions import *
+import ctypes
 
 
 class systems(api):
@@ -259,4 +261,57 @@ class systems(api):
             self.answer_status = 'success'
             self.answer_msg = config.cluster_config
             self.answer_error = ''
+
+    def loops(self):
+        self.answer_msg.clear()
+        if self.url[2] == 'get':
+            threads = [t for t in config.schedulers.values()]
+            for thread in threads:
+                self.answer_msg[thread['loop'].name] = {}
+                if thread['loop'].isAlive():
+                    self.answer_msg[thread['loop'].name]['isAlive'] = True
+                    self.answer_msg[thread['loop'].name]['counter'] = config.schedulers[thread['loop'].name]['counter']
+                    self.answer_msg[thread['loop'].name]['ident'] = str(thread['loop'].ident)
+                    self.answer_msg[thread['loop'].name]['native_id'] = str(thread['loop'].native_id)
+                    self.answer_msg[thread['loop'].name]['timeout'] = config.schedulers[thread['loop'].name]['timeout']
+
+
+                else:
+                    self.answer_msg[thread['loop'].name]['isAlive'] = False
+            self.answer_status = 'success'
+            self.answer_error = ''
+            return 0
+
+
+        '''
+        if self.url[2] == 'stop':
+            if 'name' not in self.args:
+                self.answer_msg = {}
+                self.answer_status = 'error'
+                self.answer_error = 'data not submitted'
+                return 0
+
+            if self.args['name'] not in config.schedulers:
+                self.answer_msg = {}
+                self.answer_status = 'error'
+                self.answer_error = 'Loop not found'
+                return 0
+
+            threads = [t for t in config.schedulers.values()]
+            for thread in threads:
+                if thread['loop'].name == self.args['name']:
+                    self.answer_msg[thread['loop'].name] = {}
+                    if thread['loop'].isAlive():
+                        print(str(config.schedulers))
+                        exc = ctypes.py_object(SystemExit)
+                        ctypes.pythonapi.PyThreadState_SetAsyncExc(ctypes.c_long(thread['loop'].ident), exc)
+                        print(str(config.schedulers))
+                        thread['loop'].join()
+                        exit()
+                        thread['loop'].start()
+                        self.answer_msg = {}
+                        self.answer_status = 'success'
+                        self.answer_error = ''
+                        return 0
+        '''
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import time
-
+import threading
+import config
 from src.DoCluster_class import DoClusterMng
 
 
@@ -11,7 +12,7 @@ Cluster.MngStartWeb()
 time.sleep(1)
 Cluster.ApiStartWeb()
 time.sleep(1)
-Cluster.MngSchedulersStart()
-#Cluster.MngSchedulersStart()
+Cluster.MngLoopsStart()
+
 
 

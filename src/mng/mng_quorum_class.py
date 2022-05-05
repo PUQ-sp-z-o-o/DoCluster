@@ -11,39 +11,41 @@ import copy
 
 class quorum(mng):
 
-    def Scheduler_QuorumStatus(self):
-        while True:
-            if 'quorum' in config.cluster_config:
-                if os.uname()[1] not in config.cluster_config['quorum']['nodes']:
-                    time.sleep(10)
-                    continue
-            '''The process polls the quorum nodes.'''
-            if 'quorum' in config.cluster_config:
+    Timeout_Loop_QuorumStatus = 1
 
-                quorum_nodes = []
-                for node in config.cluster_config['quorum']['nodes']:
-                    quorum_nodes.append({'node': node})
-                config.quorum_status['nodes'] = copy.deepcopy(quorum_nodes)
+    def Loop_QuorumStatus(self):
+        if 'quorum' in config.cluster_config:
+            if os.uname()[1] not in config.cluster_config['quorum']['nodes']:
+                time.sleep(10)
+                return 0
+        '''The process polls the quorum nodes.'''
+        if 'quorum' in config.cluster_config:
 
-                url = 'quorum/status'
-                data = {}
-                i = 0
-                while i < len(config.quorum_status['nodes']):
-                    answer = self.SendToNode(config.quorum_status['nodes'][i]['node'], url, data)
-                    config.quorum_status['nodes'][i]['status'] = answer['status']
-                    config.quorum_status['nodes'][i]['error'] = answer['error']
+            quorum_nodes = []
+            for node in config.cluster_config['quorum']['nodes']:
+                quorum_nodes.append({'node': node})
+            config.quorum_status['nodes'] = copy.deepcopy(quorum_nodes)
 
-                    if answer['error'] == '':
-                        config.quorum_status['nodes'][i]['config_version'] = answer['msg']['config_version']
-                        config.quorum_status['nodes'][i]['errors'] = answer['msg']['errors']
-                    i = i + 1
+            url = 'quorum/status'
+            data = {}
+            i = 0
+            while i < len(config.quorum_status['nodes']):
+                answer = self.SendToNode(config.quorum_status['nodes'][i]['node'], url, data)
+                config.quorum_status['nodes'][i]['status'] = answer['status']
+                config.quorum_status['nodes'][i]['error'] = answer['error']
 
-                self.QuorumSyncConfig()
-                time.sleep(1)
-                self.QuorumMaster()
-                config.logger.name = 'QUORUM'
-                config.logger.debug(str(config.quorum_status))
-            time.sleep(config.mng_nodes_timeout)
+                if answer['error'] == '':
+                    config.quorum_status['nodes'][i]['config_version'] = answer['msg']['config_version']
+                    config.quorum_status['nodes'][i]['errors'] = answer['msg']['errors']
+                i = i + 1
+
+            self.QuorumSyncConfig()
+            time.sleep(1)
+            self.QuorumMaster()
+            config.logger.name = 'QUORUM'
+            config.logger.debug(str(config.quorum_status))
+
+
 
     def status(self):
         self.answer_msg['config_version'] = config.cluster_config['version']

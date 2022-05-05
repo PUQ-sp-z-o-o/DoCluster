@@ -144,7 +144,8 @@ class cluster(mng):
         self.answer_error = ''
 
     def configupdate(self):
-        print(json.loads(self.args['config']))
+        config.cluster_config = json.loads(self.args['config'])
+        SaveConfiguration()
         self.answer_msg = {}
         self.answer_status = 'success'
         self.answer_error = ''

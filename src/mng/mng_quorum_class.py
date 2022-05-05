@@ -11,7 +11,7 @@ import copy
 
 class quorum(mng):
 
-    Timeout_Loop_QuorumStatus = 1
+    Timeout_Loop_QuorumStatus = config.mng_nodes_timeout
 
     def Loop_QuorumStatus(self):
         if 'quorum' in config.cluster_config:

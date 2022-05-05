@@ -12,7 +12,7 @@ import string
 
 class cluster(mng):
 
-    Timeout_Loop_NodesStatus = 10
+    Timeout_Loop_NodesStatus = config.nodes_timeout
 
     def join(self):
 

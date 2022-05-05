@@ -2,11 +2,11 @@ import logging
 import hashlib
 
 # таймаут токина позьзователя АПИ
-token_timeout = 60
+token_timeout = 300
 # таймаут опроса Менеджментовых нодов
-mng_nodes_timeout = 1
+mng_nodes_timeout = 3
 # таймаут опроса нодов на статистику
-nodes_timeout = 1
+nodes_timeout = 5
 # Порт подключения для клинта АПИ
 api_port = '3033'
 # Порт подключени для узлов МНГ

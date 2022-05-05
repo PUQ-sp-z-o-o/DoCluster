@@ -65,7 +65,7 @@ class quorum(api):
             if self.args['node'] == config.quorum_status['master']:
                 self.answer_status = 'error'
                 self.answer_msg = {}
-                self.answer_error = 'Can not delete master node'
+                self.answer_error = 'can not delete master node'
                 return 0
 
 

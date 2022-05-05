@@ -23,13 +23,7 @@ class quorum(mng):
             # Херня с запихиванием актуальных данных о статусе нод а также добавление или удаление новых или старых нод
             quorum_nodes = []
             for node in config.cluster_config['quorum']['nodes']:
-                yes = False
-                for node_a in config.quorum_status['nodes']:
-                    if node_a['node'] == node:
-                        quorum_nodes.append(node_a)
-                        yes = True
-                if not yes:
-                    quorum_nodes.append({'node': node})
+                quorum_nodes.append({'node': node})
 
             config.quorum_status['nodes'] = copy.deepcopy(quorum_nodes)
 

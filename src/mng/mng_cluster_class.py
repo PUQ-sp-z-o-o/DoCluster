@@ -81,18 +81,21 @@ class cluster(mng):
 
     def Loop_NodesStatus(self):
         if 'cluster' not in config.cluster_config:
-            time.sleep(10)
+            time.sleep(1)
             return 0
 
         if 'quorum' in config.cluster_config:
             if os.uname()[1] != config.quorum_status['master']:
-                time.sleep(60)
+                time.sleep(1)
                 return 0
 
         node_online = 0
         node_offline = 0
         for node in config.cluster_config['cluster']['nodes']:
-            config.cluster_status['nodes'][node] = {}
+            # Обработать наоборот!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            if node not in config.cluster_status['nodes']:
+                config.cluster_status['nodes'][node] = {}
+
             url = 'cluster/nodestatus'
             data = {}
             answer = self.SendToNode(node, url, data)
@@ -111,6 +114,24 @@ class cluster(mng):
             config.cluster_status['status'] = 'WARNING'
             config.cluster_status['errors'].append(str(node_offline) + ' nodes are not online')
 
+        for node in config.cluster_status['nodes']:
+            if 'config_version' in config.cluster_status['nodes'][node]:
+                if config.cluster_config['version'] != config.cluster_status['nodes'][node]['config_version']:
+                    config.cluster_status['errors'].append(node + ' node does not have current configuration')
+                    # update config on remote nod
+                    url = 'cluster/configupdate'
+                    data = {'config': json.dumps(config.cluster_config)}
+                    answer = self.SendToNode(node, url, data)
+                    if answer['status'] == 'success':
+                        config.logger.name = 'CLUSTER'
+                        config.logger.info('Successful configuration update in node: ' + node)
+                    else:
+                        config.logger.name = 'CLUSTER'
+                        config.logger.error('Problem updating configuration on node: ' + node + ' error:' + answer['error'])
+
+
+
+
     def nodestatus(self):
         self.answer_msg['config_version'] = config.cluster_config['version']
         self.answer_msg['cpu_percent'] = psutil.cpu_percent()
@@ -121,6 +142,13 @@ class cluster(mng):
         self.answer_msg['errors'] = []
         self.answer_status = 'success'
         self.answer_error = ''
+
+    def configupdate(self):
+        print(json.loads(self.args['config']))
+        self.answer_msg = {}
+        self.answer_status = 'success'
+        self.answer_error = ''
+
 
     def config(self):
         if len(self.url) >= 3:

@@ -75,38 +75,3 @@ class cluster(api):
             SaveConfiguration()
             config.api_access_tokens.clear()
 
-    def management(self):
-        if len(self.url) != 3:
-            return 0
-
-        if self.url[2] not in ['get', 'set', 'add', 'delete']:
-            return 0
-
-        if self.url[2] == 'get':
-            self.answer_msg = config.cluster_config['cluster']['management']
-            self.answer_status = 'success'
-            self.answer_error = ''
-            return 0
-
-        if self.url[2] == 'set':
-            if 'node' not in self.args or 'weight' not in self.args:
-                self.answer_status = 'error'
-                self.answer_error = 'data not submitted'
-                return 0
-
-            if self.args['node'] not in config.cluster_config['cluster']['nodes']:
-                self.answer_status = 'error'
-                self.answer_error = 'node not defined in cluster'
-                return 0
-
-            if not self.args['weight'].isdigit():
-                self.answer_status = 'error'
-                self.answer_error = 'wrong weight'
-                return 0
-
-
-            '''
-            self.answer_msg = config.cluster_config['cluster']['management']
-            self.answer_status = 'success'
-            self.answer_error = ''
-'''

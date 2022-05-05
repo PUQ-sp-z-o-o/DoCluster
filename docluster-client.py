@@ -239,6 +239,21 @@ def system_loops_reload(name):
     return send(path, data)
 
 
+def quorum_nodes_add(node):
+    path = 'quorum/nodes/add'
+    data = {
+        'node': node
+    }
+    return send(path, data)
+
+
+def quorum_nodes_delete(node):
+    path = 'quorum/nodes/delete'
+    data = {
+        'node': node
+    }
+    return send(path, data)
+
 
 #tokens()
 #cluster_management_get()
@@ -619,6 +634,8 @@ class DoClusterCLI(cmd2.Cmd):
     ##########               QUORUM                   ##################################################################
     quorum_parser = cmd2.Cmd2ArgumentParser()
     quorum_subparsers = quorum_parser.add_subparsers(title='quorum', help='Quorum Managing')
+
+    '''quorum status'''
     parser_quorum_status = quorum_subparsers.add_parser('status', help='Status of all MNG nodes in quorum')
 
     def quorum_status(self, args):
@@ -642,6 +659,45 @@ class DoClusterCLI(cmd2.Cmd):
             print(table)
 
     parser_quorum_status.set_defaults(func=quorum_status)
+
+    ### nodes
+
+    parser_quorum_nodes = quorum_subparsers.add_parser('nodes', help='Managing nodes in a quorum')
+    quorum_nodes_subparsers = parser_quorum_nodes.add_subparsers(title='nodes', help='help for 3rd layer of commands')
+
+    def quorum_nodes(self, args):
+        self.do_help('quorum nodes')
+
+    parser_quorum_nodes.set_defaults(func=quorum_nodes)
+
+    '''nodes add'''
+    parser_quorum_nodes_add = quorum_nodes_subparsers.add_parser('add', help='Add node to quorum')
+    parser_quorum_nodes_add.add_argument('-hostname', type=str, help='Hostname of node')
+
+    def quorum_nodes_add(self, ns: argparse.Namespace):
+        if ns.hostname is None:
+            self.do_help('quorum nodes add')
+            return 0
+        answer = quorum_nodes_add(ns.hostname)
+        if answer['status'] == 'success':
+            print('Node successfully added to quorum')
+
+    parser_quorum_nodes_add.set_defaults(func=quorum_nodes_add)
+
+    '''nodes delete'''
+    parser_quorum_nodes_delete = quorum_nodes_subparsers.add_parser('delete', help='Delete node from quorum')
+    parser_quorum_nodes_delete.add_argument('-hostname', type=str, help='Hostname of node')
+
+    def quorum_nodes_delete(self, ns: argparse.Namespace):
+        if ns.hostname is None:
+            self.do_help('quorum nodes delete')
+            return 0
+        answer = quorum_nodes_add(ns.hostname)
+        if answer['status'] == 'success':
+            print('Node successfully removed from quorum')
+
+    parser_quorum_nodes_delete.set_defaults(func=quorum_nodes_delete)
+
 
     @cmd2.with_argparser(quorum_parser)
     def do_quorum(self, args):

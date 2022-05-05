@@ -62,14 +62,15 @@ class quorum(api):
                 self.answer_error = 'can not delete last node'
                 return 0
 
+            if self.args['node'] == config.cluster_status['master']:
+                self.answer_status = 'error'
+                self.answer_msg = {}
+                self.answer_error = 'Can not delete master node'
+                return 0
+
+
+
             config.cluster_config['quorum']['nodes'].remove(self.args['node'])
-            config.quorum_status.clear()
-            config.quorum_status = {
-                "status": '',
-                "errors": [],
-                'master': '',
-                'nodes': []
-            }
             config.logger.name = 'QUORUM'
             config.logger.info('Removed node from quorum: ' + self.args['node'])
             SaveConfiguration()

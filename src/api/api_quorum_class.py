@@ -63,6 +63,7 @@ class quorum(api):
                 return 0
 
             config.cluster_config['quorum']['nodes'].remove(self.args['node'])
+            config.quorum_status.clear()
             config.logger.name = 'QUORUM'
             config.logger.info('Removed node from quorum: ' + self.args['node'])
             SaveConfiguration()

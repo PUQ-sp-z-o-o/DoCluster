@@ -62,10 +62,13 @@ class quorum(api):
                 self.answer_error = 'can not delete last node'
                 return 0
 
-            config.cluster_config['quorum']['nodes'].remote(self.url[2])
+            config.cluster_config['quorum']['nodes'].remove(self.args['node'])
             config.logger.name = 'QUORUM'
-            config.logger.info('Removed node from quorum: ' + self.url[2])
+            config.logger.info('Removed node from quorum: ' + self.args['node'])
             SaveConfiguration()
+            self.answer_status = 'success'
+            self.answer_msg = {}
+            self.answer_error = ''
 
         if self.url[2] == 'add':
             if self.args['node'] in config.cluster_config['quorum']['nodes']:
@@ -74,7 +77,10 @@ class quorum(api):
                 self.answer_error = 'node already in quorum'
                 return 0
 
-            config.cluster_config['quorum']['nodes'].append(self.url[2])
+            config.cluster_config['quorum']['nodes'].append(self.args['node'])
             config.logger.name = 'QUORUM'
-            config.logger.info('Node added to quorum: ' + self.url[2])
+            config.logger.info('Node added to quorum: ' + self.args['node'])
             SaveConfiguration()
+            self.answer_status = 'success'
+            self.answer_msg = {}
+            self.answer_error = ''

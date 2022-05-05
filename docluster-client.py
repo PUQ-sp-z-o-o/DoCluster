@@ -692,7 +692,7 @@ class DoClusterCLI(cmd2.Cmd):
         if ns.hostname is None:
             self.do_help('quorum nodes delete')
             return 0
-        answer = quorum_nodes_add(ns.hostname)
+        answer = quorum_nodes_delete(ns.hostname)
         if answer['status'] == 'success':
             print('Node successfully removed from quorum')
 

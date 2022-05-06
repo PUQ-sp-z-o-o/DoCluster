@@ -14,7 +14,7 @@ from cmd2 import (
 )
 
 api_url = "http://192.168.129.198:3033/api/"
-#api_url = "http://192.168.129.82:3033/api/"
+api_url = "http://192.168.129.82:3033/api/"
 
 
 api_username = 'admin'
@@ -101,7 +101,7 @@ def send(path, data):
             print('-----------------------------------------')
             print('Master node is: ' + answer['msg']['master'])
             print('-----------------------------------------')
-
+    print(json.dumps(answer, indent=1))
     return answer
 ############################################################3
 
@@ -165,7 +165,6 @@ def system_users_set(username,password,email):
     }
     return send(path, data)
 
-######################################################
 
 def system_hosts_add(ip, hostname):
     path = 'system/hosts/add'
@@ -183,6 +182,8 @@ def system_hosts_delete(ip,hostname):
     }
     return send(path, data)
 
+
+
 def system_hosts_get(ip,hostname):
     path = 'system/hosts/get'
     data = {
@@ -191,11 +192,11 @@ def system_hosts_get(ip,hostname):
     }
     return send(path, data)
 
+
 def tokens():
     path = 'tokens'
     data = {}
     send(path, data)
-
 
 def cluster_management_get():
     path = 'cluster/management/get'
@@ -260,8 +261,7 @@ def quorum_nodes_delete(node):
     return send(path, data)
 
 
-#tokens()
-#cluster_management_get()
+
 
 class DoClusterCLI(cmd2.Cmd):
 

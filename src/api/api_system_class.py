@@ -268,14 +268,12 @@ class system(api):
             threads = [t for t in config.schedulers.values()]
             for thread in threads:
                 self.answer_msg[thread['loop'].name] = {}
-                if thread['loop'].isAlive():
+                if thread['loop'].is_alive():
                     self.answer_msg[thread['loop'].name]['isAlive'] = True
                     self.answer_msg[thread['loop'].name]['counter'] = config.schedulers[thread['loop'].name]['counter']
                     self.answer_msg[thread['loop'].name]['ident'] = str(thread['loop'].ident)
                     self.answer_msg[thread['loop'].name]['native_id'] = str(thread['loop'].native_id)
                     self.answer_msg[thread['loop'].name]['timeout'] = config.schedulers[thread['loop'].name]['timeout']
-
-
                 else:
                     self.answer_msg[thread['loop'].name]['isAlive'] = False
             self.answer_status = 'success'

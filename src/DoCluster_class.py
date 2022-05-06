@@ -151,6 +151,11 @@ class DoClusterMng:
             config.logger.warning(client_ip + ' no hash value')
             return self.ApiAnswer('', 'error', 'no hash value')
 
+        if 'cluster' not in config.cluster_config:
+            config.logger.name = 'MNG'
+            config.logger.warning(client_ip + ' cluster not created')
+            return self.ApiAnswer('', 'error', 'cluster not created')
+
         local_hash = client_ip + \
                             config.cluster_config['cluster']['nodes'][os.uname()[1]]['MNG_IP'] + \
                             config.cluster_config['cluster']['nodes'][os.uname()[1]]['API_key']

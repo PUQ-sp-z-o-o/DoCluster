@@ -11,7 +11,7 @@ from src.functions import *
 import ctypes
 
 
-class systems(api):
+class system(api):
 
     '''
     System User Manager. Create, edit, delete, display
@@ -27,15 +27,15 @@ class systems(api):
         '''
         if self.url[2] == 'get':
             if 'username' in self.args:
-                if self.args['username'] not in config.cluster_config['systems']['users']:
+                if self.args['username'] not in config.cluster_config['system']['users']:
                     self.answer_status = 'error'
                     self.answer_error = 'username not found'
                     return 0
-                self.answer_msg[self.args['username']] = config.cluster_config['systems']['users'][self.args['username']]
+                self.answer_msg[self.args['username']] = config.cluster_config['system']['users'][self.args['username']]
                 self.answer_status = 'success'
                 self.answer_error = ''
             else:
-                self.answer_msg = config.cluster_config['systems']['users']
+                self.answer_msg = config.cluster_config['system']['users']
                 self.answer_status = 'success'
                 self.answer_error = ''
 
@@ -49,15 +49,15 @@ class systems(api):
                 self.answer_status = 'error'
                 self.answer_error = 'username and password must not be empty'
                 return 0
-            if self.args['username'] in config.cluster_config['systems']['users']:
+            if self.args['username'] in config.cluster_config['system']['users']:
                 self.answer_status = 'error'
                 self.answer_error = 'user already exists'
                 return 0
 
             pass_tmp = self.args['password']
-            config.cluster_config['systems']['users'][self.args['username']] = {"password": hashlib.md5(pass_tmp.encode("utf-8")).hexdigest()}
+            config.cluster_config['system']['users'][self.args['username']] = {"password": hashlib.md5(pass_tmp.encode("utf-8")).hexdigest()}
             SaveConfiguration()
-            self.answer_msg[self.args['username']] = config.cluster_config['systems']['users'][self.args['username']]
+            self.answer_msg[self.args['username']] = config.cluster_config['system']['users'][self.args['username']]
             self.answer_status = 'success'
             self.answer_error = ''
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'created user: ' + self.args['username'])
@@ -68,16 +68,16 @@ class systems(api):
                 self.answer_status = 'error'
                 self.answer_error = 'data not submitted'
                 return 0
-            if self.args['username'] not in config.cluster_config['systems']['users']:
+            if self.args['username'] not in config.cluster_config['system']['users']:
                 self.answer_status = 'error'
                 self.answer_error = 'user does not exist'
                 return 0
-            if self.args['username'] in config.cluster_config['systems']['users'] and len(config.cluster_config['systems']['users']) == 1:
+            if self.args['username'] in config.cluster_config['system']['users'] and len(config.cluster_config['system']['users']) == 1:
                 self.answer_status = 'error'
                 self.answer_error = 'Can not delete last user'
                 return 0
 
-            del config.cluster_config['systems']['users'][self.args['username']]
+            del config.cluster_config['system']['users'][self.args['username']]
             SaveConfiguration()
             self.answer_status = 'success'
             self.answer_error = ''
@@ -89,7 +89,7 @@ class systems(api):
                 self.answer_status = 'error'
                 self.answer_error = 'data not submitted'
                 return 0
-            if self.args['username'] not in config.cluster_config['systems']['users']:
+            if self.args['username'] not in config.cluster_config['system']['users']:
                 self.answer_status = 'error'
                 self.answer_error = 'user does not exist'
                 return 0
@@ -103,13 +103,13 @@ class systems(api):
             if 'password' in self.args:
                 if self.args['password'] != '':
                     pass_tmp = self.args['password']
-                    config.cluster_config['systems']['users'][self.args['username']]['password'] = hashlib.md5(pass_tmp.encode("utf-8")).hexdigest()
+                    config.cluster_config['system']['users'][self.args['username']]['password'] = hashlib.md5(pass_tmp.encode("utf-8")).hexdigest()
 
             if 'email' in self.args:
-                config.cluster_config['systems']['users'][self.args['username']]['email'] = self.args['email']
+                config.cluster_config['system']['users'][self.args['username']]['email'] = self.args['email']
 
             SaveConfiguration()
-            self.answer_msg[self.args['username']] = config.cluster_config['systems']['users'][self.args['username']]
+            self.answer_msg[self.args['username']] = config.cluster_config['system']['users'][self.args['username']]
             self.answer_status = 'success'
             self.answer_error = ''
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'Update user: ' + self.args['username'])
@@ -121,11 +121,11 @@ class systems(api):
     def hosts(self):
         '''Ddd'''
         if self.url[2] == 'add':
-            if 'hosts' not in config.cluster_config['systems']:
-                config.cluster_config['systems']['hosts'] = {}
+            if 'hosts' not in config.cluster_config['system']:
+                config.cluster_config['system']['hosts'] = {}
 
-            if self.args['ip'] not in config.cluster_config['systems']['hosts']:
-                config.cluster_config['systems']['hosts'][self.args['ip']] = []
+            if self.args['ip'] not in config.cluster_config['system']['hosts']:
+                config.cluster_config['system']['hosts'][self.args['ip']] = []
 
             if 'ip' not in self.args or 'hostname' not in self.args:
                 self.answer_msg = {}
@@ -139,21 +139,21 @@ class systems(api):
                 self.answer_error = 'wrong IP or hostname format'
                 return 0
 
-            if self.args['hostname'] in config.cluster_config['systems']['hosts'][self.args['ip']]:
+            if self.args['hostname'] in config.cluster_config['system']['hosts'][self.args['ip']]:
                 self.answer_msg = {}
                 self.answer_status = 'error'
                 self.answer_error = 'hostname already added'
                 return 0
 
-            config.cluster_config['systems']['hosts'][self.args['ip']].append(self.args['hostname'])
-            self.answer_msg[self.args['ip']] = config.cluster_config['systems']['hosts'][self.args['ip']]
+            config.cluster_config['system']['hosts'][self.args['ip']].append(self.args['hostname'])
+            self.answer_msg[self.args['ip']] = config.cluster_config['system']['hosts'][self.args['ip']]
             SaveConfiguration()
             self.answer_status = 'success'
             self.answer_error = ''
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'Added in hosts: ' + self.args['ip'] + ':' + self.args['hostname'])
         '''Get'''
         if self.url[2] == 'get':
-            if 'hosts' not in config.cluster_config['systems']:
+            if 'hosts' not in config.cluster_config['system']:
                 self.answer_msg = {}
                 self.answer_status = 'error'
                 self.answer_error = 'there is nothing to output'
@@ -174,25 +174,25 @@ class systems(api):
                     return 0
 
             if 'ip' not in self.args and 'hostname' not in self.args:
-                self.answer_msg = config.cluster_config['systems']['hosts']
+                self.answer_msg = config.cluster_config['system']['hosts']
                 self.answer_status = 'success'
                 self.answer_error = ''
                 return 0
 
             if 'ip' in self.args and 'hostname' not in self.args:
-                if self.args['ip'] not in config.cluster_config['systems']['hosts']:
+                if self.args['ip'] not in config.cluster_config['system']['hosts']:
                     self.answer_msg = {}
                     self.answer_status = 'error'
                     self.answer_error = 'IP or hostname not found'
                     return 0
-                self.answer_msg[self.args['ip']] = config.cluster_config['systems']['hosts'][self.args['ip']]
+                self.answer_msg[self.args['ip']] = config.cluster_config['system']['hosts'][self.args['ip']]
                 self.answer_status = 'success'
                 self.answer_error = ''
                 return 0
 
             if 'ip' not in self.args and 'hostname' in self.args:
-                for ip in config.cluster_config['systems']['hosts']:
-                    for hostname in config.cluster_config['systems']['hosts'][ip]:
+                for ip in config.cluster_config['system']['hosts']:
+                    for hostname in config.cluster_config['system']['hosts'][ip]:
                         if hostname == self.args['hostname']:
                             self.answer_msg[ip] = [hostname]
                 if len(self.answer_msg) == 0:
@@ -219,21 +219,21 @@ class systems(api):
                 self.answer_error = 'wrong IP or hostname format'
                 return 0
 
-            if self.args['ip'] not in config.cluster_config['systems']['hosts']:
+            if self.args['ip'] not in config.cluster_config['system']['hosts']:
                 self.answer_msg = {}
                 self.answer_status = 'error'
                 self.answer_error = 'ip not definite in hosts'
                 return 0
 
-            if self.args['hostname'] not in config.cluster_config['systems']['hosts'][self.args['ip']]:
+            if self.args['hostname'] not in config.cluster_config['system']['hosts'][self.args['ip']]:
                 self.answer_msg = {}
                 self.answer_status = 'error'
                 self.answer_error = 'hostname not definite in hosts'
                 return 0
 
-            config.cluster_config['systems']['hosts'][self.args['ip']].remove(self.args['hostname'])
-            if len(config.cluster_config['systems']['hosts'][self.args['ip']]) == 0:
-                del(config.cluster_config['systems']['hosts'][self.args['ip']])
+            config.cluster_config['system']['hosts'][self.args['ip']].remove(self.args['hostname'])
+            if len(config.cluster_config['system']['hosts'][self.args['ip']]) == 0:
+                del(config.cluster_config['system']['hosts'][self.args['ip']])
             SaveConfiguration()
             self.answer_msg = {}
             self.answer_status = 'success'

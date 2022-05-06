@@ -189,9 +189,9 @@ class DoClusterMng:
 
     '''Login API client'''
     def ApiLogin(self, username, password):
-        if username not in config.cluster_config['systems']['users']:
+        if username not in config.cluster_config['system']['users']:
             return False
-        if config.cluster_config['systems']['users'][username]['password'] != hashlib.md5(password.encode("utf-8")).hexdigest():
+        if config.cluster_config['system']['users'][username]['password'] != hashlib.md5(password.encode("utf-8")).hexdigest():
             return False
         return True
 

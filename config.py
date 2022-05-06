@@ -40,7 +40,7 @@ VERSION = '1.0'
 
 default_config = {
     "version": 0,
-    "systems": {
+    "system": {
         "users": {"admin": {"password": hashlib.md5("admin".encode("utf-8")).hexdigest()}}
     }
 }

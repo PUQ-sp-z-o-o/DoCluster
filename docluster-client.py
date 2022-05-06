@@ -14,7 +14,7 @@ from cmd2 import (
 )
 
 api_url = "http://192.168.129.198:3033/api/"
-api_url = "http://192.168.129.82:3033/api/"
+#api_url = "http://192.168.129.82:3033/api/"
 
 
 api_username = 'admin'
@@ -131,8 +131,8 @@ def quorum_status():
     return send(path, data)
 
 '''Argument is a username, if argument not set return all users'''
-def systems_users_get(username=None):
-    path = 'systems/users/get'
+def system_users_get(username=None):
+    path = 'system/users/get'
     if username == None:
         data = {}
     else:
@@ -140,8 +140,8 @@ def systems_users_get(username=None):
     return send(path, data)
 
 '''Add user'''
-def systems_users_add(username,password):
-    path = 'systems/users/add'
+def system_users_add(username,password):
+    path = 'system/users/add'
     data = {
         'username': username,
         'password': password
@@ -149,15 +149,15 @@ def systems_users_add(username,password):
     return send(path, data)
 
 '''Delete user'''
-def systems_users_delete(username):
-    path = 'systems/users/delete'
+def system_users_delete(username):
+    path = 'system/users/delete'
     data = {
         'username': username
     }
     return send(path, data)
 
-def systems_users_set(username,password,email):
-    path = 'systems/users/set'
+def system_users_set(username,password,email):
+    path = 'system/users/set'
     data = {
         'username': username,
         'password': password,
@@ -167,24 +167,24 @@ def systems_users_set(username,password,email):
 
 ######################################################
 
-def systems_hosts_add(ip, hostname):
-    path = 'systems/hosts/add'
+def system_hosts_add(ip, hostname):
+    path = 'system/hosts/add'
     data = {
         'ip': ip,
         'hostname': hostname,
     }
     return send(path, data)
 
-def systems_hosts_delete(ip,hostname):
-    path = 'systems/hosts/delete'
+def system_hosts_delete(ip,hostname):
+    path = 'system/hosts/delete'
     data = {
         'ip': ip,
         'hostname': hostname,
     }
     return send(path, data)
 
-def systems_hosts_get(ip,hostname):
-    path = 'systems/hosts/get'
+def system_hosts_get(ip,hostname):
+    path = 'system/hosts/get'
     data = {
         'ip': ip,
         'hostname': hostname,
@@ -203,41 +203,41 @@ def cluster_management_get():
     send(path, data)
 
 def system_config_get():
-    path = 'systems/config/get'
+    path = 'system/config/get'
     data = {}
     return send(path, data)
 
 def system_config_save():
-    path = 'systems/config/save'
+    path = 'system/config/save'
     data = {}
     return send(path, data)
 
 def system_config_read():
-    path = 'systems/config/read'
+    path = 'system/config/read'
     data = {}
     return send(path, data)
 
 def system_loops_get():
-    path = 'systems/loops/get'
+    path = 'system/loops/get'
     data = {}
     return send(path, data)
 
 def system_loops_stop(name):
-    path = 'systems/loops/stop'
+    path = 'system/loops/stop'
     data = {
         'name': name
     }
     return send(path, data)
 
 def system_loops_start(name):
-    path = 'systems/loops/start'
+    path = 'system/loops/start'
     data = {
         'name': name
     }
     return send(path, data)
 
 def system_loops_reload(name):
-    path = 'systems/loops/reload'
+    path = 'system/loops/reload'
     data = {
         'name': name
     }
@@ -283,7 +283,7 @@ class DoClusterCLI(cmd2.Cmd):
         if logout():
             self.prompt = 'DoCluster> '
 
-    ##########               SYSTEMS                  ##################################################################
+    ##########               SYSTEM                   ##################################################################
     system_parser = cmd2.Cmd2ArgumentParser()
     system_subparsers = system_parser.add_subparsers(title='system', help='Managing Cluster System Settings')
 
@@ -303,10 +303,10 @@ class DoClusterCLI(cmd2.Cmd):
     def system_users_get(self, ns: argparse.Namespace):
         answer = {}
         if ns.all:
-            answer = systems_users_get()
+            answer = system_users_get()
 
         if not ns.all and ns.u is not None:
-            answer = systems_users_get(ns.u)
+            answer = system_users_get(ns.u)
 
         if 'status' in answer:
             if answer['status'] == 'success':
@@ -334,7 +334,7 @@ class DoClusterCLI(cmd2.Cmd):
             self.do_help('system users set')
             return 0
 
-        answer = systems_users_set(ns.u, ns.p, ns.e)
+        answer = system_users_set(ns.u, ns.p, ns.e)
         if answer['status'] == 'success':
             print('User update successfully')
 
@@ -348,7 +348,7 @@ class DoClusterCLI(cmd2.Cmd):
         if ns.u is None or ns.p is None:
             self.do_help('system users add')
             return 0
-        answer = systems_users_add(ns.u, ns.p)
+        answer = system_users_add(ns.u, ns.p)
         if answer['status'] == 'success':
             print('User added successfully')
             if answer['status'] == 'success':
@@ -367,7 +367,7 @@ class DoClusterCLI(cmd2.Cmd):
 
     def system_users_delete(self, ns: argparse.Namespace):
         if ns.u is not None and ns.y:
-            answer = systems_users_delete(ns.u)
+            answer = system_users_delete(ns.u)
             if answer['status'] == 'success':
                 print('User removed successfully')
             return 0
@@ -393,7 +393,7 @@ class DoClusterCLI(cmd2.Cmd):
             self.do_help('system hosts get')
             return 0
 
-        answer = systems_hosts_get(ns.ip, ns.hostname)
+        answer = system_hosts_get(ns.ip, ns.hostname)
         table = PrettyTable()
         table.title = 'Cluster hosts'
         table.field_names = ['IP', 'Hostname']
@@ -413,7 +413,7 @@ class DoClusterCLI(cmd2.Cmd):
         if ns.ip is None or ns.hostname is None:
             self.do_help('system hosts add')
             return 0
-        answer = systems_hosts_add(ns.ip, ns.hostname)
+        answer = system_hosts_add(ns.ip, ns.hostname)
         if answer['status'] == 'success':
             print('Hostname and IP added successfully')
 
@@ -427,7 +427,7 @@ class DoClusterCLI(cmd2.Cmd):
 
     def system_hosts_delete(self, ns: argparse.Namespace):
         if ns.ip is not None and ns.hostname is not None and ns.y:
-            answer = systems_hosts_delete(ns.ip, ns.hostname)
+            answer = system_hosts_delete(ns.ip, ns.hostname)
             if answer['status'] == 'success':
                 print('Host removed successfully')
             return 0

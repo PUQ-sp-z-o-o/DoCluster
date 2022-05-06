@@ -28,10 +28,11 @@ class mng:
         self.answer_status = ''
 
     def SendToNode(self, node, url, data):
-        to_hash = config.cluster_config['cluster']['nodes'][os.uname()[1]]['MNG_IP'] + \
+        if node in config.cluster_config['cluster']['nodes']:
+            to_hash = config.cluster_config['cluster']['nodes'][os.uname()[1]]['MNG_IP'] + \
                             config.cluster_config['cluster']['nodes'][node]['MNG_IP'] + \
                             config.cluster_config['cluster']['nodes'][node]['API_key']
-        data['hash'] = hashlib.md5(to_hash.encode("utf-8")).hexdigest()
+            data['hash'] = hashlib.md5(to_hash.encode("utf-8")).hexdigest()
 
         answer = {'status': '', 'error': '', 'msg':  {}}
         try:

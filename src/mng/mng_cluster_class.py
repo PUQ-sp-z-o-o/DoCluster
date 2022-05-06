@@ -43,7 +43,7 @@ class cluster(mng):
         answer = self.SendToNode(self.args['node'], '', {})
         if answer['error'] != 'no hash value':
             config.logger.name = 'MNG'
-            config.logger.error(self.client_ip + ' echo test failed, node: ' + self.args['node'] + 'not available')
+            config.logger.error(self.client_ip + ' echo test failed, node: ' + self.args['node'] + ' not available')
             self.answer_status = 'error'
             self.answer_msg = {}
             self.answer_error = 'echo test failed, node: ' + self.args['node'] + 'not available'

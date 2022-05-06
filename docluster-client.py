@@ -14,7 +14,7 @@ from cmd2 import (
 )
 
 api_url = "http://192.168.129.198:3033/api/"
-api_url = "http://192.168.129.82:3033/api/"
+#api_url = "http://192.168.129.82:3033/api/"
 
 
 api_username = 'admin'
@@ -97,6 +97,10 @@ def send(path, data):
     if answer['status'] != 'success':
         print('Answer status: ' + answer['status'])
         print('Answer error: ' + str(answer['error']))
+        if str(answer['error']) == 'not manager master node':
+            print('-----------------------------------------')
+            print('Master node is: ' + answer['msg']['master'])
+            print('-----------------------------------------')
 
     return answer
 ############################################################3

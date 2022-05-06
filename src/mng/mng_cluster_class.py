@@ -25,8 +25,10 @@ class cluster(mng):
             return False
 
         if config.quorum_status['master'] != os.uname()[1]:
+            config.logger.name = 'MNG'
+            config.logger.error(self.client_ip + ' not manager master node')
             self.answer_status = 'error'
-            self.answer_msg = {}
+            self.answer_msg = {'master':  config.quorum_status['master']}
             self.answer_error = 'not manager master node'
             return False
 
@@ -36,6 +38,15 @@ class cluster(mng):
             self.answer_status = 'error'
             self.answer_msg = {}
             self.answer_error = 'missing data'
+            return False
+
+        answer = self.SendToNode(self.args['node'], '', {})
+        if answer['error'] != 'no hash value':
+            config.logger.name = 'MNG'
+            config.logger.error(self.client_ip + ' echo test failed, node: ' + self.args['node'] + 'not available')
+            self.answer_status = 'error'
+            self.answer_msg = {}
+            self.answer_error = 'echo test failed, node: ' + self.args['node'] + 'not available'
             return False
 
         if self.args['cluster_username'] not in config.cluster_config['systems']['users']:

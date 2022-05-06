@@ -55,6 +55,7 @@ class cluster(api):
                 self.answer_status = 'error'
                 self.answer_error = 'data not submitted'
                 return 0
+
         node = {
             'hash': '',
             'cluster_username': self.args['cluster_username'],

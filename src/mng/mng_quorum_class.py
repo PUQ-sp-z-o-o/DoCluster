@@ -47,6 +47,8 @@ class quorum(mng):
 
             self.QuorumSyncConfig()
             time.sleep(1)
+            self.QuorumSyncModulesData()
+            time.sleep(1)
             self.QuorumMaster()
             config.logger.name = 'QUORUM'
             config.logger.debug(str(config.quorum_status))
@@ -108,7 +110,7 @@ class quorum(mng):
             answer = self.SendToNode(node_config_v_tmp, url, data)
 
             if answer['status'] == 'success':
-                config.cluster_config = copy.deepcopy(answer['msg']['config'])
+                config.cluster_config = copy.deepcopy(answer['msg'])
                 config.logger.name = 'QUORUM'
                 config.logger.info('Get new config from: ' + node_config_v_tmp + ' version: ' + str(config_v_tmp))
                 #Для того чтоб не изменял мастер версию ПЕРЕДЕЛАТЬ!!!!!!!!!!!!!!!#SaveConfiguration()
@@ -118,6 +120,27 @@ class quorum(mng):
                 config.logger.debug('Save configuration: ' + str(config.cluster_config))
                 f.close()
 
+    def QuorumSyncModulesData(self):
+        i = 0
+        config_v_tmp = 0
+        node_config_v_tmp = ''
+        while i < len(config.quorum_status['nodes']):
+            if config.quorum_status['nodes'][i]['status'] == 'success':
+                if config_v_tmp < config.quorum_status['nodes'][i]['modules_data_version']:
+                    config_v_tmp = config.quorum_status['nodes'][i]['modules_data_version']
+                    node_config_v_tmp = config.quorum_status['nodes'][i]['node']
+            i = i + 1
+
+        if config_v_tmp > config.modules_data['version']:
+            url = 'cluster/modulesdata/get'
+            data = {}
+            answer = self.SendToNode(node_config_v_tmp, url, data)
+
+            if answer['status'] == 'success':
+                config.modules_data = copy.deepcopy(answer['msg'])
+                config.logger.name = 'QUORUM'
+                config.logger.info('Get new modules data from: ' + node_config_v_tmp + ' version: ' + str(config_v_tmp))
+                SaveModulesData()
 
 
 

@@ -162,5 +162,13 @@ class cluster(mng):
         if len(self.url) >= 3:
             if self.url[2] == 'get':
                 self.answer_status = 'success'
-                self.answer_msg = {'config': config.cluster_config}
+                self.answer_msg = config.cluster_config
                 self.answer_error = ''
+
+    def modulesdata(self):
+        if len(self.url) >= 3:
+            if self.url[2] == 'get':
+                self.answer_status = 'success'
+                self.answer_msg = config.modules_data
+                self.answer_error = ''
+

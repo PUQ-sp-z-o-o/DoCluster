@@ -18,20 +18,22 @@ class system(mng):
         if 'cluster_tasks' not in config.modules_data:
             return 0
 
-        for task in config.modules_data['cluster_tasks']:
+        i = 0
+        while i < len(config.modules_data['cluster_tasks']):
+            task = config.modules_data['cluster_tasks'][i]
             if task['status'] == 'transfer':
                 answer = self.SendToNode(task['node'], 'system/localtaskadd', {'task': task})
                 if answer['status'] == 'success':
-                    task['status'] = 'waiting'
+                    config.modules_data['cluster_tasks'][i]['status'] = 'waiting'
                     now = datetime.now()
-                    task['start'] = now.strftime("%d-%m-%Y %H:%M:%S")
+                    config.modules_data['cluster_tasks'][i]['start'] = now.strftime("%d-%m-%Y %H:%M:%S")
 
                 if answer['error'] == 'offline':
-                    task['status'] = 'error'
+                    config.modules_data['cluster_tasks'][i]['status'] = 'error'
                     now = datetime.now()
-                    task['start'] = now.strftime("%d-%m-%Y %H:%M:%S")
-                    task['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
-                    task['duration'] = 0
-                    task['log'] = task['node'] + ' :' + answer['error']
+                    config.modules_data['cluster_tasks'][i]['start'] = now.strftime("%d-%m-%Y %H:%M:%S")
+                    config.modules_data['cluster_tasks'][i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
+                    config.modules_data['cluster_tasks'][i]['duration'] = 0
+                    config.modules_data['cluster_tasks'][i]['log'] = task['node'] + ' :' + answer['error']
 
 

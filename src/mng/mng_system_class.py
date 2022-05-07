@@ -99,14 +99,15 @@ class system(mng):
     def localtaskstatus(self):
         if 'id' in self.args:
             if len(config.local_tasks) > 0:
-            i = 0
-            while i < len(config.local_tasks):
-                task = config.local_tasks[i]
-                if task['id'] == self.args['id']:
-                    self.answer_status = 'success'
-                    self.answer_msg = task
-                    self.answer_error = ''
-                    return 0
+                i = 0
+                while i < len(config.local_tasks):
+                    task = config.local_tasks[i]
+                    if task['id'] == self.args['id']:
+                        self.answer_status = 'success'
+                        self.answer_msg = task
+                        self.answer_error = ''
+                        return 0
+                    i = i +1
 
         self.answer_status = 'error'
         self.answer_msg = {}

@@ -1,3 +1,5 @@
+import json
+
 from src.mng.mng_class import mng
 import config
 import time
@@ -22,18 +24,29 @@ class system(mng):
         while i < len(config.modules_data['cluster_tasks']):
             task = config.modules_data['cluster_tasks'][i]
             if task['status'] == 'transfer':
-                answer = self.SendToNode(task['node'], 'system/localtaskadd', {'task': task})
+                config.logger.name = 'SYSTEM'
+                config.logger.error('Send task. Node: ' + task['node'] + ' Task' + str(task))
+
+                answer = self.SendToNode(task['node'], 'system/localtaskadd', {'task': json.dumps(task)})
                 if answer['status'] == 'success':
                     config.modules_data['cluster_tasks'][i]['status'] = 'waiting'
                     now = datetime.now()
                     config.modules_data['cluster_tasks'][i]['start'] = now.strftime("%d-%m-%Y %H:%M:%S")
+                    config.logger.name = 'SYSTEM'
+                    config.logger.info('Send task success. id: ' + task['id'] + ' Node: ' + task['node'])
 
-                if answer['error'] == 'offline':
+                if answer['status'] != 'success':
                     config.modules_data['cluster_tasks'][i]['status'] = 'error'
                     now = datetime.now()
                     config.modules_data['cluster_tasks'][i]['start'] = now.strftime("%d-%m-%Y %H:%M:%S")
                     config.modules_data['cluster_tasks'][i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
                     config.modules_data['cluster_tasks'][i]['duration'] = 0
                     config.modules_data['cluster_tasks'][i]['log'] = task['node'] + ' :' + answer['error']
+                    config.logger.name = 'SYSTEM'
+                    config.logger.error('Send task error. id: ' + task['id'] + ' Node: ' + task['node'] + ' :' + answer['error'])
             i = i + 1
 
+    def localtaskadd(self):
+        self.answer_status = 'success'
+        self.answer_msg = ''
+        self.answer_error = ''

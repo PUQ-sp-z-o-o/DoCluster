@@ -14,7 +14,12 @@ mng_port = '3030'
 
 cluster_config = {}
 api_access_tokens = {}
-cluster_tasks = {}
+
+cluster_tasks = []
+local_tasks = []
+
+modules_data = {}
+modules_stat = {}
 
 quorum_status = {
     "status": '',
@@ -31,7 +36,6 @@ cluster_status = {
 
 schedulers = {}
 
-
 # DEBUG,INFO,WARNING,ERROR,CRITICAL
 LogLevel = 'DEBUG'
 LogFile = 'docluster.log'
@@ -44,6 +48,12 @@ default_config = {
         "users": {"admin": {"password": hashlib.md5("admin".encode("utf-8")).hexdigest()}}
     }
 }
+
+default_modules_data = {"version": 0}
+
+
+
+
 
 logger = logging.getLogger('SYSTEM')
 

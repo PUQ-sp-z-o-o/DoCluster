@@ -60,3 +60,58 @@ def SaveConfiguration():
     config.logger.debug('Save configuration: ' + str(config.cluster_config))
     f.close()
 
+
+def ReadModulesData():
+    config.logger.name = 'SYSTEM'
+    if not os.path.isdir('config'):
+        os.mkdir('config')
+
+    if not os.access('config/modules_data.conf', os.F_OK):
+        f = open('config/modules_data.conf', 'w+')
+        json.dump(config.default_modules_data, f, indent=1)
+        f.close()
+
+    with open('config/modules_data.conf') as json_file:
+        config.modules_data = json.load(json_file)
+        json_file.close()
+    config.logger.info('Read modules_data version: ' + str(config.modules_data['version']))
+    config.logger.debug('Read modules_data: ' + str(config.modules_data))
+
+
+def SaveModulesData():
+    config.logger.name = 'SYSTEM'
+    if config.quorum_status['master'] == os.uname()[1]:
+        config.modules_data['version'] = config.modules_data['version'] + 1
+
+    f = open('config/modules_data.conf', 'w+')
+    json.dump(config.cluster_config, f, indent=1)
+    config.logger.info('Save modules_data version: ' + str(config.modules_data['version']))
+    config.logger.debug('Save modules_data: ' + str(config.modules_data))
+    f.close()
+
+
+
+
+def AddTask(node, user, description, module, method, arg, queue):
+    if 'claster_tasks' not in config.modules_data:
+        config.modules_data['claster_tasks'] = []
+    # 'status': "transfer | waiting | processing | success | error",
+    task = {
+        'id': '',
+        'node': node,
+        'user': user,
+        'description': description,
+        'module': module,
+        'method': method,
+        'arg': arg,
+        'queue': queue,
+        'status': "transfer",
+        'process_id': '',
+        'start': '',
+        'end': '',
+        'log': ''
+    }
+    config.modules_data['claster_tasks'].append(task)
+    return 0
+
+

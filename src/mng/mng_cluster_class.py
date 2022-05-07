@@ -2,7 +2,6 @@ from src.mng.mng_class import mng
 from src.functions import *
 import psutil
 from psutil._common import bytes2human
-
 import time
 import subprocess
 import config
@@ -148,6 +147,7 @@ class cluster(mng):
         self.answer_msg['memory_used'] = bytes2human(psutil.virtual_memory().used)
         self.answer_msg['memory_total'] = bytes2human(psutil.virtual_memory().total)
         self.answer_msg['errors'] = []
+        self.answer_msg['modules_stat'] = config.modules_stat
         self.answer_status = 'success'
         self.answer_error = ''
 

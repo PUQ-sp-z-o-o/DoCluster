@@ -32,6 +32,7 @@ class DoClusterMng:
         config.logger.info('*********************************')
 
         ReadConfiguration()
+        ReadModulesData()
         #self.SaveConfiguration()
         #self.MngSchedulersStart()
 

@@ -3,23 +3,26 @@
 
 import argparse
 import sys
+
 import signal
 import ctypes
 import time
 import threading
 import config
 from src.DoCluster_class import DoClusterMng
-
+from src.functions import *
 
 def terminate(signalNumber, frame):
     config.logger.name = 'SYSTEM'
     config.logger.info('Stopped DoCluster. Signal: ' + str(signalNumber))
 
+    SaveConfiguration()
+    SaveModulesData()
+
     for thread in threading.enumerate():
         if thread.is_alive():
             exc = ctypes.py_object(SystemExit)
             ctypes.pythonapi.PyThreadState_SetAsyncExc(ctypes.c_long(thread.ident), exc)
-    #exit()
 
 
 

@@ -86,12 +86,10 @@ def SaveModulesData():
         config.modules_data['version'] = config.modules_data['version'] + 1
 
     f = open('config/modules_data.conf', 'w+')
-    json.dump(config.cluster_config, f, indent=1)
+    json.dump(config.modules_data, f, indent=1)
     config.logger.info('Save modules_data version: ' + str(config.modules_data['version']))
     config.logger.debug('Save modules_data: ' + str(config.modules_data))
     f.close()
-
-
 
 
 def AddTask(node, user, description, module, method, arg, queue):

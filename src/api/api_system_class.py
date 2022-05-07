@@ -152,8 +152,8 @@ class system(api):
             self.answer_error = ''
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'Added in hosts: ' + self.args['ip'] + ':' + self.args['hostname'])
 
-            for node in config.cluster_config['cluster']['node']:
-                AddTask(node, self.username, 'Set /etc/hosts', 'system', 'hostsset', config.cluster_config['hosts'], False)
+            for node in config.cluster_config['cluster']['nodes']:
+                AddTask(node, self.username, 'Set /etc/hosts', 'system', 'hostsset', config.cluster_config['system']['hosts'], False)
 
 
 

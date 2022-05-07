@@ -42,7 +42,7 @@ class quorum(mng):
                 config.quorum_status['nodes'][i]['error'] = answer['error']
 
                 if answer['error'] == '':
-                    config.quorum_status['nodes'][i] = {**answer['msg'], **config.quorum_status['nodes'][i]}
+                    config.quorum_status['nodes'][i] = {**config.quorum_status['nodes'][i], **answer['msg']}
                     #config.quorum_status['nodes'][i]['config_version'] = answer['msg']['config_version']
                     #config.quorum_status['nodes'][i]['errors'] = answer['msg']['errors']
                 i = i + 1

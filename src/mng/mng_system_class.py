@@ -11,6 +11,7 @@ from datetime import datetime
 class system(mng):
 
     Timeout_Loop_Cluster_Task_Processor = 1
+    Timeout_Loop_Local_Task_Processor = 1
 
     def Loop_Cluster_Task_Processor(self):
         if 'quorum' in config.cluster_config:
@@ -46,7 +47,21 @@ class system(mng):
                     config.logger.error('Send task error. id: ' + task['id'] + ' Node: ' + task['node'] + ' :' + answer['error'])
             i = i + 1
 
+    def Loop_Local_Task_Processor(self):
+        if len(config.local_tasks) > 0:
+            print(config.local_tasks)
+
+
+
+
     def localtaskadd(self):
-        self.answer_status = 'success'
-        self.answer_msg = ''
-        self.answer_error = ''
+        if 'task' in self.args:
+            config.logger.name = 'SYSTEM'
+            config.logger.debug('Add local task: ' + str(task))
+            task = json.loads(self.args['task'])
+            config.local_tasks.append(task)
+            config.logger.name = 'SYSTEM'
+            config.logger.info('Add local task: ' + task['id'])
+            self.answer_status = 'success'
+            self.answer_msg = ''
+            self.answer_error = ''

@@ -15,7 +15,6 @@ mng_port = '3030'
 cluster_config = {}
 api_access_tokens = {}
 
-cluster_tasks = []
 local_tasks = []
 
 modules_data = {}

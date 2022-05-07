@@ -11,8 +11,8 @@ from datetime import datetime
 class system(mng):
 
     Timeout_Loop_Cluster_Task_Processor = 1
-    Timeout_Loop_Local_Task_Processor = 5
-    Timeout_Loop_Cluster_Task_Status = 2
+    Timeout_Loop_Local_Task_Processor = 1
+    Timeout_Loop_Cluster_Task_Status = 1
 
     def Loop_Cluster_Task_Processor(self):
         if 'quorum' in config.cluster_config:
@@ -71,14 +71,19 @@ class system(mng):
         if len(config.local_tasks) > 0:
             i = 0
             while i < len(config.local_tasks):
-                task = config.local_tasks[i]
 
-                if task['status'] == 'transfer':
+                if config.local_tasks[i]['status'] == 'transfer':
                     config.local_tasks[i]['status'] = 'processing'
                     config.local_tasks[i]['duration'] = 0
 
-                if task['status'] == 'processing':
+                if config.local_tasks[i]['status'] == 'processing':
                     config.local_tasks[i]['duration'] = config.local_tasks[i]['duration'] + 1
+
+                if config.local_tasks[i]['duration'] == 100:
+                    config.local_tasks[i]['status'] = 'success'
+                    now = datetime.now()
+                    config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
+
 
                 i = i + 1
 

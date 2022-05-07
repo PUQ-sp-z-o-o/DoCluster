@@ -6,7 +6,7 @@ import os
 
 class system(mng):
 
-    Timeout_Loop_MasterTaskStatus = 1
+    Timeout_Cluster_Task_Processor = 1
 
     def Loop_Cluster_Task_Processor(self):
         if 'quorum' in config.cluster_config:

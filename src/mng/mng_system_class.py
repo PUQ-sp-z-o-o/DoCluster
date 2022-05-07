@@ -11,7 +11,8 @@ from datetime import datetime
 class system(mng):
 
     Timeout_Loop_Cluster_Task_Processor = 1
-    Timeout_Loop_Local_Task_Processor = 1
+    Timeout_Loop_Local_Task_Processor = 5
+    Timeout_Loop_Cluster_Task_Status = 2
 
     def Loop_Cluster_Task_Processor(self):
         if 'quorum' in config.cluster_config:
@@ -47,10 +48,39 @@ class system(mng):
                     config.logger.error('Send task error. id: ' + task['id'] + ' Node: ' + task['node'] + ' :' + answer['error'])
             i = i + 1
 
+    def Loop_Cluster_Task_Status(self):
+        if 'quorum' in config.cluster_config:
+            if os.uname()[1] != config.quorum_status['master']:
+                time.sleep(10)
+                return 0
+        if 'cluster_tasks' not in config.modules_data:
+            return 0
+
+        i = 0
+        while i < len(config.modules_data['cluster_tasks']):
+            task = config.modules_data['cluster_tasks'][i]
+            if task['status'] in ['waiting', 'processing']:
+                answer = self.SendToNode(task['node'], 'system/localtaskstatus', {'id': task['id']})
+                if answer['status'] == 'success':
+                    config.modules_data['cluster_tasks'][i]['status'] = answer['msg']['status']
+                    config.modules_data['cluster_tasks'][i]['duration'] = answer['msg']['duration']
+
+            i = i + 1
+
     def Loop_Local_Task_Processor(self):
         if len(config.local_tasks) > 0:
-            print(config.local_tasks)
+            i = 0
+            while i < len(config.local_tasks):
+                task = config.local_tasks[i]
 
+                if task['status'] == 'transfer':
+                    config.local_tasks[i]['status'] = 'processing'
+                    config.local_tasks[i]['duration'] = 0
+
+                if task['status'] == 'processing':
+                    config.local_tasks[i]['duration'] = config.local_tasks[i]['duration'] + 1
+
+                i = i + 1
 
 
 
@@ -65,3 +95,19 @@ class system(mng):
             self.answer_status = 'success'
             self.answer_msg = ''
             self.answer_error = ''
+
+    def localtaskstatus(self):
+        if 'id' in self.args:
+            if len(config.local_tasks) > 0:
+            i = 0
+            while i < len(config.local_tasks):
+                task = config.local_tasks[i]
+                if task['id'] == self.args['id']:
+                    self.answer_status = 'success'
+                    self.answer_msg = task
+                    self.answer_error = ''
+                    return 0
+
+        self.answer_status = 'error'
+        self.answer_msg = {}
+        self.answer_error = 'Task not found'

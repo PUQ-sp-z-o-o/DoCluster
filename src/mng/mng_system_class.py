@@ -64,6 +64,7 @@ class system(mng):
                 if answer['status'] == 'success':
                     config.modules_data['cluster_tasks'][i]['status'] = answer['msg']['status']
                     config.modules_data['cluster_tasks'][i]['duration'] = answer['msg']['duration']
+                    config.modules_data['cluster_tasks'][i]['end'] = answer['msg']['end']
 
             i = i + 1
 
@@ -77,12 +78,14 @@ class system(mng):
                     config.local_tasks[i]['duration'] = 0
 
                 if config.local_tasks[i]['status'] == 'processing':
-                    config.local_tasks[i]['duration'] = config.local_tasks[i]['duration'] + 1
+                    config.local_tasks[i]['duration'] = config.local_tasks[i]['duration'] + 10
 
                 if config.local_tasks[i]['duration'] == 100:
-                    config.local_tasks[i]['status'] = 'success'
                     now = datetime.now()
                     config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
+                    config.local_tasks[i]['status'] = 'success'
+
+
 
 
                 i = i + 1

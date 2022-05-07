@@ -4,6 +4,8 @@ import json
 import config
 import os
 import time
+import random
+import string
 
 
 def is_valid_ip(ip_address):
@@ -97,7 +99,7 @@ def AddTask(node, user, description, module, method, arg, queue):
         config.modules_data['claster_tasks'] = []
     # 'status': "transfer | waiting | processing | success | error",
     task = {
-        'id': '',
+        'id': ''.join(random.choice(string.ascii_lowercase) for i in range(30)),
         'node': node,
         'user': user,
         'description': description,
@@ -109,9 +111,15 @@ def AddTask(node, user, description, module, method, arg, queue):
         'process_id': '',
         'start': '',
         'end': '',
+        'duration': '',
         'log': ''
     }
     config.modules_data['claster_tasks'].append(task)
+    SaveModulesData()
+    config.logger.name = 'SYSTEM'
+    config.logger.info('Add task: '+ str(task['id']))
+    config.logger.debug('Add task: ' + str(task))
+
     return 0
 
 

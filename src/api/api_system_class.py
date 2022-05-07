@@ -151,6 +151,12 @@ class system(api):
             self.answer_status = 'success'
             self.answer_error = ''
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'Added in hosts: ' + self.args['ip'] + ':' + self.args['hostname'])
+
+            for node in config.cluster_config['cluster']['node']:
+                AddTask(node, self.username, 'Set /etc/hosts', 'system', 'hostsset', config.cluster_config['hosts'], False)
+
+
+
         '''Get'''
         if self.url[2] == 'get':
             if 'hosts' not in config.cluster_config['system']:
@@ -203,8 +209,6 @@ class system(api):
                 self.answer_status = 'success'
                 self.answer_error = ''
                 return 0
-
-
         '''Delete'''
         if self.url[2] == 'delete':
             if 'ip' not in self.args or 'hostname' not in self.args:
@@ -239,6 +243,9 @@ class system(api):
             self.answer_status = 'success'
             self.answer_error = ''
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'Delete in hosts: ' + self.args['ip'] + ':' + self.args['hostname'])
+
+
+
 
     '''
     GET SAVE and READ cluster configuration

@@ -8,7 +8,7 @@ class system(mng):
 
     Timeout_Loop_MasterTaskStatus = 1
 
-    def Loop_MasterTaskStatus(self):
+    def Loop_Cluster_Task_Processor(self):
         if 'quorum' in config.cluster_config:
             if os.uname()[1] != config.quorum_status['master']:
                 time.sleep(10)

@@ -13,3 +13,8 @@ class system(mng):
             if os.uname()[1] != config.quorum_status['master']:
                 time.sleep(10)
                 return 0
+        if 'cluster_tasks' not in config.modules_data:
+            return 0
+
+        for task in config.modules_data['cluster_tasks']:
+            print(str(task['id']))

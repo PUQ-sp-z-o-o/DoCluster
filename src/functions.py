@@ -93,8 +93,8 @@ def SaveModulesData():
 
 
 def AddTask(node, user, description, module, method, arg, queue):
-    if 'claster_tasks' not in config.modules_data:
-        config.modules_data['claster_tasks'] = []
+    if 'cluster_tasks' not in config.modules_data:
+        config.modules_data['cluster_tasks'] = []
     # 'status': "transfer | waiting | processing | success | error",
     task = {
         'id': ''.join(random.choice(string.ascii_lowercase) for i in range(30)),
@@ -112,7 +112,7 @@ def AddTask(node, user, description, module, method, arg, queue):
         'duration': '',
         'log': ''
     }
-    config.modules_data['claster_tasks'].append(task)
+    config.modules_data['cluster_tasks'].append(task)
     SaveModulesData()
     config.logger.name = 'SYSTEM'
     config.logger.info('Add task: '+ str(task['id']))

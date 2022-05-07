@@ -528,18 +528,20 @@ class DoClusterCLI(cmd2.Cmd):
         answer = system_tasks_get()
         if answer['status'] == 'success':
             table = PrettyTable()
-            table.field_names = ['id', 'Node', 'User' 'Description', 'module/method', 'status', 'Start', 'End', 'Duration']
+            table.field_names = ['id', 'Node', 'User', 'Description', 'module/method', 'status', 'Start', 'End', 'Duration']
 
             for task in answer['msg']:
-                table.add_row([task['id'],
-                               task['node'],
-                               task['user'],
-                               task['description'],
-                               task['module'] + '/' + task['method'],
-                               task['status'],
-                               task['start'],
-                               task['end'],
-                               task['duration']])
+                table.add_row([
+                    task['id'],
+                    task['node'],
+                    task['user'],
+                    task['description'],
+                    task['module'] + '/' + task['method'],
+                    task['status'],
+                    str(task['start']),
+                    str(task['end']),
+                    str(task['duration'])
+                ])
             print(table)
 
     parser_system_tasks_get.set_defaults(func=system_tasks_get)

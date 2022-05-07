@@ -319,10 +319,10 @@ class system(api):
 
     def tasks(self):
         self.answer_msg.clear()
-            if self.url[2] == 'get':
-                if 'claster_tasks' in config.modules_data:
-                    self.answer_msg = config.modules_data['claster_tasks']
-                else:
-                    self.answer_msg = []
-            self.answer_status = 'success'
-            self.answer_error = ''
+        if self.url[2] == 'get':
+            if 'cluster_tasks' in config.modules_data:
+                self.answer_msg = config.modules_data['cluster_tasks']
+            else:
+                self.answer_msg = []
+        self.answer_status = 'success'
+        self.answer_error = ''

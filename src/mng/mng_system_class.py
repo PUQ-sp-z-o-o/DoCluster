@@ -56,12 +56,12 @@ class system(mng):
 
     def localtaskadd(self):
         if 'task' in self.args:
-            config.logger.name = 'SYSTEM'
-            config.logger.debug('Add local task: ' + str(task))
             task = json.loads(self.args['task'])
             config.local_tasks.append(task)
+
             config.logger.name = 'SYSTEM'
             config.logger.info('Add local task: ' + task['id'])
+            config.logger.debug('Add local task: ' + str(task))
             self.answer_status = 'success'
             self.answer_msg = ''
             self.answer_error = ''

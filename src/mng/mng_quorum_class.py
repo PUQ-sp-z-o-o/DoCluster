@@ -43,8 +43,6 @@ class quorum(mng):
 
                 if answer['error'] == '':
                     config.quorum_status['nodes'][i] = {**config.quorum_status['nodes'][i], **answer['msg']}
-                    #config.quorum_status['nodes'][i]['config_version'] = answer['msg']['config_version']
-                    #config.quorum_status['nodes'][i]['errors'] = answer['msg']['errors']
                 i = i + 1
 
             self.QuorumSyncConfig()
@@ -55,7 +53,7 @@ class quorum(mng):
 
     def status(self):
         self.answer_msg['config_version'] = config.cluster_config['version']
-        self.answer_msg['modules_data'] = config.modules_data['version']
+        self.answer_msg['modules_data_version'] = config.modules_data['version']
         self.answer_msg['errors'] = []
         self.answer_status = 'success'
         self.answer_error = ''

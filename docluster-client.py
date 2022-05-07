@@ -655,12 +655,12 @@ class DoClusterCLI(cmd2.Cmd):
             print(table)
 
             table = PrettyTable()
-            table.field_names = ['Node hostname', 'status', 'Config version', 'Errors']
+            table.field_names = ['Node hostname', 'status', 'Config version', 'Modules data version', 'Errors']
             for key in answer['msg']['nodes']:
                 if key['status'] == 'offline':
                     table.add_row([key['node'], key['status'], '---', str(key['error'])])
                 else:
-                    table.add_row([key['node'], key['status'], key['config_version'], str(key['error'])])
+                    table.add_row([key['node'], key['status'], key['config_version'], key['modules_data_version'], str(key['error'])])
             print(table)
 
     parser_quorum_status.set_defaults(func=quorum_status)

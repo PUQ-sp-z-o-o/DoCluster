@@ -35,5 +35,5 @@ class system(mng):
                     config.modules_data['cluster_tasks'][i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
                     config.modules_data['cluster_tasks'][i]['duration'] = 0
                     config.modules_data['cluster_tasks'][i]['log'] = task['node'] + ' :' + answer['error']
-
+            i = i + 1
 

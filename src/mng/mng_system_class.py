@@ -2,6 +2,8 @@ from src.mng.mng_class import mng
 import config
 import time
 import os
+from datetime import datetime
+
 
 
 class system(mng):
@@ -17,4 +19,19 @@ class system(mng):
             return 0
 
         for task in config.modules_data['cluster_tasks']:
-            print(str(task['id']))
+            if task['status'] == 'transfer':
+                answer = self.SendToNode(task['node'], 'system/localtaskadd', {'task': task})
+                if answer['status'] == 'success':
+                    task['status'] = 'waiting'
+                    now = datetime.now()
+                    task['start'] = now.strftime("%d-%m-%Y %H:%M:%S")
+
+                if answer['error'] == 'offline':
+                    task['status'] = 'error'
+                    now = datetime.now()
+                    task['start'] = now.strftime("%d-%m-%Y %H:%M:%S")
+                    task['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
+                    task['duration'] = 0
+                    task['log'] = task['node'] + ' :' + answer['error']
+
+

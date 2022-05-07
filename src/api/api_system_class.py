@@ -244,9 +244,6 @@ class system(api):
             self.answer_error = ''
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'Delete in hosts: ' + self.args['ip'] + ':' + self.args['hostname'])
 
-
-
-
     '''
     GET SAVE and READ cluster configuration
     '''
@@ -320,3 +317,12 @@ class system(api):
                         return 0
         '''
 
+    def tasks(self):
+        self.answer_msg.clear()
+            if self.url[2] == 'get':
+                if 'claster_tasks' in config.modules_data:
+                    self.answer_msg = config.modules_data['claster_tasks']
+                else:
+                    self.answer_msg = []
+            self.answer_status = 'success'
+            self.answer_error = ''

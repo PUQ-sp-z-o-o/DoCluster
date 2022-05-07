@@ -244,6 +244,10 @@ def system_loops_reload(name):
     }
     return send(path, data)
 
+def system_tasks_get():
+    path = 'system/tasks/get'
+    data = {}
+    return send(path, data)
 
 def quorum_nodes_add(node):
     path = 'quorum/nodes/add'
@@ -508,41 +512,37 @@ class DoClusterCLI(cmd2.Cmd):
 
     parser_system_loops_get.set_defaults(func=system_loops_get)
 
-    #'''loop reload'''
-    #parser_system_loops_reload = system_config_subparsers.add_parser('reload', help='Reload loop')
+    ### tasks
+    parser_system_tasks = system_subparsers.add_parser('tasks', help='Tasks management')
+    system_config_subparsers = parser_system_tasks.add_subparsers(title='tasks', help='help for 3rd layer of commands')
 
-    #def system_loops_reload(self, ns: argparse.Namespace):
-    #    answer = system_config_save()
-        #if answer['status'] == 'success':
-        #    print('Config save successfully')
-        #    print('Config version: ' + str(answer['msg']['version']))
+    def system_tasks(self, args):
+        self.do_help('system tasks')
 
-    #parser_system_loops_reload.set_defaults(func=system_loops_reload)
+    parser_system_tasks.set_defaults(func=system_tasks)
 
-    #'''loop stop'''
-    #parser_system_loops_stop = system_config_subparsers.add_parser('stop', help='Stop loop')
-    #parser_system_loops_stop.add_argument('-n', type=str, help='Name')
-    #def system_loops_stop(self, ns: argparse.Namespace):
-    #    if ns.n is None:
-    #        self.do_help('system loops stop')
-    #        return 0
+    '''tasks get'''
+    parser_system_tasks_get = system_config_subparsers.add_parser('get', help='List tasks')
 
-    #    answer = system_loops_stop(ns.n)
-    #    if answer['status'] == 'success':
-    #        print('Loop: ' + ns.n + ' stopped successfully')
+    def system_tasks_get(self, ns: argparse.Namespace):
+        answer = system_tasks_get()
+        if answer['status'] == 'success':
+            table = PrettyTable()
+            table.field_names = ['id', 'Node', 'User' 'Description', 'module/method', 'status', 'Start', 'End', 'Duration']
 
-    #parser_system_loops_stop.set_defaults(func=system_loops_stop)
+            for task in answer['msg']:
+                table.add_row([task['id'],
+                               task['node'],
+                               task['user'],
+                               task['description'],
+                               task['module'] + '/' + task['method'],
+                               task['status'],
+                               task['start'],
+                               task['end'],
+                               task['duration']])
+            print(table)
 
-    #'''loop start'''
-    #parser_system_loops_start = system_config_subparsers.add_parser('start', help='Start loop')
-
-    #def system_loops_start(self, ns: argparse.Namespace):
-    #    answer = system_config_save()
-    #    #if answer['status'] == 'success':
-    #    #    print('Config save successfully')
-    #    #    print('Config version: ' + str(answer['msg']['version']))
-
-    #parser_system_loops_start.set_defaults(func=system_loops_start)
+    parser_system_tasks_get.set_defaults(func=system_tasks_get)
 
     '''system'''
     @cmd2.with_argparser(system_parser)
@@ -658,7 +658,7 @@ class DoClusterCLI(cmd2.Cmd):
             table.field_names = ['Node hostname', 'status', 'Config version', 'Modules data version', 'Errors']
             for key in answer['msg']['nodes']:
                 if key['status'] == 'offline':
-                    table.add_row([key['node'], key['status'], '---', str(key['error'])])
+                    table.add_row([key['node'], key['status'], '---', '---', str(key['error'])])
                 else:
                     table.add_row([key['node'], key['status'], key['config_version'], key['modules_data_version'], str(key['error'])])
             print(table)

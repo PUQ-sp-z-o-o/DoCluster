@@ -1,3 +1,4 @@
+import copy
 import json
 from multiprocessing import Process, Pipe
 
@@ -67,6 +68,9 @@ class system(mng):
                     config.modules_data['cluster_tasks'][i]['status'] = answer['msg']['status']
                     config.modules_data['cluster_tasks'][i]['duration'] = answer['msg']['duration']
                     config.modules_data['cluster_tasks'][i]['end'] = answer['msg']['end']
+                    config.modules_data['cluster_tasks'][i]['process_id'] = answer['msg']['process_id']
+                    config.modules_data['cluster_tasks'][i]['log'] = answer['msg']['log']
+
                 if answer['status'] != 'success':
                     config.modules_data['cluster_tasks'][i]['status'] = 'error'
                     now = datetime.now()
@@ -75,11 +79,13 @@ class system(mng):
             i = i + 1
 
     def Loop_Local_Task_Processor(self):
+        self.TaskCleaner()
         if len(config.local_tasks) > 0:
             i = 0
             while i < len(config.local_tasks):
                 if config.local_tasks[i]['id'] not in config.local_tasks_pipe:
                     config.local_tasks_pipe[config.local_tasks[i]['id']] = {}
+                    config.local_tasks_pipe[config.local_tasks[i]['id']]['send'] = False
 
                 if config.local_tasks[i]['status'] == 'waiting' and not config.local_tasks[i]['queue']:
                     config.local_tasks[i]['status'] = 'processing'
@@ -150,9 +156,25 @@ class system(mng):
                         self.answer_status = 'success'
                         self.answer_msg = task
                         self.answer_error = ''
+
+                        if task['status'] == 'success':
+                            config.local_tasks_pipe[task['id']]['send'] = True
                         return 0
                     i = i + 1
+
 
         self.answer_status = 'error'
         self.answer_msg = {}
         self.answer_error = 'Task not found'
+
+    def TaskCleaner(self):
+        tmp = copy.deepcopy(config.local_tasks)
+        i = 0
+        while i < len(tmp):
+            if tmp['id'] in config.local_tasks_pipe:
+                if config.local_tasks_pipe[tmp['id']]['send']:
+                    config.local_tasks.pop(i)
+                    del config.local_tasks_pipe[tmp['id']]
+            i = i + 1
+        config.local_tasks = copy.deepcopy(tmp)
+        print(str(config.local_tasks))

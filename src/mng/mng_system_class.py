@@ -127,7 +127,7 @@ class system(mng):
                 i = i + 1
 
     def TaskProcess(self, conn):
-        i = 0
+        i = 10
         conn.send(str(i))
         return 0
         while i < 11:

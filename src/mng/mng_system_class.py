@@ -18,7 +18,7 @@ class system(mng):
     def Loop_Cluster_Task_Processor(self):
         if 'quorum' in config.cluster_config:
             if os.uname()[1] != config.quorum_status['master']:
-                time.sleep(10)
+                time.sleep(5)
                 return 0
         if 'cluster_tasks' not in config.modules_data:
             return 0
@@ -27,6 +27,7 @@ class system(mng):
         while i < len(config.modules_data['cluster_tasks']):
             task = config.modules_data['cluster_tasks'][i]
             if task['status'] == 'transfer':
+
                 config.logger.name = 'SYSTEM'
                 config.logger.error('Send task. Node: ' + task['node'] + ' Task' + str(task))
 
@@ -52,7 +53,7 @@ class system(mng):
     def Loop_Cluster_Task_Status(self):
         if 'quorum' in config.cluster_config:
             if os.uname()[1] != config.quorum_status['master']:
-                time.sleep(10)
+                time.sleep(5)
                 return 0
         if 'cluster_tasks' not in config.modules_data:
             return 0
@@ -82,11 +83,7 @@ class system(mng):
                 if config.local_tasks[i]['id'] not in config.local_tasks_pipe:
                     config.local_tasks_pipe[config.local_tasks[i]['id']] = {}
 
-                if config.local_tasks[i]['status'] == 'transfer' and config.local_tasks[i]['queue']:
-                    config.local_tasks[i]['status'] = 'waiting'
-                    config.local_tasks[i]['duration'] = 0
-
-                if config.local_tasks[i]['status'] == 'transfer' and not config.local_tasks[i]['queue']:
+                if config.local_tasks[i]['status'] == 'waiting' and not config.local_tasks[i]['queue']:
                     config.local_tasks[i]['status'] = 'processing'
                     config.local_tasks[i]['duration'] = 0
 
@@ -107,31 +104,29 @@ class system(mng):
                         config.local_tasks[i]['status'] = 'processing'
                 ##################
 
+                if config.local_tasks[i]['duration'] == '10':
+                    now = datetime.now()
+                    config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
+                    config.local_tasks[i]['status'] = 'success'
+
                 if config.local_tasks[i]['status'] == 'processing':
                     if 'process' not in config.local_tasks_pipe[config.local_tasks[i]['id']]:
+                        config.local_tasks_pipe[config.local_tasks[i]['id']]['process'] = ''
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn'],  config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'] = Pipe()
-                        config.local_tasks_pipe[config.local_tasks[i]['id']]['process'] = Process(target=self.Process_MU, args=(config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'],))
-                        config.local_tasks_pipe[config.local_tasks[i]['id']]['process'].start
+                        Process(target=self.Process_MU, args=(config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'],)).start()
                     else:
-                        config.local_tasks[i]['duration'] = config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn'].recv()
-
-
-                    #config.local_tasks[i]['duration'] = config.local_tasks[i]['duration'] + 1
-
-
-                #if config.local_tasks[i]['duration'] == 100:
-                #    now = datetime.now()
-                #    config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
-                #    config.local_tasks[i]['status'] = 'success'
-
+                        t = config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn']
+                        config.local_tasks[i]['duration'] = t.recv()
                 i = i + 1
 
 
     def Process_MU(self, conn):
         i = 0
-        while i < 100:
-            conn.send = conn + 1
-            conn.close()
+        while i < 11:
+            conn.send(str(i))
+            print('i: ' + str(i))
+            print('conn: ' + str(conn))
+            #conn.close()
             time.sleep(1)
             i = i + 1
 
@@ -141,6 +136,7 @@ class system(mng):
     def localtaskadd(self):
         if 'task' in self.args:
             task = json.loads(self.args['task'])
+            task['status'] = 'waiting'
             config.local_tasks.append(task)
             config.logger.name = 'SYSTEM'
             config.logger.info('Add local task: ' + task['id'])

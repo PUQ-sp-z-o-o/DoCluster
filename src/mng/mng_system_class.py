@@ -124,7 +124,7 @@ class system(mng):
         i = 0
         while i < 101:
             conn.send(str(i))
-            conn.close()
+            #conn.close()
             time.sleep(1)
             i = i + 1
 

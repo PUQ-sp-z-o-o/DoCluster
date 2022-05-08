@@ -176,5 +176,5 @@ class system(mng):
                     config.local_tasks.pop(i)
                     del config.local_tasks_pipe[tmp[i]['id']]
             i = i + 1
-        config.local_tasks = copy.deepcopy(tmp)
-        print(str(config.local_tasks))
+        print(str(len(config.local_tasks)))
+        print(str(config.local_tasks_pipe))

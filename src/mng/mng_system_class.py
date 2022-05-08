@@ -65,6 +65,12 @@ class system(mng):
                     config.modules_data['cluster_tasks'][i]['status'] = answer['msg']['status']
                     config.modules_data['cluster_tasks'][i]['duration'] = answer['msg']['duration']
                     config.modules_data['cluster_tasks'][i]['end'] = answer['msg']['end']
+                if answer['status'] == 'error':
+                    config.modules_data['cluster_tasks'][i]['status'] = 'error'
+                    now = datetime.now()
+                    config.modules_data['cluster_tasks'][i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
+                    config.modules_data['cluster_tasks'][i]['log'] = config.modules_data['cluster_tasks'][i]['log'] +  answer['error']
+
 
             i = i + 1
 
@@ -85,17 +91,18 @@ class system(mng):
                 # Проверка очереди и стартуем если очередь пуста
                 if config.local_tasks[i]['status'] == 'waiting':
                     k = 0
+                    start = True
                     while k < len(config.local_tasks):
-                        start = True
                         if config.local_tasks[k]['module'] == config.local_tasks[i]['module'] and \
                                 config.local_tasks[k]['method'] == config.local_tasks[i]['method'] and \
                                 config.local_tasks[k]['queue'] == config.local_tasks[i]['queue'] and \
                                 config.local_tasks[k]['status'] == 'processing':
                             start = False
-
-                        if start:
-                            config.local_tasks[i]['status'] = 'processing'
                         k = k + 1
+
+                    if start:
+                        config.local_tasks[i]['status'] = 'processing'
+
                 ##################
 
 

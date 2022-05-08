@@ -528,7 +528,7 @@ class DoClusterCLI(cmd2.Cmd):
         answer = system_tasks_get()
         if answer['status'] == 'success':
             table = PrettyTable()
-            table.field_names = ['id', 'Node', 'User', 'Description', 'module/method', 'status', 'Start', 'End', 'Duration', 'PID']
+            table.field_names = ['id', 'Node', 'User', 'Description', 'module/method', 'status', 'Start', 'End', 'Duration', 'PID', 'log']
 
             for task in answer['msg']:
                 table.add_row([
@@ -541,7 +541,8 @@ class DoClusterCLI(cmd2.Cmd):
                     str(task['start']),
                     str(task['end']),
                     str(task['duration']),
-                    str(task['process_id'])
+                    str(task['process_id']),
+                    task['log']
                 ])
             print(table)
 

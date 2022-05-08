@@ -1,7 +1,7 @@
 import copy
 import json
 from multiprocessing import Process, Pipe
-
+import subprocess
 from src.mng.mng_class import mng
 import config
 import time
@@ -140,7 +140,10 @@ class system(mng):
 
         log.send(log_in)
 
+        result = subprocess.run(['ping', '-c', '3', '-n', '8.8.8.8'])
+
         time.sleep(10)
+        log_in += result
         log_in += 'End Task\n'
 
         log.send(log_in)

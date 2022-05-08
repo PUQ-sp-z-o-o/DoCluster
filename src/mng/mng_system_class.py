@@ -128,6 +128,8 @@ class system(mng):
 
     def TaskProcess(self, conn):
         i = 0
+        conn.send(str(i))
+        return 0
         while i < 11:
             conn.send(str(i))
             #conn.close()
@@ -176,5 +178,3 @@ class system(mng):
                     config.local_tasks.pop(i)
                     del config.local_tasks_pipe[tmp[i]['id']]
             i = i + 1
-        print(str(len(config.local_tasks)))
-        print(str(config.local_tasks_pipe))

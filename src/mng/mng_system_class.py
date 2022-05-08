@@ -135,14 +135,19 @@ class system(mng):
                 i = i + 1
 
     def TaskProcess(self, log, status):
-        #status.send('processing')
+        status.send('processing')
+        status.close()
+
         log_in = 'Start Task\n'
-        #log.send(log_in)
+        log.send(log_in)
+        log.close()
         time.sleep(10)
         log_in += 'End Task\n'
-        log.send(log_in)
-        status.send('success')
 
+        log.send(log_in)
+        log.close()
+        status.send('success')
+        status.close()
 
     def localtaskadd(self):
         if 'task' in self.args:

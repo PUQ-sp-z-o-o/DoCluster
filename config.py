@@ -16,6 +16,7 @@ cluster_config = {}
 api_access_tokens = {}
 
 local_tasks = []
+local_tasks_pipe = {}
 
 modules_data = {}
 modules_stat = {}

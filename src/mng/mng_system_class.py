@@ -1,4 +1,5 @@
 import json
+from multiprocessing import Process, Pipe
 
 from src.mng.mng_class import mng
 import config
@@ -78,6 +79,8 @@ class system(mng):
         if len(config.local_tasks) > 0:
             i = 0
             while i < len(config.local_tasks):
+                if config.local_tasks[i]['id'] not in config.local_tasks_pipe:
+                    config.local_tasks_pipe[config.local_tasks[i]['id']] = {}
 
                 if config.local_tasks[i]['status'] == 'transfer' and config.local_tasks[i]['queue']:
                     config.local_tasks[i]['status'] = 'waiting'
@@ -102,27 +105,36 @@ class system(mng):
 
                     if start:
                         config.local_tasks[i]['status'] = 'processing'
-
                 ##################
 
-
-
-
-
                 if config.local_tasks[i]['status'] == 'processing':
-                    config.local_tasks[i]['duration'] = config.local_tasks[i]['duration'] + 1
+                    if 'process' not in config.local_tasks_pipe[config.local_tasks[i]['id']]:
+                        config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn'],  config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'] = Pipe()
+                        config.local_tasks_pipe[config.local_tasks[i]['id']]['process'] = Process(target=self.Process_MU, args=(config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'],))
+                        config.local_tasks_pipe[config.local_tasks[i]['id']]['process'].start
+                    else:
+                        config.local_tasks[i]['duration'] = config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn'].recv()
 
 
-
-                if config.local_tasks[i]['duration'] == 100:
-                    now = datetime.now()
-                    config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
-                    config.local_tasks[i]['status'] = 'success'
+                    #config.local_tasks[i]['duration'] = config.local_tasks[i]['duration'] + 1
 
 
-
+                #if config.local_tasks[i]['duration'] == 100:
+                #    now = datetime.now()
+                #    config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
+                #    config.local_tasks[i]['status'] = 'success'
 
                 i = i + 1
+
+
+    def Process_MU(self, conn):
+        i = 0
+        while i < 100:
+            conn.send = conn + 1
+            conn.close()
+            time.sleep(1)
+            i = i + 1
+
 
 
 

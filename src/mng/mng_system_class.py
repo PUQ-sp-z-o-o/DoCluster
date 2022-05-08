@@ -171,10 +171,10 @@ class system(mng):
         tmp = copy.deepcopy(config.local_tasks)
         i = 0
         while i < len(tmp):
-            if tmp['id'] in config.local_tasks_pipe:
-                if config.local_tasks_pipe[tmp['id']]['send']:
+            if tmp[i]['id'] in config.local_tasks_pipe:
+                if config.local_tasks_pipe[tmp[i]['id']]['send']:
                     config.local_tasks.pop(i)
-                    del config.local_tasks_pipe[tmp['id']]
+                    del config.local_tasks_pipe[tmp[i]['id']]
             i = i + 1
         config.local_tasks = copy.deepcopy(tmp)
         print(str(config.local_tasks))

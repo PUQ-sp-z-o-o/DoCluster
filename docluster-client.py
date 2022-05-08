@@ -19,7 +19,7 @@ api_url = "http://192.168.129.198:3033/api/"
 
 api_username = 'admin'
 api_password = 'admin'
-access_token = ''access_token = ''
+access_token = ''
 
 
 try:
@@ -540,9 +540,8 @@ class DoClusterCLI(cmd2.Cmd):
                     task['status'],
                     str(task['start']),
                     str(task['end']),
-                    str(task['duration'],
-                    str(task['process_id'],
-                        )
+                    str(task['duration']),
+                    str(task['process_id'])
                 ])
             print(table)
 

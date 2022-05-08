@@ -113,7 +113,7 @@ class system(mng):
                         p = Process(name=config.local_tasks[i]['id'] ,target=self.TaskProcess, args=(config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'],))
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['process'] = p
                         p.start()
-                        config.local_tasks[i]['id']['process_id'] = str(p.pid)
+                        config.local_tasks[i]['process_id'] = str(p.pid)
 
                     else:
                         t = config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn']

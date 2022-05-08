@@ -67,13 +67,11 @@ class system(mng):
                     config.modules_data['cluster_tasks'][i]['status'] = answer['msg']['status']
                     config.modules_data['cluster_tasks'][i]['duration'] = answer['msg']['duration']
                     config.modules_data['cluster_tasks'][i]['end'] = answer['msg']['end']
-                if answer['status'] == 'error':
+                if answer['status'] != 'success':
                     config.modules_data['cluster_tasks'][i]['status'] = 'error'
                     now = datetime.now()
                     config.modules_data['cluster_tasks'][i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
                     config.modules_data['cluster_tasks'][i]['log'] = config.modules_data['cluster_tasks'][i]['log'] +  answer['error']
-
-
             i = i + 1
 
     def Loop_Local_Task_Processor(self):
@@ -86,7 +84,6 @@ class system(mng):
                 if config.local_tasks[i]['status'] == 'waiting' and not config.local_tasks[i]['queue']:
                     config.local_tasks[i]['status'] = 'processing'
                     config.local_tasks[i]['duration'] = 0
-
 
                 # Проверка очереди и стартуем если очередь пуста
                 if config.local_tasks[i]['status'] == 'waiting':
@@ -111,25 +108,25 @@ class system(mng):
 
                 if config.local_tasks[i]['status'] == 'processing':
                     if 'process' not in config.local_tasks_pipe[config.local_tasks[i]['id']]:
-                        config.local_tasks_pipe[config.local_tasks[i]['id']]['process'] = ''
+
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn'],  config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'] = Pipe()
-                        Process(target=self.Process_MU, args=(config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'],)).start()
+                        p = Process(name=config.local_tasks[i]['id'] ,target=self.TaskProcess, args=(config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'],))
+                        config.local_tasks_pipe[config.local_tasks[i]['id']]['process'] = p
+                        p.start()
+                        config.local_tasks[i]['id']['process_id'] = str(p.pid)
+
                     else:
                         t = config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn']
                         config.local_tasks[i]['duration'] = t.recv()
                 i = i + 1
 
-
-    def Process_MU(self, conn):
+    def TaskProcess(self, conn):
         i = 0
         while i < 101:
             conn.send(str(i))
             #conn.close()
             time.sleep(1)
             i = i + 1
-
-
-
 
     def localtaskadd(self):
         if 'task' in self.args:

@@ -107,7 +107,7 @@ class system(mng):
                         config.local_tasks[i]['status'] = 'processing'
                 ##################
 
-                if config.local_tasks[i]['duration'] == '100':
+                if config.local_tasks[i]['duration'] == '10':
                     now = datetime.now()
                     config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
                     config.local_tasks[i]['status'] = 'success'
@@ -128,7 +128,7 @@ class system(mng):
 
     def TaskProcess(self, conn):
         i = 0
-        while i < 101:
+        while i < 11:
             conn.send(str(i))
             #conn.close()
             time.sleep(1)

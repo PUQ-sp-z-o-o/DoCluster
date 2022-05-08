@@ -116,25 +116,26 @@ class system(mng):
                     if 'process' not in config.local_tasks_pipe[config.local_tasks[i]['id']]:
 
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn'],  config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'] = Pipe()
-                        p = Process(name=config.local_tasks[i]['id'] ,target=self.TaskProcess, args=(config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'],))
+                        config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_log'], config.local_tasks_pipe[config.local_tasks[i]['id']]['child_log'] = Pipe()
+
+                        p = Process(name=config.local_tasks[i]['id'], target=self.TaskProcess,
+                                    args=(config.local_tasks_pipe[config.local_tasks[i]['id']]['child_log'],))
+
+
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['process'] = p
                         p.start()
                         config.local_tasks[i]['process_id'] = str(p.pid)
 
                     else:
-                        t = config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn']
-                        config.local_tasks[i]['duration'] = t.recv()
+                        log = config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_log']
+                        config.local_tasks[i]['log'] = log.recv()
+
                 i = i + 1
 
-    def TaskProcess(self, conn):
-        i = 10
-        conn.send(str(i))
-        return 0
-        while i < 11:
-            conn.send(str(i))
-            #conn.close()
-            time.sleep(1)
-            i = i + 1
+    def TaskProcess(self, log):
+        log_in = 'Start Task\n'
+        log_in += 'End Task\n'
+        log.send(log_in)
 
     def localtaskadd(self):
         if 'task' in self.args:

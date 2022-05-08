@@ -136,11 +136,10 @@ class system(mng):
 
     def TaskProcess(self, log, status):
         status.send('processing')
-        status.close()
-
         log_in = 'Start Task\n'
+
         log.send(log_in)
-        log.close()
+
         time.sleep(10)
         log_in += 'End Task\n'
 

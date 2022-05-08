@@ -107,11 +107,6 @@ class system(mng):
                         config.local_tasks[i]['status'] = 'processing'
                 ##################
 
-                if config.local_tasks[i]['duration'] == '10':
-                    now = datetime.now()
-                    config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
-                    config.local_tasks[i]['status'] = 'success'
-
                 if config.local_tasks[i]['status'] == 'processing':
                     if 'process' not in config.local_tasks_pipe[config.local_tasks[i]['id']]:
 
@@ -137,13 +132,12 @@ class system(mng):
                             now = datetime.now()
                             config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
 
-
-
                 i = i + 1
 
     def TaskProcess(self, log, status):
-        status.send('processing')
+        #status.send('processing')
         log_in = 'Start Task\n'
+        #log.send(log_in)
         time.sleep(10)
         log_in += 'End Task\n'
         log.send(log_in)

@@ -153,7 +153,7 @@ class system(api):
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'Added in hosts: ' + self.args['ip'] + ':' + self.args['hostname'])
 
             for node in config.cluster_config['cluster']['nodes']:
-                AddTask(node, self.username, 'Set /etc/hosts', 'system', 'hostsset', config.cluster_config['system']['hosts'], False)
+                AddTask(node, self.username, 'Set /etc/hosts', 'system', 'hostsset', config.cluster_config['system']['hosts'], True)
 
 
 

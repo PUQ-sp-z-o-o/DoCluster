@@ -73,12 +73,39 @@ class system(mng):
             i = 0
             while i < len(config.local_tasks):
 
-                if config.local_tasks[i]['status'] == 'transfer':
+                if config.local_tasks[i]['status'] == 'transfer' and config.local_tasks[i]['queue']:
+                    config.local_tasks[i]['status'] = 'waiting'
+                    config.local_tasks[i]['duration'] = 0
+
+                if config.local_tasks[i]['status'] == 'transfer' and not config.local_tasks[i]['queue']:
                     config.local_tasks[i]['status'] = 'processing'
                     config.local_tasks[i]['duration'] = 0
 
+
+                # Проверка очереди и стартуем если очередь пуста
+                if config.local_tasks[i]['status'] == 'waiting':
+                    k = 0
+                    while k < len(config.local_tasks):
+                        start = True
+                        if config.local_tasks[k]['module'] == config.local_tasks[i]['module'] and \
+                                config.local_tasks[k]['method'] == config.local_tasks[i]['method'] and \
+                                config.local_tasks[k]['queue'] == config.local_tasks[i]['queue'] and \
+                                config.local_tasks[k]['status'] == 'processing':
+                            start = False
+
+                        if start:
+                            config.local_tasks[i]['status'] = 'processing'
+                        k = k + 1
+                ##################
+
+
+
+
+
                 if config.local_tasks[i]['status'] == 'processing':
-                    config.local_tasks[i]['duration'] = config.local_tasks[i]['duration'] + 10
+                    config.local_tasks[i]['duration'] = config.local_tasks[i]['duration'] + 1
+
+
 
                 if config.local_tasks[i]['duration'] == 100:
                     now = datetime.now()
@@ -96,7 +123,6 @@ class system(mng):
         if 'task' in self.args:
             task = json.loads(self.args['task'])
             config.local_tasks.append(task)
-
             config.logger.name = 'SYSTEM'
             config.logger.info('Add local task: ' + task['id'])
             config.logger.debug('Add local task: ' + str(task))
@@ -115,7 +141,7 @@ class system(mng):
                         self.answer_msg = task
                         self.answer_error = ''
                         return 0
-                    i = i +1
+                    i = i + 1
 
         self.answer_status = 'error'
         self.answer_msg = {}

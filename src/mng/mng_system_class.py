@@ -117,10 +117,11 @@ class system(mng):
 
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn'],  config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'] = Pipe()
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_log'], config.local_tasks_pipe[config.local_tasks[i]['id']]['child_log'] = Pipe()
+                        config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_status'], config.local_tasks_pipe[config.local_tasks[i]['id']]['child_status'] = Pipe()
 
                         p = Process(name=config.local_tasks[i]['id'], target=self.TaskProcess,
-                                    args=(config.local_tasks_pipe[config.local_tasks[i]['id']]['child_log'],))
-
+                                    args=(config.local_tasks_pipe[config.local_tasks[i]['id']]['child_log'],
+                                          config.local_tasks_pipe[config.local_tasks[i]['id']]['child_status'],))
 
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['process'] = p
                         p.start()
@@ -130,12 +131,24 @@ class system(mng):
                         log = config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_log']
                         config.local_tasks[i]['log'] = log.recv()
 
+                        status = config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_status']
+                        config.local_tasks[i]['status'] = status.recv()
+                        if config.local_tasks[i]['status'] in ['success', 'error']:
+                            now = datetime.now()
+                            config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
+
+
+
                 i = i + 1
 
-    def TaskProcess(self, log):
+    def TaskProcess(self, log, status):
+        status.send('processing')
         log_in = 'Start Task\n'
+        time.sleep(10)
         log_in += 'End Task\n'
         log.send(log_in)
+        status.send('success')
+
 
     def localtaskadd(self):
         if 'task' in self.args:

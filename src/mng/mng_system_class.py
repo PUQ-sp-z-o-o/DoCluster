@@ -17,9 +17,9 @@ import pymemcache
 class system(mng):
 
     Timeout_Loop_Cluster_Task_Processor = 1
-    Timeout_Loop_Local_Task_Processor = 1
     Timeout_Loop_Cluster_Task_Status = 1
-
+    Timeout_Loop_Local_Task_Processor = 1
+    '''Мастер обрабатывает локальные таски и отправляет нодам'''
     def Loop_Cluster_Task_Processor(self):
         if 'quorum' in config.cluster_config:
             if os.uname()[1] != config.quorum_status['master']:
@@ -34,10 +34,14 @@ class system(mng):
             if task['status'] == 'transfer':
 
                 config.logger.name = 'SYSTEM'
-                config.logger.error('Send task. Node: ' + task['node'] + ' Task' + str(task))
+                config.logger.info('Send task. Node: ' + task['node'] + ' Task: ' + task['id'])
+                config.logger.debug('Send task. Node: ' + task['node'] + ' Task: ' + str(task))
 
                 answer = self.SendToNode(task['node'], 'system/localtaskadd', {'task': json.dumps(task)})
                 if answer['status'] == 'success':
+                    config.logger.name = 'SYSTEM'
+                    config.logger.info('Send task success. Node: ' + task['node'] + ' Task: ' + task['id'])
+
                     config.modules_data['cluster_tasks'][i]['status'] = 'waiting'
                     now = datetime.now()
                     config.modules_data['cluster_tasks'][i]['start'] = now.strftime("%d-%m-%Y %H:%M:%S")
@@ -45,6 +49,9 @@ class system(mng):
                     config.logger.info('Send task success. id: ' + task['id'] + ' Node: ' + task['node'])
 
                 if answer['status'] != 'success':
+                    config.logger.name = 'SYSTEM'
+                    config.logger.error('Send task error. Node: ' + task['node'] + ' Task: ' + task['id'])
+
                     config.modules_data['cluster_tasks'][i]['status'] = 'error'
                     now = datetime.now()
                     config.modules_data['cluster_tasks'][i]['start'] = now.strftime("%d-%m-%Y %H:%M:%S")
@@ -54,7 +61,7 @@ class system(mng):
                     config.logger.name = 'SYSTEM'
                     config.logger.error('Send task error. id: ' + task['id'] + ' Node: ' + task['node'] + ' :' + answer['error'])
             i = i + 1
-
+    '''Мастер обрабатывает статусы тасков на нодах'''
     def Loop_Cluster_Task_Status(self):
         if 'quorum' in config.cluster_config:
             if os.uname()[1] != config.quorum_status['master']:
@@ -79,7 +86,7 @@ class system(mng):
                     config.modules_data['cluster_tasks'][i]['status'] = 'error'
                     now = datetime.now()
                     config.modules_data['cluster_tasks'][i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
-                    config.modules_data['cluster_tasks'][i]['log'] = config.modules_data['cluster_tasks'][i]['log'] +  answer['error']
+                    config.modules_data['cluster_tasks'][i]['log'] = config.modules_data['cluster_tasks'][i]['log'] + answer['error']
             i = i + 1
 
     def Loop_Local_Task_Processor(self):
@@ -120,11 +127,15 @@ class system(mng):
                         memcache.set(name + '_status', 'processing')
 
                         p = Process(name=config.local_tasks[i]['id'], target=self.TaskProcess,
-                                    args=(name,))
+                                    args=(config.local_tasks[i]))
 
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['process'] = p
                         p.start()
                         config.local_tasks[i]['process_id'] = str(p.pid)
+
+                        config.logger.name = 'SYSTEM'
+                        config.logger.info('Start task. process_id: ' + config.local_tasks[i]['process_id'] + ' Task: ' + name)
+                        config.logger.debug('Start task. process_id: ' + config.local_tasks[i]['process_id'] + ' Task: ' + str(config.local_tasks[i]))
 
                         date = datetime.utcnow()
                         utc_time = calendar.timegm(date.utctimetuple())
@@ -146,21 +157,38 @@ class system(mng):
 
                 i = i + 1
 
-    def TaskProcess(self, name):
+    def TaskProcess(self, task):
+        id = task['id']
+        user = task['user']
+        module = task['module']
+        method = task['method']
+        description = task['description']
 
         memcache = pymemcache.Client(('localhost', 11211))
-        memcache.set(name + '_log', '')
-        log_in = ''
+        memcache.set(id + '_log', '')
+        log_in = 'Start task: ' + id + '\n'
+        log_in += 'Module: ' + module + '\n'
+        log_in += 'Method: ' + method + '\n'
+        log_in += 'description: ' + description + '\n'
+        memcache.set(id + '_log', log_in)
+        #######
         with subprocess.Popen(['ping', '-c', '3', '-n', '8.8.8.8'], stdout=subprocess.PIPE, bufsize=1, universal_newlines=True) as p:
             for line in p.stdout:
                 log_in += line
                 memcache.set(name + '_log', log_in)
         #######
+        memcache.set(id + '_log', log_in)
+        memcache.set(id + '_status', 'success')
 
-        memcache.set(name + '_log', log_in)
-        memcache.set(name + '_status', 'success')
-
-
+    def TaskCleaner(self):
+        tmp = copy.deepcopy(config.local_tasks)
+        i = 0
+        while i < len(tmp):
+            if tmp[i]['id'] in config.local_tasks_pipe:
+                if config.local_tasks_pipe[tmp[i]['id']]['send']:
+                    config.local_tasks.pop(i)
+                    del config.local_tasks_pipe[tmp[i]['id']]
+            i = i + 1
 
     def localtaskadd(self):
         if 'task' in self.args:
@@ -195,12 +223,3 @@ class system(mng):
         self.answer_msg = {}
         self.answer_error = 'Task not found'
 
-    def TaskCleaner(self):
-        tmp = copy.deepcopy(config.local_tasks)
-        i = 0
-        while i < len(tmp):
-            if tmp[i]['id'] in config.local_tasks_pipe:
-                if config.local_tasks_pipe[tmp[i]['id']]['send']:
-                    config.local_tasks.pop(i)
-                    del config.local_tasks_pipe[tmp[i]['id']]
-            i = i + 1

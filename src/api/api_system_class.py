@@ -157,6 +157,7 @@ class system(api):
 
 
 
+
         '''Get'''
         if self.url[2] == 'get':
             if 'hosts' not in config.cluster_config['system']:
@@ -243,7 +244,9 @@ class system(api):
             self.answer_status = 'success'
             self.answer_error = ''
             config.logger.info(self.client_ip + ' (' + self.username + ') ' + 'Delete in hosts: ' + self.args['ip'] + ':' + self.args['hostname'])
-            AddTask(node, self.username, 'Set /etc/hosts', 'system', 'hostsset', config.cluster_config['system']['hosts'], True)
+            for node in config.cluster_config['cluster']['nodes']:
+                AddTask(node, self.username, 'Set /etc/hosts', 'system', 'hostsset',
+                        config.cluster_config['system']['hosts'], True)
     '''
     GET SAVE and READ cluster configuration
     '''

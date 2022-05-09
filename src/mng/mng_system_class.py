@@ -191,8 +191,8 @@ class system(mng):
             status = 'error'
             log += 'Error: Module not found!' '\n'
 
-        if status == 'success':
-            log += 'Task: success\n'
+
+        log += 'Task: ' + status + '\n'
         time.sleep(1)
         memcache.set(id + '_log', log)
         time.sleep(1)

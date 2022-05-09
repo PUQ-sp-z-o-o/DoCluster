@@ -252,7 +252,7 @@ class system(mng):
 
         result = subprocess.Popen("echo 127.0.0.1 localhost > /etc/hosts.test", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         output, err = result.communicate()
-        if not output:
+        if err != '':
             status = 'error'
             log += err.decode() + '\n'
 

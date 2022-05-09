@@ -245,11 +245,6 @@ class system(mng):
     def hostsset(self, id, args, log):
         memcache = pymemcache.Client(('localhost', 11211))
         status = 'success'
-        #try:
-        #    process = subprocess.Popen("echo 127.0.0.1 localhost > /etc/hosts.test", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        #except subprocess.CalledProcessError as e:
-        #    log += e.cmd + '\n'
-        #    status = 'error'
 
         result = subprocess.Popen("echo 127.0.0.1 localhost > /etc/hosts.test", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         output, error = result.communicate()
@@ -257,12 +252,18 @@ class system(mng):
             status = 'error'
             log += error.decode() + '\n'
 
+        for arg in args:
+            for hostname in args[arg]:
+                result = subprocess.Popen("echo " + str(arg) + " " + hostname + " localhost > /etc/hosts.test", shell=True,
+                                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                output, error = result.communicate()
+                if result.returncode != 0:
+                    status = 'error'
+                    log += error.decode() + '\n'
+
+                memcache.set(id + '_log', log)
 
 
-        #for arg in args:
-        #    for hostname in args[arg]:
-        #        log += str(arg) + ':' + str(hostname) + '\n'
-        #        memcache.set(id + '_log', log)
 
         memcache.set(id + '_log', log)
         return {'log': log, 'status': status}

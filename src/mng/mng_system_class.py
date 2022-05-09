@@ -180,7 +180,9 @@ class system(mng):
             mng_instance = mng_class([], {}, '')
 
             if method in dir(mng_instance):
-                status = getattr(mng_instance, method)(task[0]['arg'], log)
+                task = getattr(mng_instance, method)(id, task[0]['arg'], log)
+                status = task['status']
+                log = task['log']
                 memcache.set(id + '_log', log)
             else:
                 status = 'error'
@@ -201,6 +203,8 @@ class system(mng):
                     del config.local_tasks_pipe[tmp[i]['id']]
             i = i + 1
 
+
+    ''' MNG '''
     def localtaskadd(self):
         if 'task' in self.args:
             task = json.loads(self.args['task'])
@@ -234,3 +238,15 @@ class system(mng):
         self.answer_msg = {}
         self.answer_error = 'Task not found'
 
+
+    '''    Tsks   '''
+    def hostsset(self, id, args, log):
+        memcache = pymemcache.Client(('localhost', 11211))
+
+        for arg in args:
+            log += str(arg)
+            time.sleep(2)
+
+
+        memcache.set(id + '_log', log)
+        return {'log': log, 'status': 'success'}

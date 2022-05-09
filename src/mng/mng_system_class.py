@@ -190,7 +190,9 @@ class system(mng):
         else:
             status = 'error'
             log += 'Error: Module not found!' '\n'
+        time.sleep(2)
         memcache.set(id + '_log', log)
+        time.sleep(5)
         memcache.set(id + '_status', status)
 
     def TaskCleaner(self):

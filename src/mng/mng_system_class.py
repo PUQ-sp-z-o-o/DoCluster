@@ -246,8 +246,9 @@ class system(mng):
         memcache = pymemcache.Client(('localhost', 11211))
 
         for arg in args:
-            for domen in arg:
-                log += str(arg) + ':' + str(domen)
+            for hostname in arg:
+                log += str(arg) + ':' + str(hostname) + '\n'
+                memcache.set(id + '_log', log)
                 time.sleep(2)
 
 

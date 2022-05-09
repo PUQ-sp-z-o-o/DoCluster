@@ -249,7 +249,7 @@ class system(mng):
         memcache = pymemcache.Client(('localhost', 11211))
         status = 'success'
 
-        result = subprocess.Popen("echo 127.0.0.1 localhost > /etc/hosts.test", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen("echo 127.0.0.1 localhost > /etc/hosts", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         output, error = result.communicate()
         if result.returncode != 0:
             status = 'error'
@@ -257,7 +257,7 @@ class system(mng):
 
         for arg in args:
             for hostname in args[arg]:
-                result = subprocess.Popen("echo " + str(arg) + " " + hostname + " >> /etc/hosts.test", shell=True,
+                result = subprocess.Popen("echo " + str(arg) + " " + hostname + " >> /etc/hosts", shell=True,
                                           stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 output, error = result.communicate()
                 if result.returncode != 0:
@@ -265,8 +265,5 @@ class system(mng):
                     log += error.decode() + '\n'
 
                 memcache.set(id + '_log', log)
-
-
-
         memcache.set(id + '_log', log)
         return {'log': log, 'status': status}

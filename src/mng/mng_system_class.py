@@ -247,8 +247,8 @@ class system(mng):
 
         for arg in args:
             for domen in arg:
-            log += str(arg) + ':' + str(domen)
-            time.sleep(2)
+                log += str(arg) + ':' + str(domen)
+                time.sleep(2)
 
 
         memcache.set(id + '_log', log)

@@ -10,7 +10,7 @@ import os
 import calendar
 from datetime import datetime
 import pymemcache
-
+import importlib
 
 
 
@@ -127,7 +127,7 @@ class system(mng):
                         memcache.set(name + '_status', 'processing')
 
                         p = Process(name=config.local_tasks[i]['id'], target=self.TaskProcess,
-                                    args=(config.local_tasks[i]))
+                                    args=([config.local_tasks[i]],))
 
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['process'] = p
                         p.start()
@@ -158,27 +158,38 @@ class system(mng):
                 i = i + 1
 
     def TaskProcess(self, task):
-        id = task['id']
-        user = task['user']
-        module = task['module']
-        method = task['method']
-        description = task['description']
+        id = task[0]['id']
+        user = task[0]['user']
+        module = task[0]['module']
+        method = task[0]['method']
+        description = task[0]['description']
 
         memcache = pymemcache.Client(('localhost', 11211))
-        memcache.set(id + '_log', '')
-        log_in = 'Start task: ' + id + '\n'
-        log_in += 'Module: ' + module + '\n'
-        log_in += 'Method: ' + method + '\n'
-        log_in += 'description: ' + description + '\n'
-        memcache.set(id + '_log', log_in)
+        log = 'Start task: ' + id + '\n'
+        log += 'Module: ' + module + '\n'
+        log += 'Method: ' + method + '\n'
+        log += 'Description: ' + description + '\n'
+        log += 'User: ' + user + '\n'
+        log += '-------------------------------------\n'
+        memcache.set(id + '_log', log)
         #######
-        with subprocess.Popen(['ping', '-c', '3', '-n', '8.8.8.8'], stdout=subprocess.PIPE, bufsize=1, universal_newlines=True) as p:
-            for line in p.stdout:
-                log_in += line
-                memcache.set(name + '_log', log_in)
-        #######
-        memcache.set(id + '_log', log_in)
-        memcache.set(id + '_status', 'success')
+        status = 'processing'
+        if os.access('src/mng/mng_' + module + '_class.py', os.F_OK):
+            mng_module = importlib.import_module('src.mng.mng_' + module + '_class')
+            mng_class = getattr(mng_module, module)
+            mng_instance = mng_class([], {}, '')
+
+            if method in dir(mng_instance):
+                status = getattr(mng_instance, method)(task[0]['arg'], log)
+                memcache.set(id + '_log', log)
+            else:
+                status = 'error'
+                log += 'Error: Method not found!' '\n'
+        else:
+            status = 'error'
+            log += 'Error: Module not found!' '\n'
+        memcache.set(id + '_log', log)
+        memcache.set(id + '_status', status)
 
     def TaskCleaner(self):
         tmp = copy.deepcopy(config.local_tasks)

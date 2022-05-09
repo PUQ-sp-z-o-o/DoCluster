@@ -17,8 +17,8 @@ api_url = "http://192.168.129.198:3033/api/"
 #api_url = "http://192.168.129.82:3033/api/"
 
 
-api_username = 'admin'
-api_password = 'admin'
+api_username = 'ruslan'
+api_password = 'QWEqwe123'
 access_token = ''
 
 

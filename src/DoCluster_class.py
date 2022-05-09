@@ -179,7 +179,7 @@ class DoClusterMng:
             if os.access('src/mng/mng_' + url[0] + '_class.py', os.F_OK):
                 mng_module = importlib.import_module('src.mng.mng_' + url[0] + '_class')
                 mng_class = getattr(mng_module, url[0])
-                mng_instance = mng_class(self.mng_port, url, args, client_ip)
+                mng_instance = mng_class(url, args, client_ip)
 
                 if url[1] in dir(mng_instance):
                     getattr(mng_instance, url[1])()
@@ -284,7 +284,7 @@ class DoClusterMng:
 
     '''Start Loop '''
     def MngLoopStart(self, mng_class, class_name, metchod):
-        mng_instance = mng_class(config.mng_port, [], {}, '')
+        mng_instance = mng_class([], {}, '')
         timeout = getattr(mng_instance, 'Timeout_' + metchod)
         config.schedulers[class_name + '-' + metchod]['timeout'] = str(timeout)
 

@@ -18,11 +18,10 @@ class mng:
     answer_error = ''
     answer_status = ''
 
-    def __init__(self, mng_port, url, args, client_ip):
+    def __init__(self, url, args, client_ip):
         self.url = url
         self.args = args
         self.client_ip = client_ip
-        self.mng_port = mng_port
         self.answer_msg = {}
         self.answer_error = ''
         self.answer_status = ''
@@ -36,7 +35,7 @@ class mng:
 
         answer = {'status': '', 'error': '', 'msg':  {}}
         try:
-            send = requests.post(url='http://' + node + ':' + str(self.mng_port) + '/mng/' + url, data=data, timeout=5)
+            send = requests.post(url='http://' + node + ':' + str(config.mng_port) + '/mng/' + url, data=data, timeout=5)
             try:
                 send_answer = json.loads(send.text)
             except ValueError as e:

@@ -165,7 +165,7 @@ class system(mng):
         description = task[0]['description']
 
         memcache = pymemcache.Client(('localhost', 11211))
-        log = 'Start task: ' + id + '\n'
+        log = 'Task: ' + id + '\n'
         log += 'Module: ' + module + '\n'
         log += 'Method: ' + method + '\n'
         log += 'Description: ' + description + '\n'
@@ -244,13 +244,24 @@ class system(mng):
     '''    Tsks   '''
     def hostsset(self, id, args, log):
         memcache = pymemcache.Client(('localhost', 11211))
+        status = 'success'
+        #try:
+        #    process = subprocess.run('echo', '127.0.0.1 localhost > /etc/hosts.test', check=True)
+        #except subprocess.CalledProcessError as e:
+        #    log += e.cmd + '\n'
 
-        for arg in args:
-            for hostname in args['arg']:
-                log += str(arg) + ':' + str(hostname) + '\n'
-                memcache.set(id + '_log', log)
-                time.sleep(2)
+        result = subprocess.Popen("echo 127.0.0.1 localhost > /etc/hosts.test", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output, err = result.communicate()
+        if not output:
+            status = 'error'
+            log += err.decode() + '\n'
 
+
+
+        #for arg in args:
+        #    for hostname in args[arg]:
+        #        log += str(arg) + ':' + str(hostname) + '\n'
+        #        memcache.set(id + '_log', log)
 
         memcache.set(id + '_log', log)
-        return {'log': log, 'status': 'success'}
+        return {'log': log, 'status': status}

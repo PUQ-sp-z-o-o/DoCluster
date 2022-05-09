@@ -254,7 +254,7 @@ class system(mng):
 
         for arg in args:
             for hostname in args[arg]:
-                result = subprocess.Popen("echo " + str(arg) + " " + hostname + " localhost >> /etc/hosts.test", shell=True,
+                result = subprocess.Popen("echo " + str(arg) + " " + hostname + " >> /etc/hosts.test", shell=True,
                                           stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 output, error = result.communicate()
                 if result.returncode != 0:

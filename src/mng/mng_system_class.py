@@ -1,12 +1,16 @@
 import copy
 import json
-from multiprocessing import Process, Pipe
+from multiprocessing import Process
+#from subprocess import Popen, STDOUT, check_call
 import subprocess
 from src.mng.mng_class import mng
 import config
 import time
 import os
+import calendar
 from datetime import datetime
+import pymemcache
+
 
 
 
@@ -110,46 +114,53 @@ class system(mng):
                 if config.local_tasks[i]['status'] == 'processing':
                     if 'process' not in config.local_tasks_pipe[config.local_tasks[i]['id']]:
 
-                        config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_conn'],  config.local_tasks_pipe[config.local_tasks[i]['id']]['child_conn'] = Pipe()
-                        config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_log'], config.local_tasks_pipe[config.local_tasks[i]['id']]['child_log'] = Pipe()
-                        config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_status'], config.local_tasks_pipe[config.local_tasks[i]['id']]['child_status'] = Pipe()
+                        name = config.local_tasks[i]['id']
+                        memcache = pymemcache.Client(('localhost', 11211))
+                        memcache.set(name + '_log', '')
+                        memcache.set(name + '_status', 'processing')
 
                         p = Process(name=config.local_tasks[i]['id'], target=self.TaskProcess,
-                                    args=(config.local_tasks_pipe[config.local_tasks[i]['id']]['child_log'],
-                                          config.local_tasks_pipe[config.local_tasks[i]['id']]['child_status'],))
+                                    args=(name,))
 
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['process'] = p
                         p.start()
                         config.local_tasks[i]['process_id'] = str(p.pid)
 
-                    else:
-                        log = config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_log']
-                        config.local_tasks[i]['log'] = log.recv()
+                        date = datetime.utcnow()
+                        utc_time = calendar.timegm(date.utctimetuple())
+                        config.local_tasks_pipe[config.local_tasks[i]['id']]['start'] = utc_time
 
-                        status = config.local_tasks_pipe[config.local_tasks[i]['id']]['parent_status']
-                        config.local_tasks[i]['status'] = status.recv()
+                    else:
+                        name = config.local_tasks[i]['id']
+                        memcache = pymemcache.Client(('localhost', 11211))
+                        config.local_tasks[i]['log'] = str(memcache.get(name + '_log').decode())
+                        config.local_tasks[i]['status'] = str(memcache.get(name + '_status').decode())
+
+                        date = datetime.utcnow()
+                        utc_time = calendar.timegm(date.utctimetuple())
+                        config.local_tasks[i]['duration'] = str(utc_time - config.local_tasks_pipe[config.local_tasks[i]['id']]['start'])
+
                         if config.local_tasks[i]['status'] in ['success', 'error']:
                             now = datetime.now()
                             config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
 
                 i = i + 1
 
-    def TaskProcess(self, log, status):
-        status.send('processing')
-        log_in = 'Start Task\n'
+    def TaskProcess(self, name):
 
-        log.send(log_in)
+        memcache = pymemcache.Client(('localhost', 11211))
+        memcache.set(name + '_log', '')
+        log_in = ''
+        with subprocess.Popen(['ping', '-c', '3', '-n', '8.8.8.8'], stdout=subprocess.PIPE, bufsize=1, universal_newlines=True) as p:
+            for line in p.stdout:
+                log_in += line
+                memcache.set(name + '_log', log_in)
+        #######
 
-        result = subprocess.run(['ping', '-c', '3', '-n', '8.8.8.8'])
+        memcache.set(name + '_log', log_in)
+        memcache.set(name + '_status', 'success')
 
-        time.sleep(10)
-        log_in += result
-        log_in += 'End Task\n'
 
-        log.send(log_in)
-        log.close()
-        status.send('success')
-        status.close()
 
     def localtaskadd(self):
         if 'task' in self.args:

@@ -282,7 +282,6 @@ class DoClusterMng:
             config.logger.name = 'SYSTEM'
             config.logger.info('Start loop: ' + t['loop'].name)
 
-
     '''Start Loop '''
     def MngLoopStart(self, mng_class, class_name, metchod):
         mng_instance = mng_class(config.mng_port, [], {}, '')

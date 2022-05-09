@@ -246,15 +246,16 @@ class system(mng):
         memcache = pymemcache.Client(('localhost', 11211))
         status = 'success'
         #try:
-        #    process = subprocess.run('echo', '127.0.0.1 localhost > /etc/hosts.test', check=True)
+        #    process = subprocess.Popen("echo 127.0.0.1 localhost > /etc/hosts.test", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         #except subprocess.CalledProcessError as e:
         #    log += e.cmd + '\n'
+        #    status = 'error'
 
         result = subprocess.Popen("echo 127.0.0.1 localhost > /etc/hosts.test", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output, err = result.communicate()
-        if err != '':
+        output, error = result.communicate()
+        if result.returncode != 0:
             status = 'error'
-            log += err.decode() + '\n'
+            log += error.decode() + '\n'
 
 
 

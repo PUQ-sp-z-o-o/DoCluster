@@ -239,11 +239,17 @@ class DoClusterMng:
         config.logger.name = 'API'
         if msg == '':
             msg = {}
+
+        if status == '' and error == '':
+            msg = {}
+            status = 'error'
+            error = 'wrong api path'
         answer = {
             'msg': msg,
             'status': status,
             'error': error
         }
+
         config.logger.debug('ApiAnswer:' + str(answer))
         return json.dumps(answer, indent=1)
 

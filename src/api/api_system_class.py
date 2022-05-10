@@ -1,3 +1,5 @@
+import copy
+
 from src.api.api_class import api
 from src.functions import *
 import config
@@ -154,8 +156,6 @@ class system(api):
 
             for node in config.cluster_config['cluster']['nodes']:
                 AddTask(node, self.username, 'Set /etc/hosts', 'system', 'hostsset', config.cluster_config['system']['hosts'], True)
-
-
 
 
         '''Get'''
@@ -322,10 +322,37 @@ class system(api):
 
     def tasks(self):
         self.answer_msg.clear()
+        if 'cluster_tasks' not in config.modules_data:
+            self.answer_msg = []
+            self.answer_status = 'error'
+            self.answer_error = 'no tasks in the system'
+            return 0
+
         if self.url[2] == 'get':
-            if 'cluster_tasks' in config.modules_data:
-                self.answer_msg = config.modules_data['cluster_tasks']
-            else:
-                self.answer_msg = []
-        self.answer_status = 'success'
-        self.answer_error = ''
+            if 'id' in self.args:
+                for task in config.modules_data['cluster_tasks']:
+                    if self.args['id'] == task['id']:
+                        self.answer_msg = [task]
+                        self.answer_status = 'success'
+                        self.answer_error = ''
+                        return 0
+                    if len(self.answer_msg) == 0:
+                        self.answer_msg = []
+                        self.answer_status = 'error'
+                        self.answer_error = 'no tasks in the system'
+                        return 0
+
+            if 'id' not in self.args:
+                if 'cluster_tasks' in config.modules_data:
+                    tasks = []
+                    for task in config.modules_data['cluster_tasks']:
+                        tmp = copy.deepcopy(task)
+                        del(tmp['log'])
+                        del(tmp['arg'])
+                        tasks.append(tmp)
+                    self.answer_msg = tasks
+                    self.answer_status = 'success'
+                    self.answer_error = ''
+                    return 0
+
+

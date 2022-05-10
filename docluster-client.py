@@ -244,9 +244,9 @@ def system_loops_reload(name):
     }
     return send(path, data)
 
-def system_tasks_get():
+def system_tasks_get(id):
     path = 'system/tasks/get'
-    data = {}
+    data = {'id': id}
     return send(path, data)
 
 def quorum_nodes_add(node):
@@ -523,12 +523,29 @@ class DoClusterCLI(cmd2.Cmd):
 
     '''tasks get'''
     parser_system_tasks_get = system_config_subparsers.add_parser('get', help='List tasks')
+    parser_system_tasks_get.add_argument('-id', type=str, help='Get task data')
+    parser_system_tasks_get.add_argument('-all', action='store_true', help='List tasks without log')
+
 
     def system_tasks_get(self, ns: argparse.Namespace):
-        answer = system_tasks_get()
+        if not ns.all and ns.id is None:
+            self.do_help('system tasks get')
+            return 0
+
+        answer = system_tasks_get(ns.id)
         if answer['status'] == 'success':
+            if ns.id is not None:
+                table_log = PrettyTable()
+                table_log.field_names = ['log']
+                for task in answer['msg']:
+                    table_log.add_row(['Task id: ' + task['id']])
+                    table_log.add_row([task['log']])
+                print(table_log)
+
+
             table = PrettyTable()
-            table.field_names = ['id', 'Node', 'User', 'Description', 'module/method', 'status', 'Start', 'End', 'Duration', 'PID', 'log']
+            table.field_names = ['id', 'Node', 'User', 'Description', 'module/method', 'status', 'Start', 'End',
+                                     'Duration', 'PID']
 
             for task in answer['msg']:
                 table.add_row([
@@ -541,10 +558,10 @@ class DoClusterCLI(cmd2.Cmd):
                     str(task['start']),
                     str(task['end']),
                     str(task['duration']),
-                    str(task['process_id']),
-                    task['log']
+                    str(task['process_id'])
                 ])
             print(table)
+            return 0
 
     parser_system_tasks_get.set_defaults(func=system_tasks_get)
 

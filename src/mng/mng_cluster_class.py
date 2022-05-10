@@ -142,6 +142,10 @@ class cluster(mng):
         self.answer_error = ''
         return True
 
+    #def AfterAddingNodeProcessor(self):
+    #    print("aaa")
+
+
     def nodestatus(self):
         self.answer_msg['config_version'] = config.cluster_config['version']
         self.answer_msg['cpu_percent'] = psutil.cpu_percent()

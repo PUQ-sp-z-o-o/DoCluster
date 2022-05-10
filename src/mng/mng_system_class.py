@@ -11,6 +11,7 @@ import calendar
 from datetime import datetime
 import pymemcache
 import importlib
+from src.functions import *
 
 
 
@@ -91,12 +92,14 @@ class system(mng):
                     config.modules_data['cluster_tasks'][i]['end'] = answer['msg']['end']
                     config.modules_data['cluster_tasks'][i]['process_id'] = answer['msg']['process_id']
                     config.modules_data['cluster_tasks'][i]['log'] = answer['msg']['log']
+                    SaveModulesData()
 
                 if answer['status'] != 'success':
                     config.modules_data['cluster_tasks'][i]['status'] = 'error'
                     now = datetime.now()
                     config.modules_data['cluster_tasks'][i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
                     config.modules_data['cluster_tasks'][i]['log'] = config.modules_data['cluster_tasks'][i]['log'] + answer['error']
+                    SaveModulesData()
             i = i + 1
 
     def Loop_Local_Task_Processor(self):

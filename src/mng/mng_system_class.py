@@ -34,6 +34,9 @@ class system(mng):
 
             if task['status'] == 'stop':
                 answer = self.SendToNode(task['node'], 'system/taskstop', {'id': task['id']})
+                if answer['status'] == 'success':
+                    config.modules_data['cluster_tasks'][i]['status'] = 'processing'
+
                 config.logger.name = 'SYSTEM'
                 config.logger.info('Send task stop. Node: ' + task['node'] + ' Task: ' + task['id'])
                 config.logger.debug('Send task stop. Node: ' + task['node'] + ' Task: ' + str(task))
@@ -80,7 +83,7 @@ class system(mng):
         i = 0
         while i < len(config.modules_data['cluster_tasks']):
             task = config.modules_data['cluster_tasks'][i]
-            if task['status'] in ['waiting', 'processing', 'stop']:
+            if task['status'] in ['waiting', 'processing']:
                 answer = self.SendToNode(task['node'], 'system/localtaskstatus', {'id': task['id']})
                 if answer['status'] == 'success':
                     config.modules_data['cluster_tasks'][i]['status'] = answer['msg']['status']

@@ -249,6 +249,16 @@ def system_tasks_get(id):
     data = {'id': id}
     return send(path, data)
 
+def system_tasks_test(node):
+    path = 'system/tasks/test'
+    data = {'node': node}
+    return send(path, data)
+
+def system_tasks_stop(id):
+    path = 'system/tasks/stop'
+    data = {'id': id}
+    return send(path, data)
+
 def quorum_nodes_add(node):
     path = 'quorum/nodes/add'
     data = {
@@ -564,6 +574,37 @@ class DoClusterCLI(cmd2.Cmd):
             return 0
 
     parser_system_tasks_get.set_defaults(func=system_tasks_get)
+
+    '''tasks test'''
+    parser_system_tasks_test = system_config_subparsers.add_parser('test', help='Add test task')
+    parser_system_tasks_test.add_argument('-node', type=str, help='Node for test task')
+
+
+    def system_tasks_test(self, ns: argparse.Namespace):
+        if ns.node is None:
+            self.do_help('system tasks test')
+            return 0
+        answer = system_tasks_test(ns.node)
+        if answer['status'] == 'success':
+            print('Task add successfully')
+
+    parser_system_tasks_test.set_defaults(func=system_tasks_test)
+
+    '''tasks stop'''
+    parser_system_tasks_stop = system_config_subparsers.add_parser('stop', help='Stop task')
+    parser_system_tasks_stop.add_argument('-id', type=str, help='Id for test task')
+
+
+    def system_tasks_stop(self, ns: argparse.Namespace):
+        if ns.id is None:
+            self.do_help('system tasks stop')
+            return 0
+        answer = system_tasks_stop(ns.id)
+        if answer['status'] == 'success':
+            print('Task stop successfully')
+
+    parser_system_tasks_stop.set_defaults(func=system_tasks_stop)
+
 
     '''system'''
     @cmd2.with_argparser(system_parser)

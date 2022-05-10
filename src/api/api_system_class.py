@@ -321,6 +321,31 @@ class system(api):
         '''
 
     def tasks(self):
+
+        if self.url[2] == 'test':
+            if 'node' in self.args:
+                AddTask(self.args['node'], self.username, 'Test task', 'system', 'testtask', {}, False)
+                self.answer_msg = {}
+                self.answer_status = 'success'
+                self.answer_error = ''
+
+        if self.url[2] == 'stop':
+            if 'id' in self.args:
+                i = 0
+                while i < len(config.modules_data['cluster_tasks']):
+                    if config.modules_data['cluster_tasks'][i]['id'] == self.args['id']:
+                        config.modules_data['cluster_tasks'][i]['status'] = 'stop'
+                        self.answer_msg = []
+                        self.answer_status = 'success'
+                        self.answer_error = ''
+                        return 0
+                    i = i + 1
+                self.answer_msg = []
+                self.answer_status = 'error'
+                self.answer_error = 'no tasks in the system'
+                return 0
+
+
         self.answer_msg.clear()
         if 'cluster_tasks' not in config.modules_data:
             self.answer_msg = []
@@ -336,11 +361,11 @@ class system(api):
                         self.answer_status = 'success'
                         self.answer_error = ''
                         return 0
-                    if len(self.answer_msg) == 0:
-                        self.answer_msg = []
-                        self.answer_status = 'error'
-                        self.answer_error = 'no tasks in the system'
-                        return 0
+                if len(self.answer_msg) == 0:
+                    self.answer_msg = []
+                    self.answer_status = 'error'
+                    self.answer_error = 'no tasks in the system'
+                    return 0
 
             if 'id' not in self.args:
                 if 'cluster_tasks' in config.modules_data:

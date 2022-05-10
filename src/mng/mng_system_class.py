@@ -31,6 +31,13 @@ class system(mng):
         i = 0
         while i < len(config.modules_data['cluster_tasks']):
             task = config.modules_data['cluster_tasks'][i]
+
+            if task['status'] == 'stop':
+                answer = self.SendToNode(task['node'], 'system/taskstop', {'id': task['id']})
+                config.logger.name = 'SYSTEM'
+                config.logger.info('Send task stop. Node: ' + task['node'] + ' Task: ' + task['id'])
+                config.logger.debug('Send task stop. Node: ' + task['node'] + ' Task: ' + str(task))
+
             if task['status'] == 'transfer':
 
                 config.logger.name = 'SYSTEM'
@@ -73,7 +80,7 @@ class system(mng):
         i = 0
         while i < len(config.modules_data['cluster_tasks']):
             task = config.modules_data['cluster_tasks'][i]
-            if task['status'] in ['waiting', 'processing']:
+            if task['status'] in ['waiting', 'processing', 'stop']:
                 answer = self.SendToNode(task['node'], 'system/localtaskstatus', {'id': task['id']})
                 if answer['status'] == 'success':
                     config.modules_data['cluster_tasks'][i]['status'] = answer['msg']['status']
@@ -142,8 +149,10 @@ class system(mng):
                         config.local_tasks_pipe[config.local_tasks[i]['id']]['start'] = utc_time
 
                     else:
+
                         name = config.local_tasks[i]['id']
                         memcache = pymemcache.Client(('localhost', 11211))
+
                         config.local_tasks[i]['log'] = str(memcache.get(name + '_log').decode())
                         config.local_tasks[i]['status'] = str(memcache.get(name + '_status').decode())
 
@@ -151,9 +160,19 @@ class system(mng):
                         utc_time = calendar.timegm(date.utctimetuple())
                         config.local_tasks[i]['duration'] = str(utc_time - config.local_tasks_pipe[config.local_tasks[i]['id']]['start'])
 
+                        p = config.local_tasks_pipe[config.local_tasks[i]['id']]['process']
+                        if not p.is_alive() and config.local_tasks[i]['status'] in ['processing']:
+                            config.local_tasks[i]['status'] = 'error'
+                            config.local_tasks[i]['log'] += '\nThe task ended incorrectly\n'
+                            config.logger.name = 'SYSTEM'
+                            config.logger.error('The task ended incorrectly: ' + config.local_tasks[i]['process_id'] + ' Task: ' + name)
+                            config.logger.debug('The task ended incorrectly: ' + config.local_tasks[i]['process_id'] + ' Task: ' + str(config.local_tasks[i]))
+
+
                         if config.local_tasks[i]['status'] in ['success', 'error']:
                             now = datetime.now()
                             config.local_tasks[i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
+
 
                 i = i + 1
 
@@ -191,8 +210,7 @@ class system(mng):
             status = 'error'
             log += 'Error: Module not found!' '\n'
 
-
-        log += 'Task: ' + status + '\n'
+        log += 'Task: ' + status
         time.sleep(1)
         memcache.set(id + '_log', log)
         time.sleep(1)
@@ -238,6 +256,33 @@ class system(mng):
                         return 0
                     i = i + 1
 
+        self.answer_status = 'error'
+        self.answer_msg = {}
+        self.answer_error = 'Task not found'
+
+    def localtaskstop(self):
+        if 'id' in self.args:
+            if self.args['id'] in config.local_tasks_pipe:
+                self.answer_status = 'success'
+                self.answer_msg = str(config.local_tasks_pipe['id'])
+                self.answer_error = ''
+                return 0
+
+        self.answer_status = 'error'
+        self.answer_msg = {}
+        self.answer_error = 'Task not found'
+
+    def taskstop(self):
+        if 'id' in self.args:
+            if self.args['id'] in config.local_tasks_pipe:
+                if self.args['id'] in config.local_tasks_pipe:
+                    p = config.local_tasks_pipe[self.args['id']]['process']
+                    if p.is_alive():
+                        p.terminate()
+                        self.answer_status = 'success'
+                        self.answer_msg = ''
+                        self.answer_error = ''
+                        return 0
 
         self.answer_status = 'error'
         self.answer_msg = {}
@@ -267,3 +312,13 @@ class system(mng):
                 memcache.set(id + '_log', log)
         memcache.set(id + '_log', log)
         return {'log': log, 'status': status}
+
+    def testtask(self, id, args, log):
+        memcache = pymemcache.Client(('localhost', 11211))
+        i = 0
+        while True:
+            log += 'Test task: ' + str(i) + '\n'
+            time.sleep(0.1)
+            memcache.set(id + '_log', log)
+            i = i + 1
+

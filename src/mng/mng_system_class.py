@@ -100,7 +100,7 @@ class system(mng):
                     config.modules_data['cluster_tasks'][i]['end'] = now.strftime("%d-%m-%Y %H:%M:%S")
                     config.modules_data['cluster_tasks'][i]['log'] = config.modules_data['cluster_tasks'][i]['log'] + answer['error']
 
-                    if config.modules_data['cluster_tasks'][i]['status'] in ['success', 'error']
+                    if config.modules_data['cluster_tasks'][i]['status'] in ['success', 'error']:
                         SaveModulesData()
             i = i + 1
 

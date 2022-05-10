@@ -8,6 +8,9 @@ import config
 import hashlib
 import random
 import string
+import time
+from datetime import timedelta
+
 
 class cluster(mng):
 
@@ -146,6 +149,8 @@ class cluster(mng):
         self.answer_msg['memory_available'] = bytes2human(psutil.virtual_memory().available)
         self.answer_msg['memory_used'] = bytes2human(psutil.virtual_memory().used)
         self.answer_msg['memory_total'] = bytes2human(psutil.virtual_memory().total)
+        self.answer_msg['uptime'] = str(timedelta(seconds=round(time.time() - psutil.boot_time())))
+        self.answer_msg['docluster_uptime'] = str(timedelta(seconds=round(round(time.time() - config.start_time))))
         self.answer_msg['errors'] = []
         self.answer_msg['modules_stat'] = config.modules_stat
         self.answer_status = 'success'

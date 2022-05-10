@@ -35,7 +35,7 @@ cluster_status = {
 }
 
 schedulers = {}
-
+start_time = 0
 # DEBUG,INFO,WARNING,ERROR,CRITICAL
 LogLevel = 'DEBUG'
 LogFile = 'docluster.log'

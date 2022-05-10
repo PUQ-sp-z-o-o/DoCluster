@@ -636,7 +636,7 @@ class DoClusterCLI(cmd2.Cmd):
             print(table)
 
             table = PrettyTable()
-            table.field_names = ['Node hostname', 'status', 'CPU', 'RAM', 'RAM total', 'Config version', 'Errors']
+            table.field_names = ['Node hostname', 'status', 'Uptime', 'Docluster Uptime',  'CPU', 'RAM', 'RAM total', 'Config version', 'Errors']
             for key in answer['msg']['nodes']:
                 if answer['msg']['nodes'][key]['status'] == 'offline':
                     table.add_row([
@@ -647,11 +647,15 @@ class DoClusterCLI(cmd2.Cmd):
                         '---',
                         '---',
                         '---',
+                        '---',
+                        '---',
                     ])
                 else:
                     table.add_row([
                         key,
                         answer['msg']['nodes'][key]['status'],
+                        str(answer['msg']['nodes'][key]['uptime']),
+                        str(answer['msg']['nodes'][key]['docluster_uptime']),
                         str(answer['msg']['nodes'][key]['cpu_percent']),
                         str(answer['msg']['nodes'][key]['memory_percent']),
                         str(answer['msg']['nodes'][key]['memory_total']),

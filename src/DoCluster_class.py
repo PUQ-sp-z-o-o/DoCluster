@@ -33,6 +33,7 @@ class DoClusterMng:
 
         ReadConfiguration()
         ReadModulesData()
+        config.start_time = time.time()
         #self.SaveConfiguration()
         #self.MngSchedulersStart()
 
